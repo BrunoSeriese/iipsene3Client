@@ -1,1 +1,10 @@
-<p>answer-list works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <a href="#" class="list-group-item clearfix" *ngFor="let answer of answerList">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{answer.id}}</h4>
+        <p class="list-group-item-text">{{answer.value}}</p>
+      </div>
+    </a>
+  </div>
+</div>
