@@ -1,22 +1,23 @@
-import {content} from "../content.interface";
+import {Content} from "../content.interface";
 import {Answer} from "../shared/answer/answer.model";
 
-export class QuestionModel implements content {
-  id: number;
-  value: string;
-  answers: Array<Answer>;
-
-  getAnswer(): Answer[] {
-    return [];
+export class Question implements Content {
+  constructor(private id: number,
+              private value: string,
+              private answers: Answer[]) {
   }
 
   getId(): number {
-    return 0;
+    return this.id;
   }
 
   getValue(): string {
-    return "";
+    return this.value;
   }
 
-};
+  getAnswer(): Answer[] {
+    return this.answers;
+  }
+
+}
 
