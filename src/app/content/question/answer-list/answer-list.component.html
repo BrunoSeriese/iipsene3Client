@@ -2,8 +2,9 @@
   <div class="col-xs-12">
     <a href="#" class="list-group-item clearfix" *ngFor="let answer of answerList">
       <div class="pull-left">
-        <h4 class="list-group-item-heading">{{answer.id}}</h4>
-        <p class="list-group-item-text">{{answer.value}}</p>
+        <input type="radio" id="Radio1" name="antwoorden"/>
+        <h4 class="list-group-item-heading">{{answer.getId()}}</h4>
+        <p class="list-group-item-text">{{answer.getValue()}}</p>
       </div>
     </a>
   </div>

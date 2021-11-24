@@ -15,6 +15,7 @@ export class AnswerListComponent implements OnInit {
     new Answer(4, 'Af en toe', 3)
   ];
 
+
   constructor() { }
 
   ngOnInit(): void {
