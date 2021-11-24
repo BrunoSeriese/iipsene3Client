@@ -4,7 +4,7 @@ import {Answer} from "../shared/answer/answer.model";
 export class QuestionModel implements content {
   id: number;
   value: string;
-  answers: Array<any>;
+  answers: Array<Answer>;
 
   getAnswer(): Answer[] {
     return [];
