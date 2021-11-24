@@ -8,6 +8,7 @@ import {Question} from "./question.model";
 })
 export class QuestionComponent implements OnInit {
   question:Question
+
   constructor() { }
 
   ngOnInit(): void {
