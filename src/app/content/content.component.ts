@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentListComponent} from "./content-list/content-list.component";
+import {ContentService} from "./content.service";
 
 
 @Component({
@@ -9,6 +10,7 @@ import {ContentListComponent} from "./content-list/content-list.component";
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  private contentListComponent: ContentListComponent = new ContentListComponent();
   private contentId: number = 1;
   private lastContentId: number = 1;
 
@@ -21,7 +23,7 @@ export class ContentComponent implements OnInit {
     return this.contentId;
   }
 
-  public getNextContentId(id: number) {
+  public setNextContentId(id: number) {
     this.lastContentId = this.contentId;
     this.contentId = id;
   }
