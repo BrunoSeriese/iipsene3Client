@@ -9,7 +9,7 @@ import {ContentListComponent} from "./content-list/content-list.component";
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private contentId: number = 1;
+  private _contentId: number;
   private lastContentId: number = 1;
 
   constructor() { }
@@ -18,12 +18,12 @@ export class ContentComponent implements OnInit {
   }
 
   public getContentId(): number {
-    return this.contentId;
+    return this._contentId;
   }
 
-  public getNextContentId(id: number) {
-    this.lastContentId = this.contentId;
-    this.contentId = id;
+  public setNextContentId(id: number) {
+    this.lastContentId = this._contentId;
+    this._contentId = id;
   }
 
   public getLastContentId(): number {
@@ -31,7 +31,7 @@ export class ContentComponent implements OnInit {
   }
 
   public getContent(): Content {
-    return this.getContentById(this.contentId);
+    return this.getContentById(this._contentId);
   }
 
   public getContentById(id: number): Content {
@@ -44,13 +44,25 @@ export class ContentComponent implements OnInit {
   }
 
   public nextContent(): void {
-    let content: Content = this.getContentById(this.contentId);
+    let content: Content = this.getContentById(this._contentId);
     //TODO: Set the Content
   }
 
   public previousContent(): void {
-    this.contentId = this.lastContentId;
+    this._contentId = this.lastContentId;
     let content: Content = this.getContent();
   }
+
+  public getCurrentContentId(): number{
+
+    return this._contentId;
+  }
+
+  set contentId(value: number) {
+    this._contentId = value;
+    console.log('content component ' + this._contentId)
+  }
+
+
 
 }

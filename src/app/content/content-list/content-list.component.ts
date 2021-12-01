@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Question} from "../question/question.model";
 import {Answer} from "../shared/answer/answer.model";
 import {Content} from "../content.interface";
+import {ContentComponent} from "../content.component";
 
 @Component({
   selector: 'app-content-list',
@@ -29,9 +30,19 @@ export class ContentListComponent implements OnInit {
       new Answer(4, 'Af en toe', 3)
     ])
   ]
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+
+  }
+
+  getInt(): number{
+    if (new ContentComponent().getCurrentContentId() == null){
+      return 0;
+    }
+    return new ContentComponent().getCurrentContentId();
   }
 
 }
