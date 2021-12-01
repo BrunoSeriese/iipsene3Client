@@ -9,6 +9,7 @@ import { NextComponent } from './content/shared/navigation/next/next.component';
 import { PreviousComponent } from './content/shared/navigation/previous/previous.component';
 import { ContentComponent } from './content/content.component';
 import { ContentListComponent } from './content/content-list/content-list.component';
+import { ResultComponent } from './content/result/result.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ContentListComponent } from './content/content-list/content-list.compon
     PreviousComponent,
     ContentComponent,
     ContentListComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule

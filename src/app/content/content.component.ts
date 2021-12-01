@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentListComponent} from "./content-list/content-list.component";
+import {ContentService} from "./content.service";
 
 
 @Component({
@@ -9,7 +10,8 @@ import {ContentListComponent} from "./content-list/content-list.component";
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private _contentId: number;
+  private contentListComponent: ContentListComponent = new ContentListComponent();
+  private contentId: number = 1;
   private lastContentId: number = 1;
 
   constructor() { }
@@ -18,12 +20,12 @@ export class ContentComponent implements OnInit {
   }
 
   public getContentId(): number {
-    return this._contentId;
+    return this.contentId;
   }
 
   public setNextContentId(id: number) {
-    this.lastContentId = this._contentId;
-    this._contentId = id;
+    this.lastContentId = this.contentId;
+    this.contentId = id;
   }
 
   public getLastContentId(): number {
@@ -31,7 +33,7 @@ export class ContentComponent implements OnInit {
   }
 
   public getContent(): Content {
-    return this.getContentById(this._contentId);
+    return this.getContentById(this.contentId);
   }
 
   public getContentById(id: number): Content {
@@ -44,25 +46,13 @@ export class ContentComponent implements OnInit {
   }
 
   public nextContent(): void {
-    let content: Content = this.getContentById(this._contentId);
+    let content: Content = this.getContentById(this.contentId);
     //TODO: Set the Content
   }
 
   public previousContent(): void {
-    this._contentId = this.lastContentId;
+    this.contentId = this.lastContentId;
     let content: Content = this.getContent();
   }
-
-  public getCurrentContentId(): number{
-
-    return this._contentId;
-  }
-
-  set contentId(value: number) {
-    this._contentId = value;
-    console.log('content component ' + this._contentId)
-  }
-
-
 
 }
