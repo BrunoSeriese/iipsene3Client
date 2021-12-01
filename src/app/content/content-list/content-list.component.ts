@@ -9,7 +9,19 @@ import {Answer} from "../shared/answer/answer.model";
 })
 export class ContentListComponent implements OnInit {
   questionList: Question[] =[
-    new Question(1,"Wat is je naam?", [
+    new Question(1,"Wil je subsidie voor Mei?", [
+      new Answer(1, 'Ja', 2),
+      new Answer(2, 'Nee', 3),
+      new Answer(3, 'Misschien', 3),
+      new Answer(4, 'Af en toe', 2)
+    ]),
+    new Question(2,"Binnen welke termijn is de subsidie nodig?", [
+      new Answer(1, 'Ja', 2),
+      new Answer(2, 'Nee', 2),
+      new Answer(3, 'Misschien', 3),
+      new Answer(4, 'Af en toe', 3)
+    ]),
+    new Question(3,"Heeft u momenteel een subsidie?", [
       new Answer(1, 'Ja', 2),
       new Answer(2, 'Nee', 2),
       new Answer(3, 'Misschien', 3),
