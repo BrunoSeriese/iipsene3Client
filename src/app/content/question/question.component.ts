@@ -7,7 +7,8 @@ import {Question} from "./question.model";
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-  question:Question
+  question:Question = new Question(1, "question", null);
+
   constructor() { }
 
   ngOnInit(): void {
