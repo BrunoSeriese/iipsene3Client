@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Question} from "../question/question.model";
 import {Answer} from "../shared/answer/answer.model";
+import {Content} from "../content.interface";
 
 @Component({
   selector: 'app-content-list',
@@ -8,7 +9,7 @@ import {Answer} from "../shared/answer/answer.model";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
-  questionList: Question[] =[
+  contentList: Content[] =[
     new Question(1,"Wil je subsidie voor Mei?", [
       new Answer(1, 'Ja', 2),
       new Answer(2, 'Nee', 3),
