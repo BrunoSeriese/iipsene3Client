@@ -4,7 +4,7 @@ import {Question} from "./question.model";
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
   question:Question = new Question(1, "question", null);
