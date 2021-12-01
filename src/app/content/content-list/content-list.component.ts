@@ -38,11 +38,5 @@ export class ContentListComponent implements OnInit {
 
   }
 
-  getInt(): number{
-    if (new ContentComponent().getCurrentContentId() == null){
-      return 0;
-    }
-    return new ContentComponent().getCurrentContentId();
-  }
 
 }
