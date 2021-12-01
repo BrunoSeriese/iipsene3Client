@@ -3,6 +3,7 @@ import {Question} from "../question/question.model";
 import {Answer} from "../shared/answer/answer.model";
 import {Content} from "../content.interface";
 import {ContentComponent} from "../content.component";
+import {ContentService} from "../content.service";
 
 @Component({
   selector: 'app-content-list',
@@ -10,6 +11,7 @@ import {ContentComponent} from "../content.component";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
+
   contentList: Content[] =[
     new Question(1,"Wil je subsidie voor Mei?", [
       new Answer(1, 'Ja', 2),
@@ -37,6 +39,8 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+
 
 
 }

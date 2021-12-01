@@ -10,8 +10,8 @@ import {ContentService} from "./content.service";
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private contentListComponent: ContentListComponent = new ContentListComponent();
-  private contentId: number = 1;
+  private _contentListComponent: ContentListComponent = new ContentListComponent();
+  private contentId: number;
   private lastContentId: number = 1;
 
   constructor() { }
@@ -19,13 +19,25 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get contentListComponent(): ContentListComponent {
+    return this._contentListComponent;
+  }
+
   public getContentId(): number {
-    return this.contentId;
+    if (this.contentId == null){
+      return this.contentId = 0;
+    }else{
+      return this.contentId;
+    }
+
+
+
   }
 
   public setNextContentId(id: number) {
     this.lastContentId = this.contentId;
     this.contentId = id;
+    console.log(this.contentId)
   }
 
   public getLastContentId(): number {
