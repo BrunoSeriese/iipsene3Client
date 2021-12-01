@@ -12,4 +12,7 @@ export class PreviousComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onPreviousClick() {
+
+  }
 }

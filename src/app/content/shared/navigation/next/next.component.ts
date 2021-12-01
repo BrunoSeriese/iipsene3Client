@@ -12,4 +12,8 @@ export class NextComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onNextClick() {
+
+  }
+
 }

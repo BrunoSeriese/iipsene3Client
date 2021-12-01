@@ -7,6 +7,7 @@ import { AnswerListComponent } from './content/question/answer-list/answer-list.
 import { AnswerComponent } from './content/shared/answer/answer.component';
 import { NextComponent } from './content/shared/navigation/next/next.component';
 import { PreviousComponent } from './content/shared/navigation/previous/previous.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PreviousComponent } from './content/shared/navigation/previous/previous
     AnswerComponent,
     NextComponent,
     PreviousComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule
