@@ -19,6 +19,10 @@ export class Result implements Content {
     return [this.answer];
   }
 
+  getAnswerValue(): string {
+    return this.answer.getValue();
+  }
+
 
 
 }
