@@ -5,7 +5,7 @@ import {Content} from "../../../content.interface";
 @Component({
   selector: 'app-next',
   templateUrl: './next.component.html',
-  styleUrls: ['./next.component.css']
+  styleUrls: ['./next.component.scss']
 })
 export class NextComponent implements OnInit {
 

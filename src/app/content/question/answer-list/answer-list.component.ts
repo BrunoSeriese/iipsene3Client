@@ -4,7 +4,7 @@ import {Answer} from "../../shared/answer/answer.model";
 @Component({
   selector: 'app-answer-list',
   templateUrl: './answer-list.component.html',
-  styleUrls: ['./answer-list.component.css']
+  styleUrls: ['./answer-list.component.scss']
 })
 export class AnswerListComponent implements OnInit {
 
