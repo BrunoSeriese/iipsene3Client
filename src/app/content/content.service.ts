@@ -23,12 +23,14 @@ export class ContentService {
     this.lastContentId = this.contentId;
     this.lastContentIdArray.push(this.lastContentId);
     this.contentId = id;
+    console.log(this.lastContentIdArray);
   }
 
   public setLastContent(){
     if (this.lastContentIdArray.length != 0){
       this.contentId = this.lastContentIdArray.pop();
     }
+    console.log(this.lastContentIdArray);
 
   }
 
@@ -65,6 +67,14 @@ export class ContentService {
 
   public getSelectedValue(){
     return this.selected;
+  }
+
+  public setSelectedValue(){
+    this.selected = '';
+  }
+
+  public getLastContentIdArray(){
+    return this.lastContentIdArray;
   }
 
 }

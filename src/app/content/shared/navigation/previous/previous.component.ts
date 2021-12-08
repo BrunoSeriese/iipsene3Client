@@ -14,6 +14,10 @@ export class PreviousComponent implements OnInit {
   public ngOnInit(): void {
   }
 
+  public OnEmptyArray(){
+    return this.contentService.getLastContentIdArray().length == 0;
+  }
+
   public onPreviousClick(): void {
     this.contentService.setLastContent();
   }

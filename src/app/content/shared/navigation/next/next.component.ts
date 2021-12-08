@@ -15,8 +15,17 @@ export class NextComponent implements OnInit {
   public ngOnInit(): void {
   }
 
+  public onSelection(){
+    return this.contentService.getSelectedValue() == '';
+  }
+
+
   public onNextClick(): void {
-    this.contentService.setNextContentId(Number(this.contentService.getSelectedValue()));
+    if (this.contentService.getSelectedValue() != ''){
+      this.contentService.setNextContentId(Number(this.contentService.getSelectedValue()));
+      this.contentService.setSelectedValue();
+    }
+
   }
 
 }
