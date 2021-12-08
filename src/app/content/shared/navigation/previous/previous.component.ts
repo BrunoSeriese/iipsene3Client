@@ -8,14 +8,14 @@ import {ContentService} from "../../../content.service";
 })
 export class PreviousComponent implements OnInit {
 
-  constructor(private contentService: ContentService) { }
-
-  ngOnInit(): void {
+  constructor(private contentService: ContentService) {
   }
 
-  onPreviousClick() {
-    let num: number = this.contentService.contentComponent.getContentId();
-    this.contentService.contentComponent.setNextContentId(num + 1);
-    console.log(this.contentService.contentComponent.getContentId());
+  public ngOnInit(): void {
+  }
+
+  public onPreviousClick(): void {
+    let num: number = this.contentService.getContentId();
+    this.contentService.setNextContentId(num - 1);
   }
 }
