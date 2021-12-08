@@ -10,7 +10,6 @@ import {ContentService} from "./content.service";
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
-
   constructor(private contentService: ContentService) {
   }
 
@@ -20,5 +19,10 @@ export class ContentComponent implements OnInit {
   public getContent() {
     return this.contentService.getContent();
   }
+
+  public radioChangeHandler(event: any){
+    return this.contentService.radioChangeHandler(event)
+  }
+
 
 }
