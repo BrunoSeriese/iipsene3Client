@@ -7,7 +7,7 @@ import {ContentService} from "./content.service";
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
   private contentListComponent: ContentListComponent = new ContentListComponent();
