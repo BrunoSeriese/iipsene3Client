@@ -1,5 +1,18 @@
 <app-content-list></app-content-list>
-<!--<app-question></app-question>-->
+<div class="row">
+  <div class="col-xs-12">
+    <div  class="list-group-item clearfix" >
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{contentListComponent.contentList[getContentId()].getValue()}}</h4>
+        <p class="list-group-item-text"*ngFor="let answer of contentListComponent.contentList[getContentId()].getAnswer()">
+          <input class="radiobutton" type="radio" [id]="answer.getNextContentId()" name="antwoorden">
+          {{answer.getValue()}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-previous></app-previous>
 <app-next></app-next>
 

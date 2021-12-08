@@ -7,6 +7,7 @@ import {ContentComponent} from "./content.component";
 export class ContentService {
   contentComponent: ContentComponent = new ContentComponent();
 
+
   constructor() { }
 
   getContentList() {
