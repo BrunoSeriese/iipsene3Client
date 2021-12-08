@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentListComponent} from "./content-list/content-list.component";
 import {ContentService} from "./content.service";
@@ -11,14 +11,18 @@ import {Result} from "./result/result.model";
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
-export class ContentComponent implements OnInit {
-  content: Content = new Question(99, "Test Question", null);
-  // content: Content = new Result(99, "Test Result", null);
+export class ContentComponent implements OnInit, DoCheck {
+  content: Content = this.contentService.getContent();
 
   constructor(private contentService: ContentService) {
   }
 
   public ngOnInit(): void {
+  }
+
+  public ngDoCheck() {
+    //TODO: Make this better
+    this.content = this.contentService.getContent();
   }
 
   public getContent() {
