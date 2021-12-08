@@ -25,6 +25,11 @@ export class ContentComponent implements OnInit {
     return this.contentService.getContent();
   }
 
+  public radioChangeHandler(event: any){
+    return this.contentService.radioChangeHandler(event)
+  }
+
+
   public getInstance(): String {
     if(this.content instanceof Question) {
       return "Question";

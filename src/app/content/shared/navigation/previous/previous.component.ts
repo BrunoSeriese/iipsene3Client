@@ -15,7 +15,6 @@ export class PreviousComponent implements OnInit {
   }
 
   public onPreviousClick(): void {
-    let num: number = this.contentService.getContentId();
-    this.contentService.setNextContentId(num - 1);
+    this.contentService.setLastContent();
   }
 }
