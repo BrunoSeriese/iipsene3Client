@@ -1,16 +1,4 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div  class="list-group-item clearfix" >
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ getContent().getValue() }}</h4>
-        <p class="list-group-item-text"*ngFor="let answer of getContent().getAnswer()">
-          <input class="radiobutton" type="radio" [id]="answer.getNextContentId()" name="answers">
-          {{ answer.getValue() }}
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+<app-question></app-question>
 
 <app-previous></app-previous>
 <app-next></app-next>
