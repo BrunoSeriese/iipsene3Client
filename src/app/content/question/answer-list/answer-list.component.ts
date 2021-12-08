@@ -7,7 +7,6 @@ import {Answer} from "../../shared/answer/answer.model";
   styleUrls: ['./answer-list.component.scss']
 })
 export class AnswerListComponent implements OnInit {
-
   answerList: Answer[] = [
     new Answer(1, 'Ja', 2),
     new Answer(2, 'Nee', 2),

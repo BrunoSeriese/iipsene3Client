@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentService} from "../../../content.service";
-import {Content} from "../../../content.interface";
+
 
 @Component({
   selector: 'app-next',
@@ -13,12 +13,10 @@ export class NextComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-
   }
 
   public onNextClick(): void {
-    let num: number = this.contentService.getContentId();
-    this.contentService.setNextContentId(num + 1);
+    this.contentService.setNextContentId(Number(this.contentService.getSelectedValue()));
   }
 
 }

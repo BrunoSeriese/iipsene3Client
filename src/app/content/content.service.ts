@@ -9,7 +9,9 @@ import {Content} from "./content.interface";
 export class ContentService {
   private contentListComponent: ContentListComponent = new ContentListComponent();
   private contentId: number = 1;
+  private lastContentIdArray: number[] = [];
   private lastContentId: number = 1;
+  private selected: string = '';
 
   constructor() { }
 
@@ -19,7 +21,15 @@ export class ContentService {
 
   public setNextContentId(id: number) {
     this.lastContentId = this.contentId;
+    this.lastContentIdArray.push(this.lastContentId);
     this.contentId = id;
+  }
+
+  public setLastContent(){
+    if (this.lastContentIdArray.length != 0){
+      this.contentId = this.lastContentIdArray.pop();
+    }
+
   }
 
   public getLastContentId(): number {
@@ -47,6 +57,14 @@ export class ContentService {
   public previousContent(): void {
     this.contentId = this.lastContentId;
     let content: Content = this.getContent();
+  }
+
+  public radioChangeHandler(event: any) {
+    this.selected = event.target.value;
+  }
+
+  public getSelectedValue(){
+    return this.selected;
   }
 
 }
