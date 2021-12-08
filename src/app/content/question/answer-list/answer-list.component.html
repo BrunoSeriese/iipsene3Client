@@ -1,11 +1,4 @@
-<div class="row">
-  <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let answer of answerList">
-      <div class="pull-left">
-        <input class="radiobutton" type="radio" id="Radio1" name="antwoorden">
-        <h4 class="list-group-item-heading">{{answer.id}}</h4>
-        <p class="list-group-item-text">{{answer.value}}</p>
-      </div>
-    </a>
-  </div>
-</div>
+<p class="list-group-item-text" *ngFor="let answer of answerList">
+  <input class="radiobutton" type="radio" [id]="answer.getNextContentId()">
+  {{ answer.getValue() }}
+</p>
