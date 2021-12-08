@@ -16,9 +16,7 @@ export class NextComponent implements OnInit {
   }
 
   onNextClick() {
-    let num: number = this.contentService.contentComponent.getContentId();
-    this.contentService.contentComponent.setNextContentId(num + 1);
-    // console.log(this.contentService.contentComponent.getContentId());
+    this.contentService.contentComponent.setNextContentId(this.contentService.contentComponent.contentId + 1);
   }
 
 }

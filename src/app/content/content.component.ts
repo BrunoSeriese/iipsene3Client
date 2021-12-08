@@ -11,7 +11,7 @@ import {ContentService} from "./content.service";
 })
 export class ContentComponent implements OnInit {
   private _contentListComponent: ContentListComponent = new ContentListComponent();
-  private contentId: number;
+  public contentId: number = 0;
   private lastContentId: number = 1;
 
   constructor() { }
@@ -24,20 +24,16 @@ export class ContentComponent implements OnInit {
   }
 
   public getContentId(): number {
-    if (this.contentId == null){
-      return this.contentId = 0;
-    }else{
-      return this.contentId;
-    }
-
-
+    console.log(this.contentId)
+    return this.contentId;
 
   }
 
   public setNextContentId(id: number) {
     this.lastContentId = this.contentId;
+    console.log('ervoor' + this.contentId)
     this.contentId = id;
-    console.log(this.contentId)
+    console.log('erna' + this.contentId)
   }
 
   public getLastContentId(): number {
