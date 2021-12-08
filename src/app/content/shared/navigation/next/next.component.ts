@@ -9,14 +9,16 @@ import {Content} from "../../../content.interface";
 })
 export class NextComponent implements OnInit {
 
-  constructor(private contentService: ContentService) { }
+  constructor(private contentService: ContentService) {
+  }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
 
   }
 
-  onNextClick() {
-    this.contentService.contentComponent.setNextContentId(this.contentService.contentComponent.contentId + 1);
+  public onNextClick(): void {
+    let num: number = this.contentService.getContentId();
+    this.contentService.setNextContentId(num + 1);
   }
 
 }
