@@ -1,18 +1,16 @@
-<app-content-list></app-content-list>
 <div class="row">
   <div class="col-xs-12">
     <div  class="list-group-item clearfix" >
       <div class="pull-left">
-        <h4 class="list-group-item-heading">{{contentListComponent.contentList[getContentId()].getValue()}}</h4>
-        <p class="list-group-item-text"*ngFor="let answer of contentListComponent.contentList[getContentId()].getAnswer()">
-          <input class="radiobutton" type="radio" [id]="answer.getNextContentId()" name="antwoorden">
-          {{answer.getValue()}}
+        <h4 class="list-group-item-heading">{{ getContent().getValue() }}</h4>
+        <p class="list-group-item-text"*ngFor="let answer of getContent().getAnswer()">
+          <input class="radiobutton" type="radio" value="{{answer.getNextContentId()}}" (change)= radioChangeHandler($event) [id]="answer.getNextContentId()" name="answers">
+          {{ answer.getValue() }}
         </p>
       </div>
     </div>
   </div>
 </div>
-
 <app-previous></app-previous>
 <app-next></app-next>
 
