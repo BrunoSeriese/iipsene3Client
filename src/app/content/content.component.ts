@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentListComponent} from "./content-list/content-list.component";
+import {ContentService} from "./content.service";
 
 
 @Component({
@@ -9,7 +10,8 @@ import {ContentListComponent} from "./content-list/content-list.component";
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
-  private contentId: number = 1;
+  private _contentListComponent: ContentListComponent = new ContentListComponent();
+  private contentId: number;
   private lastContentId: number = 1;
 
   constructor() { }
@@ -17,13 +19,25 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getContentId(): number {
-    return this.contentId;
+  get contentListComponent(): ContentListComponent {
+    return this._contentListComponent;
   }
 
-  public getNextContentId(id: number) {
+  public getContentId(): number {
+    if (this.contentId == null){
+      return this.contentId = 0;
+    }else{
+      return this.contentId;
+    }
+
+
+
+  }
+
+  public setNextContentId(id: number) {
     this.lastContentId = this.contentId;
     this.contentId = id;
+    console.log(this.contentId)
   }
 
   public getLastContentId(): number {
