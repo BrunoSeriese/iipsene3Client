@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Question} from "./question.model";
+import {Content} from "../content.interface";
+import {ContentService} from "../content.service";
 
 @Component({
   selector: 'app-question',
@@ -7,9 +9,9 @@ import {Question} from "./question.model";
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
-  question:Question = new Question(1, "question", null);
+  public question:Question = <Question> this.contentService.getContent();
 
-  constructor() { }
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
   }
