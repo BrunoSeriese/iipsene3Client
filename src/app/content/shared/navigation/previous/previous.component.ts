@@ -8,17 +8,16 @@ import {ContentService} from "../../../content.service";
 })
 export class PreviousComponent implements OnInit {
 
-  constructor(private contentService: ContentService) {
-  }
+  constructor(private contentService: ContentService) { }
 
   public ngOnInit(): void {
   }
 
-  public OnEmptyArray(){
-    return this.contentService.getLastContentIdArray().length == 0;
+  public OnEmptyArray(): boolean {
+    return this.contentService.getLastContentIdArray() == null || this.contentService.getLastContentIdArray().length == 0;
   }
 
   public onPreviousClick(): void {
-    this.contentService.setLastContent();
+    this.contentService.setLastContentId();
   }
 }
