@@ -4,26 +4,18 @@ import {Answer} from "../shared/answer/answer.model";
 export class Result implements Content {
   constructor(private id: number,
               private value: string,
-              private answer: Answer) {
-  }
+              private answer: Answer) { }
 
-  getId(): number {
+  public getId(): number {
     return this.id;
   }
 
-  getValue(): string {
+  public getValue(): string {
     return this.value;
   }
 
-  getAnswer(): Answer[] {
+  public getAnswer(): Answer[] {
     return [this.answer];
   }
-
-  getAnswerValue(): string {
-    return this.answer.getValue();
-  }
-
-
-
 }
 
