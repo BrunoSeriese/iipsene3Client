@@ -1,41 +1,53 @@
 import { Injectable } from '@angular/core';
-import {ContentComponent} from "./content.component";
-import {ContentListComponent} from "./content-list/content-list.component";
 import {Content} from "./content.interface";
+import {Question} from "./question/question.model";
+import {Answer} from "./shared/answer/answer.model";
+import {Result} from "./result/result.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
-  private contentListComponent: ContentListComponent = new ContentListComponent();
+  private contentList: Content[] = [
+    new Question(1,"Wil je subsidie voor Mei?", [
+      new Answer(1, 'Ja', 2),
+      new Answer(2, 'Nee', 3),
+      new Answer(3, 'Misschien', 3),
+      new Answer(4, 'Af en toe', 2)
+    ]),
+    new Question(2,"Binnen welke termijn is de subsidie nodig?", [
+      new Answer(1, 'Ja', 2),
+      new Answer(2, 'Nee', 2),
+      new Answer(3, 'Misschien', 3),
+      new Answer(4, 'Af en toe', 3)
+    ]),
+    new Question(3,"Heeft u momenteel een subsidie?", [
+      new Answer(1, 'Ja', 2),
+      new Answer(2, 'Nee', 2),
+      new Answer(3, 'Misschien', 3),
+      new Answer(4, 'Af en toe', 4)
+    ]),
+    new Result(4, "Dit is een resultaat",
+      new Answer(1, "Hallo lekker bezig, je hebt een resultaat behaald", null)),
+  ];
   private contentId: number = 1;
   private lastContentIdArray: number[] = [];
-  private lastContentId: number = 1;
-  private selected: string = '';
 
   constructor() { }
 
-  public getContentId(): number {
-    return this.contentId;
-  }
-
-  public setNextContentId(id: number) {
-    this.lastContentId = this.contentId;
-    this.lastContentIdArray.push(this.lastContentId);
+  public setNextContentId(id: number): void {
+    this.lastContentIdArray.push(this.contentId);
     this.contentId = id;
-    console.log(this.lastContentIdArray);
   }
 
-  public setLastContent(){
-    if (this.lastContentIdArray.length != 0){
+  public getLastContentIdArray(): number[] {
+    return this.lastContentIdArray;
+  }
+
+  public setLastContentId(): void {
+    if (!this.isArrayEmpty(this.lastContentIdArray)){
       this.contentId = this.lastContentIdArray.pop();
     }
-    console.log(this.lastContentIdArray);
-
-  }
-
-  public getLastContentId(): number {
-    return this.lastContentId;
   }
 
   public getContent(): Content {
@@ -43,7 +55,7 @@ export class ContentService {
   }
 
   public getContentById(id: number): Content {
-    let contentList: Content[] = this.contentListComponent.contentList;
+    let contentList: Content[] = this.contentList;
     for(let content of contentList) {
       if (content.getId() == id) {
         return content;
@@ -51,30 +63,8 @@ export class ContentService {
     }
   }
 
-  public nextContent(): void {
-    let content: Content = this.getContentById(this.contentId);
-    //TODO: Set the Content
-  }
-
-  public previousContent(): void {
-    this.contentId = this.lastContentId;
-    let content: Content = this.getContent();
-  }
-
-  public radioChangeHandler(event: any) {
-    this.selected = event.target.value;
-  }
-
-  public getSelectedValue(){
-    return this.selected;
-  }
-
-  public setSelectedValue(){
-    this.selected = '';
-  }
-
-  public getLastContentIdArray(){
-    return this.lastContentIdArray;
+  public isArrayEmpty(array: any[]): boolean {
+    return array == null || array.length == 0;
   }
 
 }
