@@ -1,27 +1,22 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Answer} from "../../shared/answer/answer.model";
-import {ContentService} from "../../content.service";
 
 @Component({
   selector: 'app-answer-list',
   templateUrl: './answer-list.component.html',
   styleUrls: ['./answer-list.component.scss']
 })
-export class AnswerListComponent implements OnInit, DoCheck {
-  answerList: Answer[] = this.contentService.getContent().getAnswer();
+export class AnswerListComponent implements OnInit {
+  @Input() public answerList: Answer[];
+  @Output("selectedAnswerEvent") public selectedAnswerEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private contentService: ContentService) { }
+  constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  ngDoCheck() {
-    //TODO: Make this better
-    this.answerList = this.contentService.getContent().getAnswer();
-  }
-
-  public radioChangeHandler(event: any){
-    return this.contentService.radioChangeHandler(event)
+  public radioButtonChangeHandler(event: Event): void {
+    this.selectedAnswerEvent.emit(Number((<HTMLInputElement> event.target).value));
   }
 
 }
