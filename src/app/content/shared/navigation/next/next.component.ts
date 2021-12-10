@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentService} from "../../../content.service";
+import {NavigationService} from "../../navigation.service";
 
 
 @Component({
@@ -9,23 +10,21 @@ import {ContentService} from "../../../content.service";
 })
 export class NextComponent implements OnInit {
 
-  constructor(private contentService: ContentService) {
-  }
+  constructor(private contentService: ContentService,
+              private navigationService: NavigationService) { }
 
   public ngOnInit(): void {
   }
 
-  public onSelection(){
-    return this.contentService.getSelectedValue() == '';
+  public onNoAnswerSelected(): boolean {
+    return this.navigationService.isSelectedAnswerEmpty();
   }
 
-
   public onNextClick(): void {
-    if (this.contentService.getSelectedValue() != ''){
-      this.contentService.setNextContentId(Number(this.contentService.getSelectedValue()));
-      this.contentService.setSelectedValue();
+    if (!this.navigationService.isSelectedAnswerEmpty()){
+      this.contentService.setNextContentId(this.navigationService.getSelected());
+      this.navigationService.clearSelected();
     }
-
   }
 
 }
