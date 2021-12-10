@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Result} from "./result.model";
-import {Answer} from "../shared/answer/answer.model";
+import {NavigationService} from "../shared/navigation.service";
 
 @Component({
   selector: 'app-result',
@@ -8,13 +8,12 @@ import {Answer} from "../shared/answer/answer.model";
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
+  @Input() public result: Result;
 
-  result:Result = new Result(3, "je krijgt subsidie B",
-    new Answer(1, "Je kan nu 200 eu krijgen, ofziets, i dunno", 4))
+  constructor(private navigationService: NavigationService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.navigationService.setSelected(this.result.getAnswer()[0].getNextContentId());
   }
 
 }
