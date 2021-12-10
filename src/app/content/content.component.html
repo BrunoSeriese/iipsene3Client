@@ -1,6 +1,6 @@
 <div [ngSwitch]="getInstance()">
-  <app-question *ngSwitchCase="'Question'"></app-question>
-  <app-result *ngSwitchCase="'Result'"></app-result>
+  <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
+  <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
 </div>
 
 <app-previous></app-previous>
