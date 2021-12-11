@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentService} from "../../../content.service";
+import {Node} from "../../../tree/node.model";
+
 
 @Component({
   selector: 'app-previous',
@@ -14,10 +16,11 @@ export class PreviousComponent implements OnInit {
   }
 
   public OnEmptyArray(): boolean {
-    return this.contentService.getLastContentIdArray() == null || this.contentService.getLastContentIdArray().length == 0;
+    const nodeArray: Node[] = this.contentService.getLastNodeArray();
+    return nodeArray == null || nodeArray.length == 0;
   }
 
   public onPreviousClick(): void {
-    this.contentService.setLastContentId();
+    this.contentService.setLastNode();
   }
 }
