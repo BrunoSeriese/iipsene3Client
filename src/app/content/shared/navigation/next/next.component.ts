@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ContentService} from "../../../content.service";
 import {NavigationService} from "../../navigation.service";
 import {Node} from "../../../tree/node.model";
@@ -9,13 +9,10 @@ import {Node} from "../../../tree/node.model";
   templateUrl: './next.component.html',
   styleUrls: ['./next.component.scss']
 })
-export class NextComponent implements OnInit {
+export class NextComponent {
 
   constructor(private contentService: ContentService,
               private navigationService: NavigationService) { }
-
-  public ngOnInit(): void {
-  }
 
   public onNoAnswerSelected(): boolean {
     return this.navigationService.isSelectedAnswerEmpty();
