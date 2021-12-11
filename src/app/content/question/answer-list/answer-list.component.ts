@@ -7,7 +7,7 @@ import {Answer} from "../../shared/answer/answer.model";
   styleUrls: ['./answer-list.component.scss']
 })
 export class AnswerListComponent implements OnInit {
-  @Input() public answerList: Answer[];
+  @Input() public answers: Answer[];
   @Output("selectedAnswerEvent") public selectedAnswerEvent: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
@@ -15,8 +15,8 @@ export class AnswerListComponent implements OnInit {
   public ngOnInit(): void {
   }
 
-  public radioButtonChangeHandler(event: Event): void {
-    this.selectedAnswerEvent.emit(Number((<HTMLInputElement> event.target).value));
+  public radioButtonChangeHandler(value: number): void {
+    this.selectedAnswerEvent.emit(value);
   }
 
 }

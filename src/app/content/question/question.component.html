@@ -3,7 +3,7 @@
     <div  class="list-group-item clearfix" >
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{ question.getValue() }}</h4>
-        <app-answer-list [answerList]="question.getAnswer()" (selectedAnswerEvent)="navigationService.setSelected($event)"></app-answer-list>
+        <app-answer-list [answers]="question.getAnswer()" (selectedAnswerEvent)="navigationService.setSelected($event)"></app-answer-list>
       </div>
     </div>
   </div>
