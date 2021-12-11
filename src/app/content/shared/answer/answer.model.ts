@@ -1,8 +1,7 @@
 export class Answer{
 
   constructor(private id: number,
-              private value: string,
-              private nextContentId: number) {}
+              private value: string) {}
 
   public getId(): number {
     return this.id;
@@ -10,10 +9,6 @@ export class Answer{
 
   public getValue(): string {
     return this.value;
-  }
-
-  public getNextContentId(): number {
-    return this.nextContentId;
   }
 
 }
