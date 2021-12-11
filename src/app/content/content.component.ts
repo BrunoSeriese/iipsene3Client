@@ -22,7 +22,7 @@ export class ContentComponent implements OnInit, DoCheck {
   public ngDoCheck(): void {
     let content: Content = this.contentService.getContent();
     if (this.content != content) {
-      this.content = this.contentService.getContent();
+      this.content = content;
     }
   }
 
