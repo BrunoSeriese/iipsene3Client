@@ -9,7 +9,8 @@
 }
 
 .radiobutton {
-  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .list-group-item-text {
@@ -19,4 +20,16 @@
 
 .list-group-item-heading {
   margin: 1rem;
+}
+
+input[type=radio] {
+  padding: 0.4em;
+  -webkit-appearance: none;
+  outline: 0.1em solid black;
+  outline-offset: 0.1em;
+}
+
+input[type=radio]:checked {
+  display: inline-block;
+  background-color: #000;
 }
