@@ -1,5 +1,5 @@
-import {Content} from "../content.interface";
-import {Answer} from "../shared/answer/answer.model";
+import {Content} from "../../content.interface";
+import {Answer} from "../../shared/answer/answer.model";
 
 export class Explanation implements Content {
   constructor(private id: number,

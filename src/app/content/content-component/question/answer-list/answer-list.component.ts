@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Answer} from "../../shared/answer/answer.model";
+import {Answer} from "../../../shared/answer/answer.model";
 
 @Component({
   selector: 'app-answer-list',

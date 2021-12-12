@@ -1,11 +1,10 @@
-import {Content} from "../content.interface";
-import {Answer} from "../shared/answer/answer.model";
+import {Content} from "../../content.interface";
+import {Answer} from "../../shared/answer/answer.model";
 
-export class Question implements Content {
-
+export class Result implements Content {
   constructor(private id: number,
               private value: string,
-              private answers: Answer[]) { }
+              private answer: Answer) { }
 
   public getId(): number {
     return this.id;
@@ -16,8 +15,7 @@ export class Question implements Content {
   }
 
   public getAnswer(): Answer[] {
-    return this.answers;
+    return [this.answer];
   }
-
 }
 

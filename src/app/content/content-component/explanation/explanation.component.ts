@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Explanation} from "./explanation.model";
-import {NavigationService} from "../shared/navigation.service";
+import {NavigationService} from "../../shared/navigation.service";
 
 @Component({
   selector: 'app-explanation',
