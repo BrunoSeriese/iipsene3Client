@@ -5,6 +5,7 @@ import {Iterator} from "./iterator.model";
 import {Result} from "../result/result.model";
 import {Question} from "../question/question.model";
 import {Answer} from "../shared/answer/answer.model";
+import {Explanation} from "../explanation/explanation.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class ContentTreeService {
         new Answer(3, "Beetje niet"),
         new Answer(4, "Nee"),
       ]),
+      new Explanation(6, "Je gaat een sterke kop koffie krijgen", new Answer(9, "Die heb je verdient!")),
       new Result(2, "Je krijgt koffie", new Answer(5, "Je krijgt een sterke kop koffie")),
       new Result(3, "Je krijgt koffie", new Answer(6, "Je krijgt een normale kop koffie")),
       new Result(4, "Je krijgt koffie", new Answer(7, "Je krijgt een slappe kop koffie")),
