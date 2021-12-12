@@ -2,10 +2,11 @@ import {Injectable} from '@angular/core';
 import {Node} from "./node.model";
 import {Content} from "../content.interface";
 import {Iterator} from "./iterator.model";
-import {Result} from "../result/result.model";
-import {Question} from "../question/question.model";
+import {Result} from "../content-component/result/result.model";
+import {Question} from "../content-component/question/question.model";
 import {Answer} from "../shared/answer/answer.model";
-import {Explanation} from "../explanation/explanation.model";
+import {Explanation} from "../content-component/explanation/explanation.model";
+import {Video} from "../content-component/video/video.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class ContentTreeService {
         new Answer(4, "Nee"),
       ]),
       new Explanation(6, "Je gaat een sterke kop koffie krijgen", new Answer(9, "Die heb je verdient!")),
+      new Video(7, "Een mooie video over koffie", new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")),
       new Result(2, "Je krijgt koffie", new Answer(5, "Je krijgt een sterke kop koffie")),
       new Result(3, "Je krijgt koffie", new Answer(6, "Je krijgt een normale kop koffie")),
       new Result(4, "Je krijgt koffie", new Answer(7, "Je krijgt een slappe kop koffie")),

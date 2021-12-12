@@ -1,9 +1,10 @@
 import {Component, DoCheck} from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentService} from "./content.service";
-import {Question} from "./question/question.model";
-import {Result} from "./result/result.model";
-import {Explanation} from "./explanation/explanation.model";
+import {Question} from "./content-component/question/question.model";
+import {Result} from "./content-component/result/result.model";
+import {Explanation} from "./content-component/explanation/explanation.model";
+import {Video} from "./content-component/video/video.model";
 
 @Component({
   selector: 'app-content',
@@ -29,6 +30,8 @@ export class ContentComponent implements DoCheck {
       return "Result";
     } else if (this.content instanceof Explanation) {
       return "Explanation";
+    } else if (this.content instanceof Video) {
+      return "Video";
     }
   }
 
