@@ -1,17 +1,9 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div  class="list-group-item clearfix" >
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ getContent().getValue() }}</h4>
-        <p class="list-group-item-text"*ngFor="let answer of getContent().getAnswer()">
-          <input class="radiobutton" type="radio" value="{{answer.getNextContentId()}}" (change)= radioChangeHandler($event) [id]="answer.getNextContentId()" name="answers">
-          {{ answer.getValue() }}
-        </p>
-      </div>
-    </div>
-  </div>
+<div [ngSwitch]="getInstance()">
+  <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
+  <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
+  <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
+  <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
 </div>
+
 <app-previous></app-previous>
 <app-next></app-next>
-
-

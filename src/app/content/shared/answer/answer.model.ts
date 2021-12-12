@@ -1,20 +1,14 @@
 export class Answer{
 
-  constructor(
-    private id: number,
-    private value: string,
-    private nextContentId: number) {}
+  constructor(private id: number,
+              private value: string) {}
 
-  getId(): number {
+  public getId(): number {
     return this.id;
   }
 
-  getValue(): string {
+  public getValue(): string {
     return this.value;
-  }
-
-  getNextContentId(): number {
-    return this.nextContentId;
   }
 
 }

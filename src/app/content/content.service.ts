@@ -1,70 +1,41 @@
 import { Injectable } from '@angular/core';
-import {ContentComponent} from "./content.component";
-import {ContentListComponent} from "./content-list/content-list.component";
 import {Content} from "./content.interface";
+import {ContentTreeService} from "./tree/content-tree.service";
+import {Node} from "./tree/node.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
-  private contentListComponent: ContentListComponent = new ContentListComponent();
-  private contentId: number = 1;
-  private lastContentIdArray: number[] = [];
-  private lastContentId: number = 1;
-  private selected: string = '';
+  private currentNode: Node = this.contentTree.getRoot();
+  private lastNodeArray: Node[] = [];
 
-  constructor() { }
+  constructor(private contentTree: ContentTreeService) { }
 
-  public getContentId(): number {
-    return this.contentId;
+  public setNextNode(node: Node): void {
+    this.lastNodeArray.push(this.currentNode);
+    this.currentNode = node;
   }
 
-  public setNextContentId(id: number) {
-    this.lastContentId = this.contentId;
-    this.lastContentIdArray.push(this.lastContentId);
-    this.contentId = id;
+  public getLastNodeArray(): Node[] {
+    return this.lastNodeArray;
   }
 
-  public setLastContent(){
-    if (this.lastContentIdArray.length != 0){
-      this.contentId = this.lastContentIdArray.pop();
+  public setLastNode(): void {
+    if (!this.isArrayEmpty(this.lastNodeArray)){
+      this.currentNode = this.lastNodeArray.pop();
     }
-
-  }
-
-  public getLastContentId(): number {
-    return this.lastContentId;
   }
 
   public getContent(): Content {
-    return this.getContentById(this.contentId);
+    return this.currentNode != null ? this.currentNode.content : null;
   }
 
-  public getContentById(id: number): Content {
-    let contentList: Content[] = this.contentListComponent.contentList;
-    for(let content of contentList) {
-      if (content.getId() == id) {
-        return content;
-      }
-    }
+  public getNodeByAnswerIndex(index: number): Node {
+    return this.contentTree.getNodeByAnswerIndex(this.currentNode, index);
   }
 
-  public nextContent(): void {
-    let content: Content = this.getContentById(this.contentId);
-    //TODO: Set the Content
+  public isArrayEmpty(array: unknown[]): boolean {
+    return array == null || array.length == 0;
   }
-
-  public previousContent(): void {
-    this.contentId = this.lastContentId;
-    let content: Content = this.getContent();
-  }
-
-  public radioChangeHandler(event: any) {
-    this.selected = event.target.value;
-  }
-
-  public getSelectedValue(){
-    return this.selected;
-  }
-
 }
