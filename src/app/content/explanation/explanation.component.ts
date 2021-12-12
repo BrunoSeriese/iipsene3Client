@@ -1,14 +1,19 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Explanation} from "./explanation.model";
+import {NavigationService} from "../shared/navigation.service";
 
 @Component({
   selector: 'app-explanation',
   templateUrl: './explanation.component.html',
   styleUrls: ['./explanation.component.scss']
 })
-export class ExplanationComponent {
+export class ExplanationComponent implements OnInit {
   @Input() public explanation: Explanation;
 
-  constructor() { }
+  constructor(private navigationService: NavigationService) { }
+
+  public ngOnInit(): void {
+    this.navigationService.setSelected(0);
+  }
 
 }
