@@ -1,0 +1,17 @@
+@mixin navbutton{
+  .next-btn{
+
+
+    background: #e0e0e0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border: none;
+  }
+
+  .next-btn:hover{
+    animation-duration: 1s;
+    animation-name: onhover;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+  }
+}
