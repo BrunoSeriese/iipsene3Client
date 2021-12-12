@@ -1,4 +1,4 @@
-<p class="list-group-item-text" *ngFor="let answer of answerList">
-  <input class="radiobutton" type="radio" [id]="answer.getNextContentId()">
+<p class="list-group-item-text" *ngFor="let answer of answers; index as i">
+  <input class="radiobutton" type="radio" name="answers" (change)= radioButtonChangeHandler(i)>
   {{ answer.getValue() }}
 </p>
