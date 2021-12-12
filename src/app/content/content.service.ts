@@ -35,7 +35,7 @@ export class ContentService {
     return this.contentTree.getNodeByAnswerIndex(this.currentNode, index);
   }
 
-  public isArrayEmpty(array: any[]): boolean {
+  public isArrayEmpty(array: unknown[]): boolean {
     return array == null || array.length == 0;
   }
 }

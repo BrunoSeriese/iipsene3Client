@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ContentService} from "./content/content.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'iipsene3Client';
+  public title; string = 'iipsene3Client';
+
+  constructor(public contentService: ContentService) { }
 }

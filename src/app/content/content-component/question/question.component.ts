@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Question} from "./question.model";
-import {NavigationService} from "../shared/navigation.service";
+import {NavigationService} from "../../shared/navigation.service";
 
 @Component({
   selector: 'app-question',
