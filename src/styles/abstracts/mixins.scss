@@ -1,30 +1,43 @@
-@mixin navbutton{
-  .btn{
-    //background-image: url("../../assets/images/navigation_button.png");
-    //background-repeat: no-repeat;
-    //background-size: cover;
-    border: solid 1px;
-    border-radius: 0;
-    height: 3.5rem;
-    width: 24rem;
-    font-size: 1.5rem;
+@mixin navbutton {
+
+  .btn {
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 1em 6em 1em 2em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: none;
     text-align: left;
-    font-weight: bold;
-    transition: 0.5s ease-in-out all;
+    border-radius: 0;
+
+  }
+  .btn:after {
     content: '';
     position: absolute;
     top: 0;
     right: 2em;
+    height: 100%;
+    width: 3.5em;
     display: inline-block;
-    transition: all .2s ease-out;
-    background: url("../../assets/images/navigation_button.png");
-    background-position: center right;
+    transition: all 0.2s ease-out;
+    background: url(../../assets/images/streep-black.png) no-repeat center right;
     vertical-align: middle;
     margin-left: 1.5em;
   }
 
-  .btn:hover{
-    -webkit-filter: invert(100%) !important;
+  .btn:hover {
+    text-decoration: none;
+    background: black;
+    color: white;
+
+  }
+  .btn:hover::after {
+    background-image: url(../../assets/images/streep-white.png);
   }
 }
 
