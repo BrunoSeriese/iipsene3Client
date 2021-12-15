@@ -7,7 +7,7 @@ import {ContentService} from "./content/content.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title; string = 'iipsene3Client';
+  public title: string = 'iipsene3Client';
 
   constructor(public contentService: ContentService) { }
 }
