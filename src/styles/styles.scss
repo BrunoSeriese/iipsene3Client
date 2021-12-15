@@ -5,7 +5,13 @@
 @import "base/reset";
 @import "base/typography";
 
-body{
-  //background-image:url("../webapplicatie2_1background.png");
-  //background-size: 1920px 1080px;
+*{
+  color: white;
 }
+
+body{
+  background-image:url("../webapplicatie2_1background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

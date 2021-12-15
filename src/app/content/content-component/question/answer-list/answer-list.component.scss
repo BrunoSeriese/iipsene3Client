@@ -15,18 +15,19 @@
 }
 
 .list-group-item-text {
-  margin-top: 1rem;
+  margin-top: 4rem;
   align-items: center;
+  font-size: 30px;
 }
 
 input[type=radio] {
   padding: 0.4em;
   -webkit-appearance: none;
-  outline: 0.1em solid black;
-  outline-offset: 0.1em;
+  outline: 0.1em solid;
+  outline-offset: 0.15em;
 }
 
 input[type=radio]:checked {
   display: inline-block;
-  background-color: #000;
+  background-color: white;
 }

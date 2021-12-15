@@ -10,6 +10,7 @@
     font-size: 25px;
     text-align: left;
     font-weight: bold;
+    transition: 0.5s ease-in-out all;
   }
 
   .btn:hover{
@@ -17,3 +18,4 @@
     background-image: url("../../assets/images/navigation_button.png");
   }
 }
+

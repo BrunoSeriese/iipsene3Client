@@ -1,4 +1,10 @@
 @import "src/styles/transitions/animations";
 @import "src/styles/abstracts/mixins";
 
-@include navbutton
+@include navbutton;
+
+.btn{
+  top:90%;
+  left:5%;
+  position: absolute;
+}
