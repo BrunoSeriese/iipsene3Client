@@ -35,4 +35,11 @@ describe('QuestionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('id should be 1', function () {
+      expect(component.question.getId()).toBe(1);
+  });
+  it('id should be 1', function () {
+    expect(component.question.getValue()).toBe("Is koffie lekker?");
+  });
 });
