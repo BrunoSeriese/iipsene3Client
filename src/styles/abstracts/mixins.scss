@@ -1,21 +1,30 @@
 @mixin navbutton{
   .btn{
-    background-image: url("../../assets/images/navigation_button.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    //background-image: url("../../assets/images/navigation_button.png");
+    //background-repeat: no-repeat;
+    //background-size: cover;
     border: solid 1px;
     border-radius: 0;
-    height: 50px;
-    width: 350px;
-    font-size: 25px;
+    height: 3.5rem;
+    width: 24rem;
+    font-size: 1.5rem;
     text-align: left;
     font-weight: bold;
     transition: 0.5s ease-in-out all;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 2em;
+    display: inline-block;
+    transition: all .2s ease-out;
+    background: url("../../assets/images/navigation_button.png");
+    background-position: center right;
+    vertical-align: middle;
+    margin-left: 1.5em;
   }
 
   .btn:hover{
     -webkit-filter: invert(100%) !important;
-    background-image: url("../../assets/images/navigation_button.png");
   }
 }
 
