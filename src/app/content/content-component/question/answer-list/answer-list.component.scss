@@ -6,6 +6,7 @@
   align-items: center;
   margin: 1rem;
   justify-content: flex-start;
+  background: transparent;
 }
 
 .radiobutton {
@@ -16,10 +17,6 @@
 .list-group-item-text {
   margin-top: 1rem;
   align-items: center;
-}
-
-.list-group-item-heading {
-  margin: 1rem;
 }
 
 input[type=radio] {
