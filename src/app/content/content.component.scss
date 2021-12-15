@@ -1,6 +1,9 @@
-.nav-wrapper{
+.nav-wrapper {
+  position: absolute;
+  bottom: 10vh;
   display: flex;
-  justify-content: space-around;
-  position: relative;
-  height: 100%;
+  justify-content: space-evenly;
+  width: 100%;
 }
+
+
