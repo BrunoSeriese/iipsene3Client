@@ -28,4 +28,16 @@ describe('ResultComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('id should be 3', () => {
+    expect(component.result.getId()).toBe(3);
+  });
+
+  it('value should be "Je krijgt koffie"', () => {
+    expect(component.result.getValue()).toBe("Je krijgt koffie");
+  });
+
+  it('getAnswer() should be equal', () => {
+    expect(component.result.getAnswer()).toEqual([new Answer(6, "Je krijgt een normale kop koffie")]);
+  });
 });
