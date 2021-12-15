@@ -1,0 +1,49 @@
+@mixin navbutton {
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0 0 0 2em;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: none;
+    text-align: left;
+    border-radius: 0;
+    width: 15em;
+    height: 3.5em;
+  }
+  .btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 2em;
+    height: 100%;
+    width: 3.5em;
+    display: inline-block;
+    transition: all 0.2s ease-out;
+    background: url(../../assets/images/streep-black.png) no-repeat center right;
+    vertical-align: middle;
+    margin-left: 1.5em;
+  }
+
+  .btn:hover {
+    text-decoration: none;
+    background: black;
+    color: white;
+
+  }
+  .btn:hover::after {
+    background-image: url(../../assets/images/streep-white.png);
+  }
+
+  .btn:disabled {
+    opacity: 0.35;
+  }
+}
+

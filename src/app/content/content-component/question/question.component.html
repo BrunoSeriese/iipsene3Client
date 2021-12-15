@@ -1,10 +1,16 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div  class="list-group-item clearfix" >
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ question.getValue() }}</h4>
-        <app-answer-list [answers]="question.getAnswer()" (selectedAnswerEvent)="navigationService.setSelected($event)"></app-answer-list>
-      </div>
-    </div>
+<div class="col-12">
+
+  <div class="list-group-item id-wrapper">
+    <h4 class="id-text">Vraag: {{ question.getId() }}</h4>
   </div>
+
+  <div class="question-wrapper">
+    <p class="question-text">{{ question.getValue() }}</p>
+  </div>
+  <div class="answer-wrapper">
+    <app-answer-list [answers]="question.getAnswer()"
+                     (selectedAnswerEvent)="navigationService.setSelected($event)"></app-answer-list>
+  </div>
+
 </div>
+
