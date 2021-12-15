@@ -60,10 +60,10 @@ describe('ContentComponent', () => {
   });
 
   it('should contain a next button', () => {
-    expect(debugElement.query(By.css('#previousButton')).nativeElement.innerText).toBe("Previous");
+    expect(debugElement.query(By.css('#previousButton'))).toBeTruthy();
   });
 
   it('should contain a previous button', () => {
-    expect(debugElement.query(By.css('#nextButton')).nativeElement.innerText).toBe("Next");
+    expect(debugElement.query(By.css('#nextButton'))).toBeTruthy();
   });
 });
