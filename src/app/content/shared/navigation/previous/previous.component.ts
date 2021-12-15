@@ -19,7 +19,8 @@ export class PreviousComponent {
   }
 
   public onPreviousClick(): void {
-    this.navigationService.clearSelected();
+    let previousAnswerSelected: number = this.contentService.getPreviousAnswerIndexByCurrentNode();
+    this.navigationService.setSelected(previousAnswerSelected);
     this.contentService.setLastNode();
   }
 }

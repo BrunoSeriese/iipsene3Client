@@ -1,4 +1,4 @@
 <p class="list-group-item-text" *ngFor="let answer of answers; index as i">
-  <input class="radiobutton" type="radio" name="answers" (change)= radioButtonChangeHandler(i)>
+  <input class="radiobutton" type="radio" name="answers" (change)=radioButtonChangeHandler(i) [checked]="selectedAnswer == i">
   {{ answer.getValue() }}
 </p>

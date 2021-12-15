@@ -8,6 +8,7 @@ import {Answer} from "../../../shared/answer/answer.model";
 })
 export class AnswerListComponent {
   @Input() public answers: Answer[];
+  @Input() public selectedAnswer: number;
   @Output("selectedAnswerEvent") public selectedAnswerEvent: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }

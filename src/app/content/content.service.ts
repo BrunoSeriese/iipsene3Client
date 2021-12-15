@@ -17,6 +17,10 @@ export class ContentService {
     this.currentNode = node;
   }
 
+  public getLastNode(): Node {
+    return this.lastNodeArray[0];
+  }
+
   public getLastNodeArray(): Node[] {
     return this.lastNodeArray;
   }
@@ -33,6 +37,16 @@ export class ContentService {
 
   public getNodeByAnswerIndex(index: number): Node {
     return this.contentTree.getNodeByAnswerIndex(this.currentNode, index);
+  }
+
+  public getPreviousAnswerIndexByCurrentNode(): number {
+    let children: Node[] = this.getLastNode().getChildren();
+    for (let i: number = 0; i < children.length; i++) {
+      if(children[i] == this.currentNode) {
+        return i;
+      }
+    }
+    return null;
   }
 
   public isArrayEmpty(array: unknown[]): boolean {
