@@ -16,10 +16,15 @@ describe('NextComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NextComponent);
     component = fixture.componentInstance;
+
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should be true', () => {
+    expect(component.onNoAnswerSelected()).toBeTruthy();
   });
 });
