@@ -1,17 +1,19 @@
 @mixin navbutton{
-  .next-btn{
-
-
-    background: #e0e0e0;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    border: none;
+  .btn{
+    background-image: url("../../assets/images/navigation_button.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 1px;
+    border-radius: 0px;
+    height: 50px;
+    width: 350px;
+    font-size: 25px;
+    text-align: left;
+    font-weight: bold;
   }
 
-  .next-btn:hover{
-    animation-duration: 1s;
-    animation-name: onhover;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
+  .btn:hover{
+    -webkit-filter: invert(100%) !important;
+    background-image: url("../../assets/images/navigation_button.png");
   }
 }
