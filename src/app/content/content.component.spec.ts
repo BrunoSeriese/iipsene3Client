@@ -8,10 +8,13 @@ import {Result} from "./content-component/result/result.model";
 import {Video} from "./content-component/video/video.model";
 import {NextComponent} from "./shared/navigation/next/next.component";
 import {PreviousComponent} from "./shared/navigation/previous/previous.component";
+import {DebugElement} from "@angular/core";
+import {By} from "@angular/platform-browser";
 
 describe('ContentComponent', () => {
   let component: ContentComponent;
   let fixture: ComponentFixture<ContentComponent>;
+  let debugElement: DebugElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,6 +26,7 @@ describe('ContentComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ContentComponent);
     component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
     fixture.detectChanges();
   });
 
@@ -53,5 +57,13 @@ describe('ContentComponent', () => {
   it('should return "Video"', () => {
     component.content = new Video(7, "Een mooie video over koffie", new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A"));
     expect(component.getInstance()).toBe("Video");
+  });
+
+  it('should contain a next button', () => {
+    expect(debugElement.query(By.css('#previousButton')).nativeElement.innerText).toBe("Previous");
+  });
+
+  it('should contain a previous button', () => {
+    expect(debugElement.query(By.css('#nextButton')).nativeElement.innerText).toBe("Next");
   });
 });
