@@ -27,4 +27,16 @@ describe('ExplanationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('id should be 6', () => {
+    expect(component.explanation.getId()).toBe(6);
+  });
+
+  it('value should be "Je gaat een sterke kop koffie krijgen"', () => {
+    expect(component.explanation.getValue()).toBe("Je gaat een sterke kop koffie krijgen");
+  });
+
+  it('getAnswer() should be equal', () => {
+    expect(component.explanation.getAnswer()).toEqual([new Answer(9, "Die heb je verdient!")]);
+  });
 });
