@@ -10,7 +10,5 @@ import {NavigationService} from "../../shared/navigation.service";
 export class QuestionComponent {
   @Input() public question: Question;
 
-  constructor(public navigationService: NavigationService) {
-    this.navigationService.clearSelected();
-  }
+  constructor(public navigationService: NavigationService) { }
 }

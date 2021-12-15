@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ContentService} from "../../../content.service";
 import {Node} from "../../../tree/node.model";
+import {NavigationService} from "../../navigation.service";
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Node} from "../../../tree/node.model";
 })
 export class PreviousComponent {
 
-  constructor(private contentService: ContentService) { }
+  constructor(private navigationService: NavigationService, private contentService: ContentService) { }
 
   public OnEmptyArray(): boolean {
     const nodeArray: Node[] = this.contentService.getLastNodeArray();
@@ -18,6 +19,7 @@ export class PreviousComponent {
   }
 
   public onPreviousClick(): void {
+    this.navigationService.clearSelected();
     this.contentService.setLastNode();
   }
 }
