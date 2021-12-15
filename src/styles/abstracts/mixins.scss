@@ -1,6 +1,7 @@
 @mixin navbutton {
 
   .btn {
+    font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -38,6 +39,10 @@
   }
   .btn:hover::after {
     background-image: url(../../assets/images/streep-white.png);
+  }
+
+  .btn:disabled {
+    opacity: 0.35;
   }
 }
 

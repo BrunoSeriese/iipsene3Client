@@ -1,11 +1,12 @@
 <div [ngSwitch]="getInstance()">
 
-    <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
-    <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
-    <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
-    <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
+  <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
+  <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
+  <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
+  <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
 
 </div>
-
-<app-previous></app-previous>
-<app-next></app-next>
+<div class="nav-wrapper">
+    <app-previous></app-previous>
+    <app-next></app-next>
+</div>

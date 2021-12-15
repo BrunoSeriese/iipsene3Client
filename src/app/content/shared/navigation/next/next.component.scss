@@ -2,15 +2,7 @@
 @import "src/styles/abstracts/mixins";
 @include navbutton;
 
-.btn{
-  top:90%;
-  left:50%;
-  position: fixed;
-}
 
-.btn:disabled{
-  opacity:0.35;
-}
 
 
 

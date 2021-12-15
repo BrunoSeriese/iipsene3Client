@@ -5,23 +5,25 @@
 @import "base/reset";
 @import "base/typography";
 
-*{
+* {
   color: white;
   font-family: 'Neue Haas Grotesk Display Pro', serif;
   letter-spacing: 0.05rem;
 }
 
-body{
-  background-image:url("../assets/images/background.jpg");
+body {
+  background-image: url("../assets/images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
