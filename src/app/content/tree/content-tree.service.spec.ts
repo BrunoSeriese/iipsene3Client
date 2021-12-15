@@ -13,4 +13,8 @@ describe('ContentTreeService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('root should be defined', () => {
+    expect(service.getRoot()).toBeDefined();
+  });
 });
