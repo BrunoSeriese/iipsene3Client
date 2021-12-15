@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
-import {computeMsgId} from "@angular/compiler";
 import {Result} from "./result.model";
 import {Answer} from "../../shared/answer/answer.model";
 
