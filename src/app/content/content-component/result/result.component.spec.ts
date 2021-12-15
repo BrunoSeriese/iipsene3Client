@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
+import {computeMsgId} from "@angular/compiler";
+import {Result} from "./result.model";
+import {Answer} from "../../shared/answer/answer.model";
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -16,6 +19,9 @@ describe('ResultComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ResultComponent);
     component = fixture.componentInstance;
+
+    component.result = new Result(3, "Je krijgt koffie", new Answer(6, "Je krijgt een normale kop koffie"));
+
     fixture.detectChanges();
   });
 
