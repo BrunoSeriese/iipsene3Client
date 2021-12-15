@@ -3,11 +3,12 @@
   border: none;
 }
 
-.question-wrapper{
+.id-wrapper{
   margin-top: 5em;
+  padding: 2rem;
 }
 
-.question-wrapper::before{
+.id-wrapper::before{
   font-size: 50px;
   content: "";
   position: absolute;
@@ -17,19 +18,26 @@
   width: 40%;
   border-top: 5px solid #fff;
 }
-.question-wrapper::after{
+.id-wrapper::after{
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  height: 90%;
+  height: 80%;
   width: 5px;
   border-left: 5px solid #fff;
 }
 
+.id-text{
+font-style: italic;
+}
+
+.question-wrapper{
+  padding-left: 2rem;
+}
 .question-text{
   font-size: 3rem;
-  font-family: 'Neue Haas Grotesk Display Pro', serif;
+  font-weight: 550;
 }
 
 
