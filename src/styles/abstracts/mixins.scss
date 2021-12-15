@@ -1,6 +1,7 @@
 @mixin navbutton {
 
   .btn {
+    flex-shrink: 3;
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -16,6 +17,7 @@
     border-radius: 0;
     width: 15em;
   }
+
   .btn:after {
     content: '';
     position: absolute;
@@ -23,11 +25,11 @@
     right: 2em;
     height: 100%;
     width: 3.5em;
-    display: inline-block;
+    //display: inline-block;
     transition: all 0.2s ease-out;
     background: url(../../assets/images/streep-black.png) no-repeat center right;
-    vertical-align: middle;
-    margin-left: 1.5em;
+    //vertical-align: middle;
+    //margin-left: 1.5em;
   }
 
   .btn:hover {
