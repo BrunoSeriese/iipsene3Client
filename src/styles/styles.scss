@@ -13,5 +13,13 @@ body{
   background-image:url("../assets/images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 

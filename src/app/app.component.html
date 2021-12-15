@@ -1,4 +1,8 @@
 <body>
-  <app-content [content]="contentService.getContent()"></app-content>
+  <div class="row">
+    <div class="col-md-8 offset-md-1 position-fixed vh-100" style="color: #FFFFFF; background: rgba(255, 255, 255, 0.25);">
+      <app-content  [content]="contentService.getContent()"></app-content>
+    </div>
+  </div>
 </body>
 
