@@ -4,8 +4,6 @@ import { QuestionComponent } from './question.component';
 import {Question} from "./question.model";
 import {Answer} from "../../shared/answer/answer.model";
 import {AnswerListComponent} from "./answer-list/answer-list.component";
-import {ContentComponent} from "../../content.component";
-import {AppComponent} from "../../../app.component";
 
 describe('QuestionComponent', () => {
   let component: QuestionComponent;
