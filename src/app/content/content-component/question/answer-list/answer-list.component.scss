@@ -1,13 +1,6 @@
 @import "src/styles/abstracts/variables";
 
-.pull-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 1rem;
-  justify-content: flex-start;
-  background: transparent;
-}
+
 
 .radiobutton {
   margin-left: 1rem;
@@ -15,7 +8,8 @@
 }
 
 .list-group-item-text {
-  margin-top: 4rem;
+  margin-top: 4em;
+  margin-bottom: 1.5em;
   align-items: center;
   font-size: 30px;
 }
@@ -33,5 +27,5 @@ input[type=radio]:checked {
 }
 
 .answer-wrapper{
-
+  padding-left: 6em;
 }
