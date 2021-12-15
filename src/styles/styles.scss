@@ -7,7 +7,8 @@
 
 * {
   color: white;
-  font-family: 'Neue Haas Grotesk Display Pro', serif;
+  font-family: '../assets/font/NeueHaasDisplayRoman.ttf', serif;
+  font-weight: 100;
   letter-spacing: 0.05rem;
 }
 
@@ -21,9 +22,7 @@ body {
   height: 100vh;
   min-height: 100vh;
   min-width: 100vw;
-    min-width: 100%;
-    min-height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

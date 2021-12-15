@@ -1,1 +1,24 @@
+.value-wrapper{
+  margin-top: 5em;
+  //padding: 2rem;
+}
 
+.value-wrapper::before{
+  font-size: 50px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80%;
+  width: 50px;
+  border-top: 5px solid #fff;
+}
+.value-wrapper::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5px;
+  width:40%;
+  border-left: 5px solid #fff;
+}

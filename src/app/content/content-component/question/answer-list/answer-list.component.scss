@@ -15,15 +15,16 @@
 }
 
 .list-group-item-text {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
   align-items: center;
-  font-size: 30px;
+  font-size: 1.75rem;
+  font-weight: lighter;
 }
 
 input[type=radio] {
   padding: 0.4em;
   -webkit-appearance: none;
-  outline: 0.1em solid;
+  outline: 0.05em solid;
   outline-offset: 0.15em;
 }
 
@@ -32,6 +33,3 @@ input[type=radio]:checked {
   background-color: white;
 }
 
-.answer-wrapper{
-  background: red;
-}

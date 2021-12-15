@@ -17,12 +17,12 @@ export class ContentTreeService {
 
   constructor() {
     this.contents = [
-      new Question(1, "Is koffie lekker?", [
-        new Answer(1, "Ja"),
-        new Answer(2, "Beetje wel"),
-        new Answer(3, "Beetje niet"),
-        new Answer(4, "Nee"),
-      ]),
+      // new Question(1, "Is koffie lekker?", [
+      //   new Answer(1, "Ja"),
+      //   new Answer(2, "Beetje wel"),
+      //   new Answer(3, "Beetje niet"),
+      //   new Answer(4, "Nee"),
+      // ]),
       new Explanation(6, "Je gaat een sterke kop koffie krijgen", new Answer(9, "Die heb je verdient!")),
       new Result(2, "Je krijgt koffie", new Answer(5, "Je krijgt een sterke kop koffie")),
       new Video(7, "Een mooie video over koffie", new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")),
