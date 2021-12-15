@@ -26,7 +26,7 @@ describe('AnswerListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be a eventEmitter when called', () => {
+  it('should be an eventEmitter when called', () => {
     expect(component.selectedAnswerEvent).toEqual(new EventEmitter<number>())
   });
 
