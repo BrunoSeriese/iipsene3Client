@@ -1,8 +1,2 @@
-.content-wrapper{
-  padding-left: 1vw;
-}
-
-.content-header{
-  font-size: 3rem;
-  font-weight: 550;
-}
+@import "src/styles/abstracts/mixins";
+@include content;

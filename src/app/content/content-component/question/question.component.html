@@ -1,8 +1,7 @@
-<div class="content-wrapper">
-  <p class="content-header">{{ question.getValue() }}</p>
+<p class="content-header">{{ question.getValue() }}</p>
 
-  <app-answer-list [answers]="question.getAnswer()"
-                   [selectedAnswer]="navigationService.getSelected()"
-                   (selectedAnswerEvent)="navigationService.setSelected($event)">
-  </app-answer-list>
-</div>
+<app-answer-list [answers]="question.getAnswer()"
+                 [selectedAnswer]="navigationService.getSelected()"
+                 (selectedAnswerEvent)="navigationService.setSelected($event)">
+</app-answer-list>
+

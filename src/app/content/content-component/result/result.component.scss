@@ -1,3 +1,2 @@
-.quickfix{
-  margin-bottom: 75vh;
-}
+@import "src/styles/abstracts/mixins";
+@include content;

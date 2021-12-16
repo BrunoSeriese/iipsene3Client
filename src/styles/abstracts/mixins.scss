@@ -77,3 +77,10 @@
   }
 }
 
+@mixin content {
+  .content-header{
+    font-size: 3rem;
+    font-weight: 550;
+  }
+}
+
