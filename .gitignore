@@ -67,3 +67,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#SonarQube
+.sonar_lock
+report-task.txt
+stylelintconfig.json

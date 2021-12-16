@@ -9,8 +9,8 @@
   </div>
   <div class="answer-wrapper">
     <app-answer-list [answers]="question.getAnswer()"
+                     [selectedAnswer]="navigationService.getSelected()"
                      (selectedAnswerEvent)="navigationService.setSelected($event)"></app-answer-list>
   </div>
 
 </div>
-

@@ -1,8 +1,6 @@
 <div class="answer-wrapper">
-  <p class="list-group-item-text answers" *ngFor="let answer of answers; index as i">
-    <input class="radiobutton" type="radio" name="answers" (change)=radioButtonChangeHandler(i)>
+  <p class="list-group-item-text" *ngFor="let answer of answers; index as i">
+    <input class="radiobutton" type="radio" name="answers" (change)= radioButtonChangeHandler(i) [checked]="selectedAnswer == i">
     {{ answer.getValue() }}
   </p>
 </div>
-
-

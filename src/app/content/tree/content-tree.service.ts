@@ -88,7 +88,7 @@ export class ContentTreeService {
         totalHeight = currentHeight;
       }
     }
-    return totalHeight++;
+    return ++totalHeight;
   }
 
   public getNodeByAnswerIndex(node: Node, index: number): Node {
