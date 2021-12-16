@@ -12,6 +12,9 @@
   margin-bottom: 1.5em;
   align-items: center;
   font-size: 30px;
+  display: flex;
+  height: 100%;
+
 }
 
 input[type=radio] {
@@ -28,4 +31,9 @@ input[type=radio]:checked {
 
 .answer-wrapper{
   padding-left: 6em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-wrap: wrap;
+  resize: both;
 }
