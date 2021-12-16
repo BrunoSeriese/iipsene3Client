@@ -1,24 +1,33 @@
+.list-group-item{
+  background: transparent;
+  border: none;
+
+}
+
 .value-wrapper{
-  margin-top: 5em;
-  //padding: 2rem;
+  //margin-top: 15em;
+  padding-left: 3rem;
+  padding-top: 3rem;
 }
 
 .value-wrapper::before{
+  //margin-top: 5em;
   font-size: 50px;
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 80%;
-  width: 50px;
-  border-top: 5px solid #fff;
+  width: 40%;
+  border-top: 8px solid #fff;
 }
 .value-wrapper::after{
+  margin-top: 16em;
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  height: 5px;
-  width:40%;
-  border-left: 5px solid #fff;
+  height: 10%;
+  width: 40%;
+  border-left: 8px solid #fff;
 }
