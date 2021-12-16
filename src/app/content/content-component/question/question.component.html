@@ -1,6 +1,6 @@
 <div class="col-12">
 
-  <span class="list-group-item id-wrapper"></span>
+  <span class="list-group-item logo-header"></span>
 
   <div class="question-wrapper">
     <p class="question-text">{{ question.getValue() }}</p>
@@ -8,7 +8,8 @@
   <div class="answer-wrapper">
     <app-answer-list [answers]="question.getAnswer()"
                      [selectedAnswer]="navigationService.getSelected()"
-                     (selectedAnswerEvent)="navigationService.setSelected($event)"></app-answer-list>
+                     (selectedAnswerEvent)="navigationService.setSelected($event)">
+    </app-answer-list>
   </div>
 
 </div>

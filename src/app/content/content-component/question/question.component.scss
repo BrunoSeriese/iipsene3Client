@@ -1,16 +1,12 @@
-.list-group-item{
-  background: transparent;
-  border: none;
-
-}
-
-.id-wrapper{
+.logo-header{
   margin-top: 2vh;
   padding-left: 3rem;
   padding-top: 3rem;
+  background: transparent;
+  border: none;
 }
 
-.id-wrapper::before{
+.logo-header::before{
   font-size: 50px;
   content: "";
   position: absolute;
@@ -20,7 +16,7 @@
   width: 40%;
   border-top: 8px solid #fff;
 }
-.id-wrapper::after{
+.logo-header::after{
   content: "";
   position: absolute;
   left: 0;
