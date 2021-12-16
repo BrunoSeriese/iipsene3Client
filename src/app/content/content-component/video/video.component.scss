@@ -1,2 +1,7 @@
 @import "src/styles/abstracts/mixins";
 @include content;
+
+.yt_video {
+  width: 20vw;
+  height: fit-content;
+}
