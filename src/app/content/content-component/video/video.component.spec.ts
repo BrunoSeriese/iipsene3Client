@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoComponent } from './video.component';
+import {Video} from "./video.model";
+import {Answer} from "../../shared/answer/answer.model";
 
 describe('VideoComponent', () => {
   let component: VideoComponent;
@@ -16,10 +18,25 @@ describe('VideoComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(VideoComponent);
     component = fixture.componentInstance;
+
+    component.video = new Video(7, "Een mooie video over koffie", new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A"));
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('id should be 7', () => {
+    expect(component.video.getId()).toBe(7);
+  });
+
+  it('value should be "Een mooie video over koffie"', () => {
+    expect(component.video.getValue()).toBe("Een mooie video over koffie");
+  });
+
+  it('getAnswer() should be equal', () => {
+    expect(component.video.getAnswer()).toEqual([new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")]);
   });
 });
