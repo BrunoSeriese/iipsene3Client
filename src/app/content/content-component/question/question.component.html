@@ -1,14 +1,8 @@
-<div class="col-12">
-  <span class="list-group-item logo-header"></span>
+<div class="content-wrapper">
+  <p class="content-header">{{ question.getValue() }}</p>
 
-  <div class="question-wrapper">
-    <p class="question-text">{{ question.getValue() }}</p>
-  </div>
-
-  <div class="answer-wrapper">
-    <app-answer-list [answers]="question.getAnswer()"
-                     [selectedAnswer]="navigationService.getSelected()"
-                     (selectedAnswerEvent)="navigationService.setSelected($event)">
-    </app-answer-list>
-  </div>
+  <app-answer-list [answers]="question.getAnswer()"
+                   [selectedAnswer]="navigationService.getSelected()"
+                   (selectedAnswerEvent)="navigationService.setSelected($event)">
+  </app-answer-list>
 </div>

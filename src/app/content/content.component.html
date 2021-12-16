@@ -1,8 +1,12 @@
-<div [ngSwitch]="getInstance()">
-  <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
-  <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
-  <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
-  <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
+<div class="col-xs-12">
+  <span class="list-group-item logo-header"></span>
+
+  <div [ngSwitch]="getInstance()">
+    <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
+    <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
+    <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
+    <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
+  </div>
 </div>
 
 <div class="navbar justify-content-evenly">

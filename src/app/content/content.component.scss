@@ -1,3 +1,8 @@
+@import "src/styles/abstracts/mixins";
+@include logo_header;
 
+.content-wrapper{
+  padding-left: 2vw;
+}
 
 

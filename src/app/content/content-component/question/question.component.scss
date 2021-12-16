@@ -1,26 +1,8 @@
-@import "src/styles/abstracts/mixins";
-
-@include logo_header;
-
-.id-text{
-font-style: italic;
+.content-wrapper{
+  padding-left: 1vw;
 }
 
-.question-wrapper{
-  padding-left: 3rem;
-}
-.question-text{
+.content-header{
   font-size: 3rem;
   font-weight: 550;
 }
-
-//.pull-left {
-//  display: flex;
-//  flex-direction: row;
-//  align-items: center;
-//  margin-left: 3em;
-//  justify-content: flex-start;
-//  background: transparent;
-//}
-
-
