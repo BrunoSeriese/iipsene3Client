@@ -1,20 +1,20 @@
 @import "src/styles/abstracts/variables";
 
-
-
 .radiobutton {
+  width: 20px;
+  height: 20px;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .list-group-item-text {
   margin-top: 2vh;
   margin-bottom: 8vh;
-  align-items: center;
-  font-size: 30px;
-  display: flex;
-  height: 100%;
-
+  font-size: 1.5rem;
 }
 
 input[type=radio] {
@@ -27,13 +27,4 @@ input[type=radio] {
 input[type=radio]:checked {
   display: inline-block;
   background-color: white;
-}
-
-.answer-wrapper{
-  padding-left: 6em;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  flex-wrap: wrap;
-  resize: both;
 }

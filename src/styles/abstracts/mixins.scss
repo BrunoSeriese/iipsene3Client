@@ -1,6 +1,6 @@
-@mixin navbutton {
+@mixin nav-button {
 
-  .btn {
+  .nav-button {
     font-size: 1.4rem;
     padding: 0 0 0 2em;
     line-height: 1.2;
@@ -11,18 +11,18 @@
     border: 1px solid black;
     position: relative;
     overflow: hidden;
-    transition: all 0.5s;
+    transition: all 0.4s;
     box-shadow: none;
     text-align: left;
     border-radius: 0;
-    width: 15em;
-    height: 3.5em;
+    width: 21vw;
+    height: 9vh;
   }
-  .btn:after {
+  .nav-button:after {
     content: '';
     position: absolute;
     top: 0;
-    right: 2em;
+    right: 3vw;
     height: 100%;
     width: 3.5em;
     display: inline-block;
@@ -32,18 +32,55 @@
     margin-left: 1.5em;
   }
 
-  .btn:hover {
+  .nav-button:hover {
     text-decoration: none;
     background: black;
     color: white;
 
   }
-  .btn:hover::after {
+  .nav-button:hover::after {
     background-image: url(../../assets/images/streep-white.png);
   }
 
-  .btn:disabled {
+  .nav-button:disabled {
     opacity: 0.35;
+  }
+}
+
+@mixin logo_header{
+  .logo-header{
+    margin-top: 2vh;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    background: transparent;
+    border: none;
+  }
+
+  .logo-header::before{
+    font-size: 50px;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 5px;
+    width: 40%;
+    border-top: 8px solid #fff;
+  }
+  .logo-header::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 80%;
+    width: 5px;
+    border-left: 8px solid #fff;
+  }
+}
+
+@mixin content {
+  .content-header{
+    font-size: 3rem;
+    font-weight: 550;
   }
 }
 

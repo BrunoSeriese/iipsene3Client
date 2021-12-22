@@ -1,9 +1,9 @@
-.nav-wrapper {
-  bottom: 20%;
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  display: flex;
+@import "src/styles/abstracts/mixins";
+@include logo_header;
+
+.content-wrapper {
+  padding-left: 1vw;
+  height: 72.5vh;
 }
 
 
