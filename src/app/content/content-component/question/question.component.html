@@ -1,6 +1,7 @@
 <h1 class="content-header">{{ question.getValue() }}</h1>
 
-<app-answer-list [answers]="question.getAnswer()"
-                 [selectedAnswer]="navigationService.getSelected()"
-                 (selectedAnswerEvent)="navigationService.setSelected($event)">
+<app-answer-list class="flex-column-class"
+  [answers]="question.getAnswer()"
+  [selectedAnswer]="navigationService.getSelected()"
+  (selectedAnswerEvent)="navigationService.setSelected($event)">
 </app-answer-list>

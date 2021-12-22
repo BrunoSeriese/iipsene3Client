@@ -1,10 +1,29 @@
 @import "src/styles/abstracts/variables";
 
+//.flex-column-class{
+//  flex-direction: column!important;
+//  display: flex;
+//  justify-content: space-evenly;
+//  position: inherit;
+//  height: 90%;
+//}
+
+//.height-class {
+//  height: 100%;
+//}
+
+.ptag-fix {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+
 .radiobutton {
   width: 20px;
   height: 20px;
   margin-left: 1rem;
   margin-right: 1rem;
+  transform: translate(0,3px);
 }
 
 .clickable {

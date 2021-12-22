@@ -1,2 +1,11 @@
 @import "src/styles/abstracts/mixins";
 @include content;
+
+.flex-column-class{
+  flex-direction: column!important;
+  display: flex;
+  justify-content: space-evenly;
+  position: inherit;
+  height: 60vh;
+  font-size: 1.2vw;
+}
