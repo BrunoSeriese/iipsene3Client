@@ -1,21 +1,25 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable} from "rxjs";
-import {Content} from "./content.interface";
+import {Answer} from "./shared/answer/answer.model";
 
+export class ContentModel{
+constructor(private  id: number,
+            private value: string,
+            private type: string,
+            private answers: Answer[]) {}
 
-@Injectable()
-export class ContentModel {
-
-  private contentUrl: string;
-
-  constructor(private http: HttpClient) {
-    this.contentUrl = 'http://localhost:8080/api/v1/content';
+  public getId(): number {
+    return this.id;
   }
 
-  public findAll(): Observable<Content[]> {
-    return this.http.get<Content[]>(this.contentUrl);
+  public getValue(): string {
+    return this.value;
   }
 
+  public getType(): string {
+    return this.type;
+  }
+
+  public  getAnswers():Answer[] {
+    return this.answers;
+  }
 
 }
