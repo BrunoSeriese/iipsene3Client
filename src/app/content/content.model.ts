@@ -7,17 +7,15 @@ import {Content} from "./content.interface";
 @Injectable()
 export class ContentModel {
 
-  private usersUrl: string;
+  private contentUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/api/v1/content';
+    this.contentUrl = 'http://localhost:8080/api/v1/content';
   }
 
   public findAll(): Observable<Content[]> {
-    return this.http.get<Content[]>(this.usersUrl);
+    return this.http.get<Content[]>(this.contentUrl);
   }
 
-  public save(content: Content) {
-    return this.http.post<Content>(this.usersUrl, content);
-  }
+
 }
