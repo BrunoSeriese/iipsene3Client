@@ -1,6 +1,6 @@
 import {Answer} from "./shared/answer/answer.model";
 
-export class ContentModel{
+export class Content {
 constructor(private  id: number,
             private value: string,
             private type: string,

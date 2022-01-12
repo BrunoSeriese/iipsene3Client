@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from "rxjs";
-import {Content} from "./content.interface";
-import {ContentModel} from "./content.model";
+import {Content} from "./content.model";
 
 
-@Injectable()
-export class ContentDao {
-
-  private contentUrl: string;
+@Injectable({
+  providedIn: 'root'
+})
+export class ContentDAO {
+  private baseURL: String = "http://localhost:8080/api/v1";
 
   constructor(private http: HttpClient) {
-    this.contentUrl = 'http://localhost:8080/api/v1/content';
   }
-  public findAll(): Observable<ContentModel[]> {
-    return this.http.get<ContentModel[]>(this.contentUrl);
+
+  public findAll(): Observable<Content[]> {
+    return this.http
+      .get<Content[]>(this.baseURL + "/contents");
   }
+
   public getContent(){
     // var contents[ContentModel] = this.findAll();
 
