@@ -1,6 +1,6 @@
 <div class="offset-1" *ngFor="let answer of answers; index as i">
   <p class="list-group-item-text clickable" (click)= radioButtonChangeHandler(i)>
     <input class="radiobutton" type="radio" [checked]="selectedAnswer == i">
-    {{ answer.getValue() }}
+    {{ answer.value }}
   </p>
 </div>

@@ -17,9 +17,16 @@
       </ul>
     </div>
   </nav>
-  <div *ngFor="let content of contentArray" >
-    <p *ngIf="content.type == 'Result'">{{content.value}}</p>
-    <p *ngIf="content.type != 'Result'">{{content.value}}</p>
+  <div *ngFor="let content of contentArray, index as i" >
+<!--    <div *ngIf="content.type == 'Result'">-->
+<!--      <h4>{{content.type}}: {{content.value}}</h4>-->
+<!--    </div>-->
+    <div *ngIf="content.type != 'Result'">
+      <h4>{{content.type}}: {{content.value}}</h4>
+      <ol type="A">
+        <li *ngFor="let answer of content.answers">Answer: {{answer.value}}</li>
+      </ol>
+    </div>
   </div>
   </body>
 </html>

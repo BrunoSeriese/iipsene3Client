@@ -48,7 +48,7 @@ export class ContentTreeService {
     const node: Node = new Node(content);
 
     if (!(content instanceof Result)) {
-      for (let answer of node.content.getAnswer()) {
+      for (let answer of node.content.answers) {
         const child: Node = this.construct(iterator);
         node.addChild(child);
       }
@@ -62,10 +62,10 @@ export class ContentTreeService {
       return;
     }
 
-    let value: string = node.content.getValue() + " => ";
+    let value: string = node.content.value + " => ";
 
-    for(let answer of node.content.getAnswer()) {
-      value += answer.getValue() + ", ";
+    for(let answer of node.content.answers) {
+      value += answer.value + ", ";
     }
 
     console.log(value);

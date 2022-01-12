@@ -2,19 +2,19 @@ import {Content} from "../../content.interface";
 import {Answer} from "../../shared/answer/answer.model";
 
 export class Explanation implements Content {
-  constructor(private id: number,
-              private value: string,
-              private answer: Answer) { }
+  constructor(private _id: number,
+              private _value: string,
+              private _answers: Answer) { }
 
-  public getId(): number {
-    return this.id;
+  get id(): number {
+    return this._id;
   }
 
-  public getValue(): string {
-    return this.value;
+  get value(): string {
+    return this._value;
   }
 
-  public getAnswer(): Answer[] {
-    return [this.answer];
+  get answers(): Answer[] {
+    return [this._answers];
   }
 }

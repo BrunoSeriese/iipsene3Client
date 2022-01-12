@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentDAO} from "../../content/content.DAO";
-import {Content} from "../../content/content.interface";
+import {Content} from "../../content/content.model";
 
 @Component({
   selector: 'app-vragen',

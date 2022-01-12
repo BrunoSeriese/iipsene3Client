@@ -1,6 +1,6 @@
-<h1 class="content-header">{{ question.getValue() }}</h1>
+<h1 class="content-header">{{ question.value }}</h1>
 
-<app-answer-list [answers]="question.getAnswer()"
+<app-answer-list [answers]="question.answers"
                  [selectedAnswer]="navigationService.getSelected()"
                  (selectedAnswerEvent)="navigationService.setSelected($event)">
 </app-answer-list>

@@ -1,25 +1,41 @@
 import {Answer} from "./shared/answer/answer.model";
 
 export class Content {
-constructor(private id: number,
-            private value: string,
-            private type: string,
-            private answers: Answer[]) {}
+constructor(private _id: number,
+            private _value: string,
+            private _type: string,
+            private _answers: Answer[]) {}
 
-  public getId(): number {
-    return this.id;
+
+  get id(): number {
+    return this._id;
   }
 
-  public getValue(): string {
-    return this.value;
+  set id(value: number) {
+    this._id = value;
   }
 
-  public getType(): string {
-    return this.type;
+  get value(): string {
+    return this._value;
   }
 
-  public  getAnswers():Answer[] {
-    return this.answers;
+  set value(value: string) {
+    this._value = value;
   }
 
+  get type(): string {
+    return this._type;
+  }
+
+  set type(value: string) {
+    this._type = value;
+  }
+
+  get answers(): Answer[] {
+    return this._answers;
+  }
+
+  set answers(value: Answer[]) {
+    this._answers = value;
+  }
 }
