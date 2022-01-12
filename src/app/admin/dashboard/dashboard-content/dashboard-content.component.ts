@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Content} from "../../../content/content.model";
+import {ContentModel} from "../../../content/content.model";
 
 @Component({
   selector: 'app-dashboard-content',
@@ -7,8 +7,8 @@ import {Content} from "../../../content/content.model";
   styleUrls: ['./dashboard-content.component.scss']
 })
 export class DashboardContentComponent implements OnInit {
-  @Input("content") public content: Content;
-  @Input("contents") public contents: Content[];
+  @Input("content") public content: ContentModel;
+  @Input("contents") public contents: ContentModel[];
 
   constructor() { }
 

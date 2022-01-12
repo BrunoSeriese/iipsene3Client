@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Content} from "../../../../content/content.model";
+import {ContentModel} from "../../../../content/content.model";
 
 @Component({
   selector: 'app-dashboard-item',
@@ -7,9 +7,9 @@ import {Content} from "../../../../content/content.model";
   styleUrls: ['./dashboard-item.component.scss']
 })
 export class DashboardItemComponent implements OnInit {
-  @Input("content") public content: Content;
-  @Input("contents") public contents: Content[];
-  public selectedContent: Content;
+  @Input("content") public content: ContentModel;
+  @Input("contents") public contents: ContentModel[];
+  public selectedContent: ContentModel;
   public selectedContentValue: String = "";
 
   constructor() { }
@@ -17,7 +17,7 @@ export class DashboardItemComponent implements OnInit {
   public ngOnInit(): void {
   }
 
-  public onSelected(content: Content): void {
+  public onSelected(content: ContentModel): void {
     this.selectedContent = content;
     this.selectedContentValue = content.value;
   }

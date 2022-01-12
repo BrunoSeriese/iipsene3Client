@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentDAO} from "../../content/content.DAO";
-import {Content} from "../../content/content.model";
+import {ContentModel} from "../../content/content.model";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,7 @@ import {Content} from "../../content/content.model";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public contents: Content[] = [];
+  public contents: ContentModel[] = [];
 
   constructor(private contentDAO: ContentDAO) {
     this.getContent();
@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public getContent(){
-    this.contentDAO.findAll().subscribe(contents =>{
+    this.contentDAO.getAll().subscribe(contents =>{
       this.contents = contents
     })
   }
