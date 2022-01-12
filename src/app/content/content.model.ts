@@ -1,7 +1,7 @@
 import {Answer} from "./shared/answer/answer.model";
 
 export class Content {
-constructor(private  id: number,
+constructor(private id: number,
             private value: string,
             private type: string,
             private answers: Answer[]) {}
