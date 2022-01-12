@@ -13,8 +13,7 @@ export class ContentStartComponent implements OnInit {
   constructor(public contentService: ContentService) {
     this.contentService.getContentObservable()
       .subscribe(contents => {
-        this.content = this.contentService.createTree(contents).content;
-        console.log(this.content)
+        this.content = this.contentService.createTree(this.contentService.convertArray(contents)).content;
       });
   }
 
