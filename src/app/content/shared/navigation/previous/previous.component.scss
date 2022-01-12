@@ -2,3 +2,36 @@
 @import "src/styles/abstracts/mixins";
 @include nav-button;
 
+.nav-button:before{
+  content: 'Previous';
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-button:before {
+      content: '';
+  }
+  .nav-button:after {
+    height: 6vh;
+    content: '';
+    position: relative;
+    top: 0;
+    //right: 10%;
+    height: 100%;
+    width: 100%;
+    //display: inline-block;
+    transition: all 0.2s ease-out;
+    background: url(../../../../../assets/images/pijl.png) no-repeat center right;
+    background-size: 10vh 4vw;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-button:after {
+    background: url(../../../../../assets/images/pijl.png) no-repeat center right;
+    background-size: 5vh 5vw;
+    //right: 7vw;
+  }
+}
