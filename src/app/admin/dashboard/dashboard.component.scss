@@ -1,11 +1,26 @@
 .scroll-div {
   overflow: hidden;
   overflow-y: scroll;
-  height: 92.5vh;
   width: 50vw;
 }
 
 .background {
   height: 100vh;
   background-color: white;
+}
+
+.contents {
+  height: 92.5vh;
+
+}
+
+.results {
+  height: 75vh;
+}
+
+.save {
+  position: absolute;
+  bottom: 6vh;
+  width: 100px;
+  right: 3vw;
 }
