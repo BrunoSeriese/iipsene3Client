@@ -11,7 +11,11 @@ export class ContentStartComponent implements OnInit {
   public content: Content;
 
   constructor(public contentService: ContentService) {
-
+    this.contentService.getContentObservable()
+      .subscribe(contents => {
+        this.content = this.contentService.createTree(contents).content;
+        console.log(this.content)
+      });
   }
 
   public ngOnInit(): void {

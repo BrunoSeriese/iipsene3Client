@@ -4,6 +4,7 @@ import {ContentTreeService} from "./tree/content-tree.service";
 import {Node} from "./tree/node.model";
 import {ContentDAO} from "./content.DAO";
 import {Observable} from "rxjs";
+import {ContentModel} from "./content.model";
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +46,7 @@ export class ContentService {
     return this.currentNode != null ? this.currentNode.content : null;
   }
 
-  public getContentObservable(): Observable<Content[]> {
+  public getContentObservable(): Observable<ContentModel[]> {
     return this.contentDAO.getAll();
   }
 
