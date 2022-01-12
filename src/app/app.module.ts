@@ -18,11 +18,11 @@ import { ContentStartComponent } from './content/content-start/content-start.com
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
   {path: 'admin', component: LoginComponent},
-  {path: 'admin/dashboard', component: DashBoardComponent},
+  {path: 'admin/dashboard', component: DashboardComponent},
   {path: 'content', component: ContentStartComponent},
 ];
 import {HttpClientModule} from "@angular/common/http";
-import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
+import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
     VideoComponent,
     LoginComponent,
     StartComponent,
-    DashBoardComponent,
+    DashboardComponent,
     ContentStartComponent,
   ],
   imports: [
