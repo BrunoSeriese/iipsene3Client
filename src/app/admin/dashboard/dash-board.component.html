@@ -24,7 +24,22 @@
     <div *ngIf="content.type != 'Result'">
       <h4>{{content.type}}: {{content.value}}</h4>
       <ol type="A">
-        <li *ngFor="let answer of content.answers">Answer: {{answer.value}}</li>
+        <li *ngFor="let answer of content.answers">Answer: {{answer.value}}
+          <div>
+            <p>Ga naar</p>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+        </li>
       </ol>
     </div>
   </div>
