@@ -13,7 +13,7 @@ import { VideoComponent } from './content/content-component/video/video.componen
 import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
 import {HttpClientModule} from "@angular/common/http";
-import {VragenComponent} from "./admin/vragen/vragen.component";
+import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import {VragenComponent} from "./admin/vragen/vragen.component";
     VideoComponent,
     LoginComponent,
     StartComponent,
-    VragenComponent
+    DashBoardComponent
   ],
   imports: [
     BrowserModule,

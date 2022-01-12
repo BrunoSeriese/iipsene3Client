@@ -3,11 +3,11 @@ import {ContentDAO} from "../../content/content.DAO";
 import {Content} from "../../content/content.model";
 
 @Component({
-  selector: 'app-vragen',
-  templateUrl: './vragen.component.html',
-  styleUrls: ['./vragen.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dash-board.component.html',
+  styleUrls: ['./dash-board.component.scss']
 })
-export class VragenComponent implements OnInit {
+export class DashBoardComponent implements OnInit {
   public contentArray: Content[] = [];
   constructor(private contentDAO: ContentDAO) {
     this.getContent();
