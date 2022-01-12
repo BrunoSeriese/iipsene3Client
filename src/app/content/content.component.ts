@@ -16,10 +16,10 @@ import {Content} from "./content.interface";
 export class ContentComponent {
   @Input("content") public content: Content;
 
-  constructor(private contentService: ContentService) {
+  constructor() {
   }
 
-  public getInstance(content: Content): string {
+  public getInstance(): string {
     if(this.content instanceof Question) {
       return "Question";
     } else if (this.content instanceof Result) {
