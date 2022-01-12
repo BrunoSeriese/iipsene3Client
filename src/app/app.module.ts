@@ -13,6 +13,7 @@ import { VideoComponent } from './content/content-component/video/video.componen
 import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
 import {RouterModule, Routes} from "@angular/router";
+import { ContentStartComponent } from './content/content-start/content-start.component';
 
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
@@ -39,6 +40,7 @@ import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
     LoginComponent,
     StartComponent,
     DashBoardComponent
+    ContentStartComponent,
   ],
   imports: [
     BrowserModule,
