@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class LoginService {
   private baseURL: String = "http://localhost:8080/api/v1";
+  private _token: String = "";
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +18,13 @@ export class LoginService {
     }
     return this.http
       .post(this.baseURL + "/auth/login", body, {responseType: "text"});
+  }
+
+  public get token(): String {
+    return this._token;
+  }
+
+  public set token(token: String) {
+    this._token = token;
   }
 }

@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
 
     observer
       .subscribe(token => {
-        //!! Don't simplify this !!
         if (token != "") {
           this.showErrorMessage = false;
+          this.loginService.token = token;
           //this.router.navigate(["/admin/dashboard"]);
         } else {
           this.showErrorMessage = true
