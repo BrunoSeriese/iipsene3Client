@@ -39,7 +39,7 @@ import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
     VideoComponent,
     LoginComponent,
     StartComponent,
-    DashBoardComponent
+    DashBoardComponent,
     ContentStartComponent,
   ],
   imports: [
