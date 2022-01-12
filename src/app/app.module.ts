@@ -13,13 +13,14 @@ import { VideoComponent } from './content/content-component/video/video.componen
 import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
 import {RouterModule, Routes} from "@angular/router";
+import { ContentStartComponent } from './content/content-start/content-start.component';
 
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
   {path: 'admin', component: LoginComponent},
 
   {
-    path: 'content', component: AppComponent
+    path: 'content', component: ContentStartComponent
   },
 ];
 
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     VideoComponent,
     LoginComponent,
     StartComponent,
+    ContentStartComponent,
   ],
   imports: [
     BrowserModule,
