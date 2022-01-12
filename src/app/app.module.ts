@@ -12,6 +12,16 @@ import { ExplanationComponent } from './content/content-component/explanation/ex
 import { VideoComponent } from './content/content-component/video/video.component';
 import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  {path: '', component: StartComponent},
+  {path: 'admin', component: LoginComponent},
+
+  {
+    path: 'content', component: AppComponent
+  },
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +38,8 @@ import { StartComponent } from './start/start.component';
     StartComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
