@@ -23,10 +23,11 @@ export class ContentTreeService {
     return this.root;
   }
 
-  public create(contents: Content[]) {
+  public create(contents: Content[]): Node {
     this.contents = contents;
     const iterator: Iterator<Content> = new Iterator<Content>(this.contents);
     this.root = this.construct(iterator);
+    return this.root;
   }
 
   private construct(iterator: Iterator<Content>): Node {
