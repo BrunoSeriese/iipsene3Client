@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentTreeService} from "./tree/content-tree.service";
 import {Node} from "./tree/node.model";
+import {ContentDAO} from "./content.DAO";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class ContentService {
   private currentNode: Node = this.contentTree.getRoot();
   private lastNodeArray: Node[] = [];
 
-  constructor(private contentTree: ContentTreeService) { }
+  constructor(private contentDAO: ContentDAO, private contentTree: ContentTreeService) {
+  }
 
   public setNextNode(node: Node): void {
     this.lastNodeArray.push(this.currentNode);
@@ -52,4 +54,6 @@ export class ContentService {
   public isArrayEmpty(array: unknown[]): boolean {
     return array == null || array.length == 0;
   }
+
+
 }
