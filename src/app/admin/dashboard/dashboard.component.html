@@ -19,11 +19,11 @@
   </div>
 </nav>
 
-<div *ngFor="let content of contentArray, index as i" >
-<!--    <div *ngIf="content.type == 'Result'">-->
-<!--      <h4>{{content.type}}: {{content.value}}</h4>-->
-<!--    </div>-->
-  <div *ngIf="content.type != 'Result'">
+<div class="row" *ngFor="let content of contentArray, index as i" >
+  <!--    <div *ngIf="content.type == 'Result'">-->
+  <!--      <h4>{{content.type}}: {{content.value}}</h4>-->
+  <!--    </div>-->
+  <div class="col-md-12" *ngIf="content.type != 'Result'">
     <h4>{{content.type}}: {{content.value}}</h4>
     <ol type="A">
       <li *ngFor="let answer of content.answers">Answer: {{answer.value}}
