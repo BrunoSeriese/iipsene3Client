@@ -24,6 +24,7 @@ export class ContentDAO {
   public getAll(): Observable<ContentModel[]> {
     return this.http
       .get<ContentModel[]>(this.baseURL + "/contents");
+
   }
 
   public createAll(contents: ContentModel[]) {

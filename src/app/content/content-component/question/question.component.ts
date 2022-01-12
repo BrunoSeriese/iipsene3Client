@@ -11,4 +11,5 @@ export class QuestionComponent {
   @Input() public question: Question;
 
   constructor(public navigationService: NavigationService) { }
+  
 }

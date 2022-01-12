@@ -32,6 +32,7 @@ export class ContentTreeService {
 
   private construct(iterator: Iterator<Content>): Node {
     if (!iterator.hasNext()) {
+
       return null;
     }
 
@@ -59,9 +60,10 @@ export class ContentTreeService {
       value += answer.value + ", ";
     }
 
-    console.log(value);
+
 
     for(let child of node.getChildren()) {
+
       this.display(child);
     }
   }
