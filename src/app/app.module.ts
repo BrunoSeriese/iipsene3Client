@@ -10,6 +10,8 @@ import { ContentComponent } from './content/content.component';
 import { ResultComponent } from './content/content-component/result/result.component';
 import { ExplanationComponent } from './content/content-component/explanation/explanation.component';
 import { VideoComponent } from './content/content-component/video/video.component';
+import { LoginComponent } from './admin/login/login.component';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { VideoComponent } from './content/content-component/video/video.componen
     ResultComponent,
     ExplanationComponent,
     VideoComponent,
+    LoginComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule
