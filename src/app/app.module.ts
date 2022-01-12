@@ -12,7 +12,7 @@ import { ExplanationComponent } from './content/content-component/explanation/ex
 import { VideoComponent } from './content/content-component/video/video.component';
 import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
-import { VragenComponent } from './admin/vragen/vragen.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,10 +27,10 @@ import { VragenComponent } from './admin/vragen/vragen.component';
     VideoComponent,
     LoginComponent,
     StartComponent,
-    VragenComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+form {
+  max-width: 480px;
+  margin: auto;
+}
+
+.form-button {
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (max-width: 480px) {
+  form {
+    max-width: 95vw;
+  }
+}
