@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "./login.service";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import {Observable} from "rxjs";
 export class LoginComponent implements OnInit {
   public showErrorMessage: boolean = false;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
   }
 
   public ngOnInit(): void {
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
         if (token != "") {
           this.showErrorMessage = false;
           this.loginService.token = token;
-          //this.router.navigate(["/admin/dashboard"]);
+          this.router.navigate(["/admin/dashboard"]);
         } else {
           this.showErrorMessage = true
         }

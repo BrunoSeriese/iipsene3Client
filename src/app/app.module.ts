@@ -18,10 +18,8 @@ import { ContentStartComponent } from './content/content-start/content-start.com
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
   {path: 'admin', component: LoginComponent},
-
-  {
-    path: 'content', component: ContentStartComponent
-  },
+  {path: 'admin/dashboard', component: DashBoardComponent},
+  {path: 'content', component: ContentStartComponent},
 ];
 import {HttpClientModule} from "@angular/common/http";
 import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
