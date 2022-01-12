@@ -8,7 +8,8 @@ import {Content} from "../../content/content.model";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public contentArray: Content[] = [];
+  public contents: Content[] = [];
+
   constructor(private contentDAO: ContentDAO) {
     this.getContent();
   }
@@ -18,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   public getContent(){
     this.contentDAO.findAll().subscribe(contents =>{
-      this.contentArray = contents
+      this.contents = contents
     })
   }
 

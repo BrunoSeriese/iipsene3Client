@@ -1,56 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Vragen</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="background">
-<div class="scroll-div">
-<div class="row" *ngFor="let content of contentArray, index as i" >
-  <!--    <div *ngIf="content.type == 'Result'">-->
-  <!--      <h4>{{content.type}}: {{content.value}}</h4>-->
-  <!--    </div>-->
-  <div class="col-md-12" *ngIf="content.type != 'Result'">
-    <h4>{{content.type}}: {{content.value}}</h4>
-    <ol type="A">
-      <li *ngFor="let answer of content.answers">Answer: {{answer.value}}
-        <div>
-          <p>Ga naar</p>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle"
-                    type="button" id="dropdownMenuButton"
-                    data-bs-target="#dropdown"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
-              Dropdown button
-            </button>
-            <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div *ngFor="let dropdown_content of contentArray">
-                <div *ngIf="dropdown_content.id != content.id">
-                  <a class="dropdown-item">{{dropdown_content.value}}</a>
-                </div>
-              </div>
-            </div>
-          </div>
+<app-header></app-header>
+<div class="col-ms-6">
+  <div class="background d-flex justify-content-evenly">
+    <div class="scroll-div">
+      <div class="row" *ngFor="let content of contents, index as i" >
+        <div class="col-ms-5" *ngIf="content.type != 'Result'">
+          <app-dashboard-content [content]="content" [contents]="contents"></app-dashboard-content>
         </div>
-      </li>
-    </ol>
+      </div>
+    </div>
+
+    <div class="scroll-div">
+      <div class="row" *ngFor="let content of contents, index as i" >
+        <div class="col-ms-5" *ngIf="content.type == 'Result'">
+          <app-dashboard-content [content]="content" [contents]=""></app-dashboard-content>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
+
