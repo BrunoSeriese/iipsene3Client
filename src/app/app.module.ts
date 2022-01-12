@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   {path: 'admin', component: LoginComponent},
 
   {
-    path: 'content', component: AppComponent
+    path: 'content', component: ContentStartComponent
   },
 ];
 import {HttpClientModule} from "@angular/common/http";
