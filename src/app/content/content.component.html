@@ -1,8 +1,7 @@
 <div class="col-xs-12">
   <span class="list-group-item logo-header"></span>
 
-  <div class="content-wrapper" [ngSwitch]="getInstance()">
-    <h1 *ngSwitchCase="'Question'" [question]="content">{{content.value}}</h1>
+  <div class="content-wrapper" [ngSwitch]="getInstance(content)">
     <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
     <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
     <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
