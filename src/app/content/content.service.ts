@@ -12,6 +12,10 @@ export class ContentService {
   private lastNodeArray: Node[] = [];
 
   constructor(private contentDAO: ContentDAO, private contentTree: ContentTreeService) {
+    this.contentDAO.getAll()
+      .subscribe(contents => {
+        this.currentNode = this.contentTree.create(contents);
+      });
   }
 
   public setNextNode(node: Node): void {

@@ -18,12 +18,7 @@ export class ContentDAO {
   private baseURL: String = "http://localhost:8080/api/v1";
   private contents: Content[];
 
-  constructor(private http: HttpClient,
-              private contentTreeService: ContentTreeService) {
-    this.getAll().subscribe(contents => {
-      this.contents = contents;
-      this.contentTreeService.create(this.contents);
-    });
+  constructor(private http: HttpClient) {
   }
 
   public getAll(): Observable<ContentModel[]> {
