@@ -1,51 +1,51 @@
-<html>
-  <head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  </head>
-  <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Vragen</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Vragen</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div *ngFor="let content of contentArray, index as i" >
+<div *ngFor="let content of contentArray, index as i" >
 <!--    <div *ngIf="content.type == 'Result'">-->
 <!--      <h4>{{content.type}}: {{content.value}}</h4>-->
 <!--    </div>-->
-    <div *ngIf="content.type != 'Result'">
-      <h4>{{content.type}}: {{content.value}}</h4>
-      <ol type="A">
-        <li *ngFor="let answer of content.answers">Answer: {{answer.value}}
-          <div>
-            <p>Ga naar</p>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle"
-                      type="button" id="dropdownMenuButton"
-                      data-bs-target="#dropdown"
-                      data-bs-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                Dropdown button
-              </button>
-              <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+  <div *ngIf="content.type != 'Result'">
+    <h4>{{content.type}}: {{content.value}}</h4>
+    <ol type="A">
+      <li *ngFor="let answer of content.answers">Answer: {{answer.value}}
+        <div>
+          <p>Ga naar</p>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle"
+                    type="button" id="dropdownMenuButton"
+                    data-bs-target="#dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+              Dropdown button
+            </button>
+            <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </div>
-        </li>
-      </ol>
-    </div>
+        </div>
+      </li>
+    </ol>
   </div>
-  </body>
-</html>
+</div>
