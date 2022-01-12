@@ -3,6 +3,7 @@ import {Content} from "./content.interface";
 import {ContentTreeService} from "./tree/content-tree.service";
 import {Node} from "./tree/node.model";
 import {ContentDAO} from "./content.DAO";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,13 @@ export class ContentService {
   private lastNodeArray: Node[] = [];
 
   constructor(private contentDAO: ContentDAO, private contentTree: ContentTreeService) {
-    this.contentDAO.getAll()
-      .subscribe(contents => {
-        this.currentNode = this.contentTree.create(contents);
-      });
+
+  }
+
+  public createTree(contents: Content[]): Node {
+    let node: Node = this.contentTree.create(contents);
+    this.currentNode = node;
+    return node;
   }
 
   public setNextNode(node: Node): void {
@@ -39,6 +43,10 @@ export class ContentService {
 
   public getContent(): Content {
     return this.currentNode != null ? this.currentNode.content : null;
+  }
+
+  public getContentObservable(): Observable<Content[]> {
+    return this.contentDAO.getAll();
   }
 
   public getNodeByAnswerIndex(index: number): Node {
