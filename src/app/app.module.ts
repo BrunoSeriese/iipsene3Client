@@ -14,6 +14,8 @@ import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
 import {RouterModule, Routes} from "@angular/router";
 import { ContentStartComponent } from './content/content-start/content-start.component';
+import {HttpClientModule} from "@angular/common/http";
+import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
@@ -21,8 +23,6 @@ const appRoutes: Routes = [
   {path: 'admin/dashboard', component: DashboardComponent},
   {path: 'content', component: ContentStartComponent},
 ];
-import {HttpClientModule} from "@angular/common/http";
-import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
