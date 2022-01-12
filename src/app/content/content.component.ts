@@ -17,6 +17,7 @@ export class ContentComponent {
   @Input("content") public content: Content;
 
   constructor(private contentService: ContentService) {
+
   }
 
   public getInstance(content: Content): string {

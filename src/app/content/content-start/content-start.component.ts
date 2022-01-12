@@ -14,7 +14,6 @@ export class ContentStartComponent implements OnInit {
     this.contentService.getContentObservable()
       .subscribe(contents => {
         this.content = this.contentService.createTree(contents).content;
-        console.log(this.content)
       });
   }
 
