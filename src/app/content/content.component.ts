@@ -5,6 +5,7 @@ import {Result} from "./content-component/result/result.model";
 import {Explanation} from "./content-component/explanation/explanation.model";
 import {Video} from "./content-component/video/video.model";
 
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -12,6 +13,7 @@ import {Video} from "./content-component/video/video.model";
 })
 export class ContentComponent {
   @Input() public content: Content;
+
 
   constructor() { }
 
