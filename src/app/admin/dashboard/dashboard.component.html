@@ -39,11 +39,14 @@
                     aria-expanded="false">
               Dropdown button
             </button>
-            <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngFor="let content of contentArray">
+              <p>{{content.value}}</p>
             </div>
+<!--            <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--              <a class="dropdown-item" href="#">Action</a>-->
+<!--              <a class="dropdown-item" href="#">Another action</a>-->
+<!--              <a class="dropdown-item" href="#">Something else here</a>-->
+<!--            </div>-->
           </div>
         </div>
       </li>
