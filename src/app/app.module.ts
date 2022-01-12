@@ -16,6 +16,9 @@ import {RouterModule, Routes} from "@angular/router";
 import { ContentStartComponent } from './content/content-start/content-start.component';
 import {HttpClientModule} from "@angular/common/http";
 import {DashboardComponent} from "./admin/dashboard/dashboard.component";
+import { HeaderComponent } from './admin/dashboard/header/header.component';
+import { DashboardContentComponent } from './admin/dashboard/dashboard-content/dashboard-content.component';
+import { DashboardItemComponent } from './admin/dashboard/dashboard-content/dashboard-item/dashboard-item.component';
 
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
@@ -39,6 +42,9 @@ const appRoutes: Routes = [
     StartComponent,
     DashboardComponent,
     ContentStartComponent,
+    HeaderComponent,
+    DashboardContentComponent,
+    DashboardItemComponent,
   ],
   imports: [
     BrowserModule,
