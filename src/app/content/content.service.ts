@@ -50,6 +50,10 @@ export class ContentService {
     return this.contentDAO.getAll();
   }
 
+  public convertArray(contents: ContentModel[]): Content[] {
+    return this.contentDAO.convertArray(contents);
+}
+
   public getNodeByAnswerIndex(index: number): Node {
     return this.contentTree.getNodeByAnswerIndex(this.currentNode, index);
   }
