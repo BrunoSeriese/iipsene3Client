@@ -12,6 +12,16 @@ import { ExplanationComponent } from './content/content-component/explanation/ex
 import { VideoComponent } from './content/content-component/video/video.component';
 import { LoginComponent } from './admin/login/login.component';
 import { StartComponent } from './start/start.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  {path: '', component: StartComponent},
+  {path: 'admin', component: LoginComponent},
+
+  {
+    path: 'content', component: AppComponent
+  },
+];
 import {HttpClientModule} from "@angular/common/http";
 import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
 
@@ -32,7 +42,9 @@ import {DashBoardComponent} from "./admin/dashboard/dash-board.component";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
