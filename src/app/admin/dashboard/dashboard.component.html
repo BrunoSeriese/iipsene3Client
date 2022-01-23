@@ -3,15 +3,38 @@
 <div class="col-ms-6">
   <div class="background d-flex justify-content-evenly">
     <div class="scroll-div contents">
-      <div class="row" *ngFor="let content of contents, index as i" >
+      <div class="row" *ngFor="let content of contents, index as i">
         <div class="col-ms-5" *ngIf="content.type != 'Result'">
           <app-dashboard-content [content]="content" [contents]="contents"></app-dashboard-content>
         </div>
       </div>
+
+      <div class="dropdown">
+        <button (click)="getUniqueTypes()" class="btn btn-secondary dropdown-toggle"
+                type="button" id="dropdownMenuButton"
+                data-bs-target="#dropdown"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+
+          {{selectedContentType}}
+
+        </button>
+        <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+          <div *ngFor="let type of newArray">
+            <button class="dropdown-item" (click)="onSelected(type)">{{type}}</button>
+          </div>
+
+        </div>
+      </div>
+
+
     </div>
 
+
     <div class="scroll-div results">
-      <div class="row" *ngFor="let content of contents, index as i" >
+      <div class="row" *ngFor="let content of contents, index as i">
         <div class="col-ms-5" *ngIf="content.type == 'Result'">
           <app-dashboard-content [content]="content" [contents]=""></app-dashboard-content>
         </div>
