@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ContentModel} from "../../../content/content.model";
+import {Content} from "../../../content/content.interface";
+import {Answer} from "../../../content/shared/answer/answer.model";
 
 @Component({
   selector: 'app-dashboard-content',
@@ -13,6 +15,16 @@ export class DashboardContentComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
+  }
+
+  public deleteContent(){
+    let index = this.contents.findIndex(x => x.id === this.content.id);
+    this.contents.splice(index, 1)
+  }
+
+  public deleteAnswer(answer: Answer){
+    let index = this.content.answers.findIndex(x => x.id === answer.id);
+    this.content.answers.splice(index, 1);
   }
 
 }
