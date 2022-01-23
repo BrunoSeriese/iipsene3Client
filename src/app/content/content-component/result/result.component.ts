@@ -16,6 +16,10 @@ export class ResultComponent {
 
   public generatePDF(): void {
     let docDefinition = {
+      info: {
+        title: 'SVDJ Subsidie Advies',
+        author: 'Severin, Vincent'
+      },
       content: [
         {
           nodeName: "DIV",
