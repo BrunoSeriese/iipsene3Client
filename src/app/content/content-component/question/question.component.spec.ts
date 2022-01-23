@@ -35,14 +35,14 @@ describe('QuestionComponent', () => {
   });
 
   it('id should be 1', () => {
-      expect(component.question.getId()).toBe(1);
+      expect(component.question.id).toBe(1);
   });
 
   it('value should be "Is koffie lekker?"', () => {
-    expect(component.question.getValue()).toBe("Is koffie lekker?");
+    expect(component.question.value).toBe("Is koffie lekker?");
   });
 
   it('size should be 4', () => {
-    expect(component.question.getAnswer().length).toBe(4);
+    expect(component.question.answers.length).toBe(4);
   });
 });

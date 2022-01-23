@@ -36,7 +36,7 @@
     <div class="scroll-div results">
       <div class="row" *ngFor="let content of contents, index as i">
         <div class="col-ms-5" *ngIf="content.type == 'Result'">
-          <app-dashboard-content [content]="content" [contents]=""></app-dashboard-content>
+          <app-dashboard-content [content]="content" [contents]="contents"></app-dashboard-content>
         </div>
       </div>
       <div class="row control-buttons d-flex justify-content-evenly">
@@ -46,5 +46,7 @@
     </div>
   </div>
 </div>
+
+
 
 
