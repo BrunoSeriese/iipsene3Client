@@ -29,14 +29,14 @@ describe('VideoComponent', () => {
   });
 
   it('id should be 7', () => {
-    expect(component.video.getId()).toBe(7);
+    expect(component.video.id).toBe(7);
   });
 
   it('value should be "Een mooie video over koffie"', () => {
-    expect(component.video.getValue()).toBe("Een mooie video over koffie");
+    expect(component.video.value).toBe("Een mooie video over koffie");
   });
 
   it('getAnswer() should be equal', () => {
-    expect(component.video.getAnswer()).toEqual([new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")]);
+    expect(component.video.answers).toEqual([new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")]);
   });
 });

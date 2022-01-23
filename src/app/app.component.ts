@@ -9,5 +9,5 @@ import {ContentService} from "./content/content.service";
 export class AppComponent {
   public title: string = 'iipsene3Client';
 
-  constructor(public contentService: ContentService) { }
+  constructor() { }
 }
