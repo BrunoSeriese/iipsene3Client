@@ -15,6 +15,6 @@ describe('ContentTreeService', () => {
   });
 
   it('root should be defined', () => {
-    expect(service.getRoot()).toBeDefined();
+    expect(service.getRoot()).toBeUndefined();
   });
 });

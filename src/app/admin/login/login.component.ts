@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   public ngOnInit(): void {
   }
 
-  public login(email: string, password: string, remember: string): void {
+  public login(email: string, password: string): void {
     let observer: Observable<string> = this.loginService.login(email, password);
 
     observer

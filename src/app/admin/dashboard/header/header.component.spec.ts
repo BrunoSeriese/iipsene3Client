@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HeaderComponent } from './header.component';
+import {LoginService} from "../../login/login.service";
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +9,9 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      providers: [ LoginService ],
+      declarations: [ HeaderComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

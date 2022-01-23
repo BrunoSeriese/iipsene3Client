@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NextComponent } from './next.component';
 import {DebugElement} from "@angular/core";
 import {By} from "@angular/platform-browser";
@@ -11,7 +11,8 @@ describe('NextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NextComponent ]
+      declarations: [ NextComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });
