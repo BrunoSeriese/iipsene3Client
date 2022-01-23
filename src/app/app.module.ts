@@ -19,11 +19,15 @@ import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 import { HeaderComponent } from './admin/dashboard/header/header.component';
 import { DashboardContentComponent } from './admin/dashboard/dashboard-content/dashboard-content.component';
 import { DashboardItemComponent } from './admin/dashboard/dashboard-content/dashboard-item/dashboard-item.component';
+import {DashboardInfoComponent} from "./admin/dashboard/dashboard-content/dashboard-info/dashboard-info.component";
+
 
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
   {path: 'admin', component: LoginComponent},
-  {path: 'admin/dashboard', component: DashboardComponent},
+  {path: 'admin/dashboard', component: DashboardComponent, children: [
+      {path: ':id', component: DashboardInfoComponent}
+    ]},
   {path: 'content', component: ContentStartComponent},
 ];
 
@@ -45,6 +49,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     DashboardContentComponent,
     DashboardItemComponent,
+
   ],
   imports: [
     BrowserModule,

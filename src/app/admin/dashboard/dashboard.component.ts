@@ -23,6 +23,9 @@ export class DashboardComponent implements OnInit {
       this.contents = contents
     })
   }
+  public logger(){
+    console.log(this.contents);
+  }
 
 
 
