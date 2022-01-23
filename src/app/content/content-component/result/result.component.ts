@@ -106,7 +106,7 @@ export class ResultComponent {
         }
       ]
     };
-    pdfMake.createPdf(docDefinition).open();
+    pdfMake.createPdf(docDefinition).download('AdviesSVDJ.pdf').open();
   }
 
 }
