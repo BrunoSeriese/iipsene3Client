@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentDAO} from "../../content/content.DAO";
 import {ContentModel} from "../../content/content.model";
+import {Answer} from "../../content/shared/answer/answer.model";
 
 @Component({
   selector: 'app-dashboard',
@@ -22,6 +23,14 @@ export class DashboardComponent implements OnInit {
       this.contents = contents
     })
   }
+ public saveContent(){
+    console.log(this.contents);
+
+   let newContent = new ContentModel(8,"dit is een vraag",
+     "Question",null)
+    this.contents.push();
+    this.contentDAO.createContent(this.contents)
+ }
 
 
 
