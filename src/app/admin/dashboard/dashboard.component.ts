@@ -23,14 +23,7 @@ export class DashboardComponent implements OnInit {
       this.contents = contents
     })
   }
- public saveContent(){
-    console.log(this.contents);
 
-   let newContent = new ContentModel(8,"dit is een vraag",
-     "Question",null)
-    this.contents.push();
-    this.contentDAO.createContent(this.contents)
- }
 
 
 

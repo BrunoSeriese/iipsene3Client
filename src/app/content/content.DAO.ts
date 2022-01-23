@@ -29,12 +29,10 @@ export class ContentDAO {
   public createAll(contents: ContentModel[]) {
     let newContents: Content[] = this.convertArray(contents);
   }
-  public createContent(content: ContentModel[]){
-    this.http.delete(this.baseURL + "/content/all");
-    this.http.post(this.baseURL + "/contents/all", content)
 
+  public addContent(content: ContentModel, node: number){
+    this.http.post(this.baseURL + '/contents/' + node, content);
   }
-
   public convertArray(contents: ContentModel[]) {
     let newContents: Content[] = [];
     for (let content of contents) {
