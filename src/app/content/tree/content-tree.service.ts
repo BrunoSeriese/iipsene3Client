@@ -97,12 +97,15 @@ export class ContentTreeService {
       return parent;
     }
 
+    if(value == node) {
+      return parent;
+    }
+
     for(let child of node.getChildren()) {
       if(child == value) {
         return this.getParentNodeByNode(child, value, node);
       }
     }
-    return node;
   }
 
 
