@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   public logger(){
-    console.log(this.contents);
+    console.log(this.contents)
   }
 
 
