@@ -9,23 +9,39 @@
         </div>
       </div>
 
+
+      <div class="input-group m-3" *ngIf="selectedContentType != ''">
+
+        <div class="col-md-6 m-3">
+          <input (change)="question" type="text" class="form-control" placeholder="Question..." #question>
+          <div class="col-md-6 mt-3">
+            <input (change)="answer1" type="text" class="form-control col-sm-1" placeholder="Answer1" #answer1>
+          </div>
+
+          <div class="input-group-append">
+            <button class="btn btn-primary mt-3">+++++</button>
+            <button class="btn btn-outline-secondary mt-3" type="button"
+                    (click)="getValues(question.value, answer1.value)">
+              Save Question
+            </button>
+          </div>
+        </div>
+      </div>
+
+
       <div class="dropdown">
-        <button (click)="getUniqueTypes()" class="btn btn-secondary dropdown-toggle"
+        <button class="btn btn-secondary dropdown-toggle"
                 type="button" id="dropdownMenuButton"
                 data-bs-target="#dropdown"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
-                aria-expanded="false">
-
-          {{selectedContentType}}
-
+                aria-expanded="false">Add Content
         </button>
+
         <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-          <div *ngFor="let type of newArray">
-            <button class="dropdown-item" (click)="onSelected(type)">{{type}}</button>
+          <div *ngFor="let type of uniqueTypeArray">
+            <button class="dropdown-item" (click)="getSelectedType(type)">{{type}}</button>
           </div>
-
         </div>
       </div>
 
