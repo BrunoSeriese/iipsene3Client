@@ -13,27 +13,29 @@ import {SharedNodeService} from "../shared-node.service";
 export class DashboardInfoComponent implements OnInit {
   location: string;
   node: Node;
+  contents: Object[];
 
 
 
   constructor(private route: ActivatedRoute, public sharedNodeService: SharedNodeService) {
-    this.node = this.sharedNodeService.selectedNode;
+
   }
 
 
   ngOnInit(): void {
 
+    this.node = this.sharedNodeService.selectedNode;
+
     this.location = this.route.snapshot.params['id']
     if (this.route) {
       this.route.params.subscribe(params => {
-
+        this.node = this.sharedNodeService.selectedNode;
         this.location = params['id'];
-        console.log(this.location);
-        console.log(this.node.content);
-
       });
     }
   }
+
+
 
 
 }

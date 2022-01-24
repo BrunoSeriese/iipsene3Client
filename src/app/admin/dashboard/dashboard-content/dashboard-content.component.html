@@ -1,5 +1,5 @@
 <h4>{{getInstance(node.content)}}:
-  <a routerLink="{{node.content.id}}" class="btn">{{node.content.value}} </a>
+  <a (click)="updateNode()" routerLink="{{node.content.id}}" class="btn">{{node.content.value}} </a>
   <button (click)="removeNode(nodes, node)">X</button>
 </h4>
 <ol type="A">
