@@ -14,12 +14,12 @@
 body {
   background-image: url("../assets/images/background.jpg");
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
 
-@media (max-width: 1300px){
-  body {
-    background-size: inherit;
-  }
-}
+
