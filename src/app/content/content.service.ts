@@ -74,7 +74,7 @@ export class ContentService {
 
   public getParentNodeIdByNode(node: Node): number {
     let result: Node = this.contentTree.getParentNodeByNode(this.contentTree.getRoot(), node, null);
-    console.log("Result : " + result);
+    console.log("Result : " + ((result == null) ? "null" : result.content.id));
     if(result == null) {
       return null;
     }

@@ -105,24 +105,20 @@ export class ContentTreeService {
     if(node == value) {
       console.log("node == value : " + parent.content.id)
       return parent;
-    } else {
+    }
 
+    else {
       for(let child of node.getChildren()) {
-
-        let result: Node = this.getParentNodeByNode(child, value, node);
-
-        if(result == null) {
-          console.log("Return result")
-          return result;
+        parent = this.getParentNodeByNode(child, value, node);
+        if (child == value) {
+          console.log("for child == value : " + node.content.id)
+          return parent;
         }
-
-        // if (child == value) {
-        //   console.log("child == value : " + node.content.id)
-        //   return node;
-        // }
       }
+      console.log("End of FOR")
     }
     console.log("Return null")
+    return null;
   }
 
 
