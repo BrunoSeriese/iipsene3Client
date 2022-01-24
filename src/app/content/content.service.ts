@@ -72,5 +72,9 @@ export class ContentService {
     return array == null || array.length == 0;
   }
 
+  public getParentNodeByNode(node: Node): Node {
+    return this.contentTree.getParentNodeByNode(this.contentTree.getRoot(), node);
+  }
+
 
 }

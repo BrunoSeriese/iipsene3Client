@@ -5,6 +5,10 @@ import {Answer} from "../../content/shared/answer/answer.model";
 import {ContentService} from "../../content/content.service";
 import {Content} from "../../content/content.interface";
 import {Node} from "../../content/tree/node.model";
+import {Question} from "../../content/content-component/question/question.model";
+import {Result} from "../../content/content-component/result/result.model";
+import {Explanation} from "../../content/content-component/explanation/explanation.model";
+import {Video} from "../../content/content-component/video/video.model";
 import {SharedNodeService} from "./dashboard-content/shared-node.service";
 
 @Component({
@@ -14,8 +18,8 @@ import {SharedNodeService} from "./dashboard-content/shared-node.service";
   providers: [SharedNodeService]
 })
 export class DashboardComponent implements OnInit {
-  public contents: ContentModel[];
-  public node: Node;
+  public nodeArray: Node[];
+  public nodes: Node;
 
   constructor(private contentService: ContentService,
               private contentDAO: ContentDAO) {
@@ -25,16 +29,64 @@ export class DashboardComponent implements OnInit {
   public ngOnInit(): void {
   }
 
-  public getContent(): void{
+  public getContent(): void {
     this.contentDAO.getAll().subscribe(contentModels =>{
-      this.contents = contentModels;
       let contents: Content[] = this.contentDAO.convertArray(contentModels);
-      this.node = this.contentService.createTree(contents);
-    })
+      this.nodes = this.contentService.createTree(contents);
+      console.log(this.display(this.nodes, []));
+    });
   }
 
   public logger(): void {
-    console.log(this.node)
+    console.log(this.nodes);
+  }
+
+  public updateNodeArray(node: Node): Node[] {
+    this.nodeArray = this.display(node, []);
+    return this.nodeArray;
+  }
+
+  public display(node: Node, contentArray: Node[]): Node[] {
+    if(node == null) {
+      return;
+    }
+
+    contentArray.push(node);
+
+    for(let child of node.getChildren()) {
+      this.display(child, contentArray);
+    }
+    return contentArray;
+  }
+
+  // public display(node: Node): void {
+  //   if(node == null) {
+  //     return;
+  //   }
+  //
+  //   let value: string = node.content.value + " => ";
+  //
+  //   for(let answer of node.content.answers) {
+  //     value += answer.value + ", ";
+  //   }
+  //
+  //   console.log(value);
+  //
+  //   for(let child of node.getChildren()) {
+  //     this.display(child);
+  //   }
+  // }
+
+  public getInstance(content: Content): string {
+    if(content instanceof Question) {
+      return "Question";
+    } else if (content instanceof Result) {
+      return "Result";
+    } else if (content instanceof Explanation) {
+      return "Explanation";
+    } else if (content instanceof Video) {
+      return "Video";
+    }
   }
 
 

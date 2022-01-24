@@ -85,4 +85,17 @@ export class ContentTreeService {
   public getNodeByAnswerIndex(node: Node, index: number): Node {
     return node != null ? node.getChildren()[index] : null;
   }
+
+  public getParentNodeByNode(node: Node, value: Node): Node {
+    if(node == null) {
+      return null;
+    }
+
+    for(let child of this.root.getChildren()) {
+      if(child == value) {
+        return this.getParentNodeByNode(child, value);
+      }
+    }
+    return node;
+  }
 }
