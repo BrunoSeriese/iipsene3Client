@@ -1,2 +1,64 @@
 @import "src/styles/abstracts/mixins";
-@include nav-button
+@include nav-button;
+
+.startDiv{
+  background-color: #e0e0e0;
+  padding: 20px;
+  border: 3px solid black;
+}
+
+.header-text{
+  background: #e0e0e0;
+  margin: 2vw;
+  border: 3px solid black;
+}
+
+.header-text > h1{
+  color: black;
+}
+
+.startDiv > h1{
+  color: black;
+}
+
+.startDiv > h1 > strong {
+  color: black;
+}
+.dashboardDiv{
+  background-color: #e0e0e0;
+  padding: 20px;
+  border: 3px solid black;
+}
+
+.dashboardDiv > h1{
+  color: black;
+}
+
+.dashboardDiv > h1 > strong {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vw;
+  //width: 75%;
+}
+
+.flex-item-left {
+  flex: 20%;
+  margin-right: 2vw;
+}
+
+.flex-item-right {
+  flex: 20%;
+  margin-left: 2vw;
+}
+
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+    margin: 0;
+    margin-bottom: 2vw;
+  }
+}

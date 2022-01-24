@@ -1,12 +1,26 @@
-<div class="row">
-  <div class="col-md4">
+<div class="row" xmlns="http://www.w3.org/1999/html">
+  <div class="container-md">
     <img class="mt-4" src="assets/images/logo-white.png" height="72px" alt="logo image">
     <div class="text-center">
-      <h1 class="mb-3">Subsidie Questionaire</h1>
-      <div class="d-flex justify-content-evenly">
-        <button routerLink="/content" class="nav-button">Start</button>
-        <button routerLink="/admin" class="nav-button">Dashboard</button>
+      <div class="header-text">
+        <h1>Welkom op de vragenlijst pagina van het SVDJ!</h1>
       </div>
-    </div>
+        <div class="flex-container">
+            <div class="flex-item-left startDiv">
+              <h1>Wilt u de vragenlijst afnemen om uit te vinden welk subsidie bij u hoort?
+                  <br>
+                Druk dan op de <strong>start</strong> knop hieronder!
+              </h1>
+              <button routerLink="/content" class="nav-button">Start</button>
+            </div>
+            <div class="flex-item-right dashboardDiv">
+              <h1>Bent u een medewerker bij het SVDJ?
+                <br>
+                Druk dan op de <strong>dashboard</strong> knop hieronder!
+              </h1>
+              <button routerLink="/admin" class="nav-button">Dashboard</button>
+            </div>
+        </div>
+      </div>
   </div>
 </div>
