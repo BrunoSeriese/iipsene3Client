@@ -1,8 +1,8 @@
 @mixin nav-button {
 
   .nav-button {
-    font-size: 1.4rem;
-    padding: 0 0 0 2em;
+    font-size: calc(.8rem + .5vw);
+    padding: 0 0 0 2rem;
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -15,8 +15,8 @@
     box-shadow: none;
     text-align: left;
     border-radius: 0;
-    width: 21vw;
-    height: 9vh;
+    width: 16vw;
+    height: 6vh;
   }
   .nav-button:after {
     content: '';
@@ -80,8 +80,30 @@
 
 @mixin content {
   .content-header{
-    font-size: 3rem;
+    font-size: 4.5vh;
     font-weight: 550;
+
+  }
+}
+
+@mixin corner-styling{
+  .corner-styling::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 5px;
+    width: 40%;
+    border-top: 8px solid #fff;
+  }
+  .corner-styling::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15%;
+    width: 5px;
+    border-left: 8px solid #fff;
   }
 }
 

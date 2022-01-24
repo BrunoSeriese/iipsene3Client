@@ -9,12 +9,26 @@
 
 .clickable {
   cursor: pointer;
+  margin-bottom: 0;
+  padding: 0.5em 0;
 }
 
 .list-group-item-text {
-  margin-top: 2vh;
-  margin-bottom: 8vh;
-  font-size: 1.5rem;
+  //margin-top: 2vh;
+  //font-size: 1.5rem;
+}
+
+.answerlist{
+  width: fit-content;
+  cursor: pointer;
+  font-size: 2.5vh;
+  font-weight: 500;
+  //position: relative;
+  //display: flex;
+  //flex-direction: column;
+  //flex-wrap: wrap;
+  //border-bottom: 5px white solid;
+  //justify-content: space-around;
 }
 
 input[type=radio] {

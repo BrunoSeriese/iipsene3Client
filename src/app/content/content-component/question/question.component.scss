@@ -1,2 +1,11 @@
 @import "src/styles/abstracts/mixins";
+
 @include content;
+
+.answerlist-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  margin-top: 5vh;
+}

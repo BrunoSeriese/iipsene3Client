@@ -1,7 +1,7 @@
-<h1 class="content-header">{{ question.value }}</h1>
+<h1 class="content-header" style="padding-left: 2rem; padding-top: 1rem;">{{ question.value }}</h1>
 
 
-<app-answer-list [answers]="question.answers"
+<app-answer-list class="answerlist-layout" [answers]="question.answers"
                  [selectedAnswer]="navigationService.getSelected()"
                  (selectedAnswerEvent)="navigationService.setSelected($event)">
-</app-answer-list>
+</app-answer-list >
