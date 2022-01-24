@@ -51,6 +51,7 @@ export class ContentDAO {
       }
       bodies.push(body);
     }
+    console.log(bodies);
     this.http
       .post(this.baseURL + "/contents", bodies, requestOptions)
       .subscribe();

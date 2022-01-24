@@ -10,6 +10,7 @@ import {Result} from "../../content/content-component/result/result.model";
 import {Explanation} from "../../content/content-component/explanation/explanation.model";
 import {Video} from "../../content/content-component/video/video.model";
 import {SharedNodeService} from "./dashboard-content/shared-node.service";
+import {applySourceSpanToExpressionIfNeeded} from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: 'app-dashboard',
@@ -55,13 +56,15 @@ export class DashboardComponent implements OnInit {
 
     let parentIds: number[] = [];
     for(let i in this.nodeArray) {
-      let parentId: number = this.contentService.getParentNodeByNode(this.nodeArray[i]).content.id;
+      let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[i]);
       parentIds.push(parentId);
     }
 
-    let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
-    this.contentDAO.deleteAll();
-    this.contentDAO.addContent(contentModels, parentIds);
+    console.log(parentIds);
+
+    // let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
+    // this.contentDAO.deleteAll();
+    // this.contentDAO.addContent(contentModels, parentIds);
   }
 
   public display(node: Node, contentArray: Node[]): Node[] {
