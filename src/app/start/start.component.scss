@@ -1,15 +1,39 @@
 @import "src/styles/abstracts/mixins";
 @include nav-button;
+@include logo_header;
 
+.logo-header{
+  margin-top:0;
+
+}
+.btn-custom{
+  float:right;
+  height: 100%;
+}
+
+.main-content{
+  min-height: 90vh;
+  height: 90vh;
+  width: 50%;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header-balk{
+  background: rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid black;
+  height: 11vh;
+  //position: fixed;
+}
+.img-custom{
+  margin: 1vw;
+}
 .startDiv{
-  background-color: #e0e0e0;
   padding: 20px;
-  border: 3px solid black;
 }
 
 .header-text{
   background: #e0e0e0;
-  margin: 2vw;
   border: 3px solid black;
 }
 
@@ -17,13 +41,7 @@
   color: black;
 }
 
-.startDiv > h1{
-  color: black;
-}
 
-.startDiv > h1 > strong {
-  color: black;
-}
 .dashboardDiv{
   background-color: #e0e0e0;
   padding: 20px;
@@ -41,18 +59,12 @@
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 2vw;
-  //width: 75%;
+  padding: 2vw;
 }
 
-.flex-item-left {
-  flex: 20%;
-  margin-right: 2vw;
-}
+.flex-item {
+  flex: 100%;
 
-.flex-item-right {
-  flex: 20%;
-  margin-left: 2vw;
 }
 
 @media (max-width: 800px) {
@@ -60,5 +72,15 @@
     flex: 100%;
     margin: 0;
     margin-bottom: 2vw;
+  }
+
+  .main-content{
+    height: 100vh;
+    width: 100%;
+  }
+
+  .header-balk{
+    height: 13vh;
+
   }
 }
