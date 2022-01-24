@@ -17,7 +17,6 @@ import {LoginService} from "../admin/login/login.service";
 })
 export class ContentDAO {
   private baseURL: String = "http://localhost:8080/api/v1";
-  private contents: Content[];
 
   constructor(private http: HttpClient,
               private loginService: LoginService) {
@@ -28,14 +27,33 @@ export class ContentDAO {
       .get<ContentModel[]>(this.baseURL + "/contents");
   }
 
-  public addContent(content: ContentModel, parentId: number) {
+  public deleteAll() {
     let requestOptions: any = {
       headers: new HttpHeaders({"Authorization": "Bearer " + this.loginService.token}),
     };
     this.http
-      .delete(this.baseURL + '/contents/all', requestOptions);
+      .delete(this.baseURL + '/contents/all', requestOptions)
+      .subscribe();
+  }
+
+  public addContent(contents: ContentModel[], parentIds: number[]) {
+    let requestOptions: any = {
+      headers: new HttpHeaders({"Authorization": "Bearer " + this.loginService.token}),
+    };
+    let bodies: any[] = [];
+    for(let i in contents) {
+      let body: any = {
+        "id": contents[i].id,
+        "value": contents[i].value,
+        "type": contents[i].type,
+        "answers": contents[i].answers,
+        "parentNodeId": parentIds[i]
+      }
+      bodies.push(body);
+    }
     this.http
-      .post(this.baseURL + '/contents/' + parentId, content, requestOptions);
+      .post(this.baseURL + "/contents", bodies, requestOptions)
+      .subscribe();
   }
 
   public convertToModels(contents: Content[]): ContentModel[] {

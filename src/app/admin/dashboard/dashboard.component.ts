@@ -46,6 +46,24 @@ export class DashboardComponent implements OnInit {
     return this.nodeArray;
   }
 
+  public save(): void {
+    this.updateNodeArray(this.nodes);
+    let contents: Content[] = [];
+    this.nodeArray.forEach(node => {
+      contents.push(node.content);
+    });
+
+    let parentIds: number[] = [];
+    for(let i in this.nodeArray) {
+      let parentId: number = this.contentService.getParentNodeByNode(this.nodeArray[i]).content.id;
+      parentIds.push(parentId);
+    }
+
+    let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
+    this.contentDAO.deleteAll();
+    this.contentDAO.addContent(contentModels, parentIds);
+  }
+
   public display(node: Node, contentArray: Node[]): Node[] {
     if(node == null) {
       return;
