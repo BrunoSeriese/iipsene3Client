@@ -63,9 +63,9 @@ export class DashboardComponent implements OnInit {
 
     console.log(parentIds);
 
-    // let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
-    // this.contentDAO.deleteAll();
-    // this.contentDAO.addContent(contentModels, parentIds);
+    let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
+    this.contentDAO.deleteAll();
+    this.contentDAO.addContent(contentModels, parentIds);
   }
 
   public display(node: Node, contentArray: Node[]): Node[] {
