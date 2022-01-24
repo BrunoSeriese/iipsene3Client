@@ -56,16 +56,12 @@ export class DashboardComponent implements OnInit {
 
     let parentIds: number[] = [];
 
-    // for(let i in this.nodeArray) {
-    //   let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[i]);
-    //   parentIds.push(parentId);
-    // }
+    for(let i in this.nodeArray) {
+      let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[i]);
+      parentIds.push(parentId);
+    }
 
-    // console.log(this.nodeArray[2])
-    let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[2]);
-    parentIds.push(parentId);
-
-    // console.log(parentIds);
+    console.log(parentIds);
 
     // let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
     // this.contentDAO.deleteAll();

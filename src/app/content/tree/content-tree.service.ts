@@ -15,6 +15,7 @@ import {ContentDAO} from "../content.DAO";
 export class ContentTreeService {
   private contents: Content[];
   private root: Node;
+  private parent: Node;
 
   constructor() {
   }
@@ -86,50 +87,19 @@ export class ContentTreeService {
     return node != null ? node.getChildren()[index] : null;
   }
 
-
-
-
-
-
-
-  public getParentNodeByNode(node: Node, value: Node, parent: Node): Node {
-    console.log("---");
-    console.log("Node-Id : " + node.content.id);
-    console.log("Value-Id : " + value.content.id);
-    console.log("Parent-Id : " + ((parent == null) ? "null" : parent.content.id));
-
+  public getParentNodeByNode(current: Node, value: Node, parent: Node): Node {
     if(this.root == value) {
-      return parent;
+      return null;
     }
 
-    if(node == value) {
-      console.log("node == value : " + parent.content.id)
-      return parent;
+    if(current == value) {
+      this.parent = parent;
     }
 
-    else {
-      for(let child of node.getChildren()) {
-        parent = this.getParentNodeByNode(child, value, node);
-        if (child == value) {
-          console.log("for child == value : " + node.content.id)
-          return parent;
-        }
-      }
-      console.log("End of FOR")
+    for(let child of current.getChildren()) {
+      this.getParentNodeByNode(child, value, current);
     }
-    console.log("Return null")
-    return null;
+    return this.parent;
   }
-
-
-
-
-
-
-
-
-
-
-
 
 }
