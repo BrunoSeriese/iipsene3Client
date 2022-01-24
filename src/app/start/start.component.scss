@@ -14,7 +14,7 @@
 .main-content{
   min-height: 90vh;
   height: 90vh;
-  width: 50%;
+  width: 83%;
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.15);
 }
@@ -25,7 +25,9 @@
   height: 11vh;
 }
 .img-custom{
-  margin: 1vw;
+  margin: 1vh 0 0 1vh;
+  height: 8vh;
+  width: auto;
 }
 .startDiv{
   padding: 20px;
@@ -66,7 +68,7 @@
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
   .flex-item-right, .flex-item-left {
     flex: 100%;
     margin: 0;
