@@ -1,2 +1,86 @@
 @import "src/styles/abstracts/mixins";
-@include nav-button
+@include nav-button;
+@include logo_header;
+
+.logo-header{
+  margin-top:0;
+
+}
+.btn-custom{
+  float:right;
+  height: 100%;
+}
+
+.main-content{
+  min-height: 90vh;
+  height: 90vh;
+  width: 50%;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header-balk{
+  background: rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid black;
+  height: 11vh;
+  //position: fixed;
+}
+.img-custom{
+  margin: 1vw;
+}
+.startDiv{
+  padding: 20px;
+}
+
+.header-text{
+  background: #e0e0e0;
+  border: 3px solid black;
+}
+
+.header-text > h1{
+  color: black;
+}
+
+
+.dashboardDiv{
+  background-color: #e0e0e0;
+  padding: 20px;
+  border: 3px solid black;
+}
+
+.dashboardDiv > h1{
+  color: black;
+}
+
+.dashboardDiv > h1 > strong {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vw;
+}
+
+.flex-item {
+  flex: 100%;
+
+}
+
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+    margin: 0;
+    margin-bottom: 2vw;
+  }
+
+  .main-content{
+    height: 100vh;
+    width: 100%;
+  }
+
+  .header-balk{
+    height: 13vh;
+
+  }
+}
