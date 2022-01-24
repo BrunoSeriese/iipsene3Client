@@ -1,6 +1,6 @@
 <h4>{{getInstance(node.content)}}:
   <a routerLink="{{node.content.id}}" class="btn">{{node.content.value}} </a>
-  <button (click)="removeNode()">X</button>
+  <button (click)="removeNode(nodes, node)">X</button>
 </h4>
 <ol type="A">
 <!--  <li *ngFor="let answer of content.answers">Answer: {{answer.value}}-->

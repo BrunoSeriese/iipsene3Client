@@ -5,7 +5,7 @@
     <div class="scroll-div contents">
       <div class="row" *ngFor="let node of updateNodeArray(nodes), index as i" >
         <div class="col-ms-5" *ngIf="getInstance(node.content) != 'Result'">
-          <app-dashboard-content [node]="node"></app-dashboard-content>
+          <app-dashboard-content [nodes]="nodes" [node]="node"></app-dashboard-content>
         </div>
       </div>
     </div>

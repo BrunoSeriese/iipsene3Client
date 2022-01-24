@@ -59,24 +59,6 @@ export class DashboardComponent implements OnInit {
     return contentArray;
   }
 
-  // public display(node: Node): void {
-  //   if(node == null) {
-  //     return;
-  //   }
-  //
-  //   let value: string = node.content.value + " => ";
-  //
-  //   for(let answer of node.content.answers) {
-  //     value += answer.value + ", ";
-  //   }
-  //
-  //   console.log(value);
-  //
-  //   for(let child of node.getChildren()) {
-  //     this.display(child);
-  //   }
-  // }
-
   public getInstance(content: Content): string {
     if(content instanceof Question) {
       return "Question";

@@ -14,6 +14,7 @@ import {SharedNodeService} from "./shared-node.service";
   styleUrls: ['./dashboard-content.component.scss']
 })
 export class DashboardContentComponent implements OnInit {
+  @Input("nodes") public nodes: Node;
   @Input("node") public node: Node;
 
   constructor(private sharedNodeService: SharedNodeService) { }
@@ -22,8 +23,18 @@ export class DashboardContentComponent implements OnInit {
     this.sharedNodeService.updateSelectedNode(this.node);
   }
 
-  public removeNode(): void {
-    this.node = null;
+  public removeNode(node: Node, value: Node): void {
+    if(node == null) {
+      return;
+    }
+
+    for(let child of node.getChildren()) {
+      if(child == value) {
+        node.removeChild(child);
+        return;
+      }
+      this.removeNode(child, value);
+    }
   }
 
   public getInstance(content: Content): string {
