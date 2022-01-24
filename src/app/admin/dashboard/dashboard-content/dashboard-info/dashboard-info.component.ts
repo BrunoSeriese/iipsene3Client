@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {ContentDAO} from "../../../../content/content.DAO";
 import {ContentModel} from "../../../../content/content.model";
 import {Node} from "../../../../content/tree/node.model";
+import {SharedNodeService} from "../shared-node.service";
 
 @Component({
   selector: 'app-dashboard-info',
@@ -11,11 +12,13 @@ import {Node} from "../../../../content/tree/node.model";
 })
 export class DashboardInfoComponent implements OnInit {
   location: string;
-  @Input("node") public node: Node;
+  node: Node;
 
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public sharedNodeService: SharedNodeService) {
+    this.node = this.sharedNodeService.selectedNode;
+  }
 
 
   ngOnInit(): void {
