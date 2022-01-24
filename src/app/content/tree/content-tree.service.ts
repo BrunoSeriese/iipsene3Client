@@ -93,19 +93,36 @@ export class ContentTreeService {
 
 
   public getParentNodeByNode(node: Node, value: Node, parent: Node): Node {
+    console.log("---");
+    console.log("Node-Id : " + node.content.id);
+    console.log("Value-Id : " + value.content.id);
+    console.log("Parent-Id : " + ((parent == null) ? "null" : parent.content.id));
+
     if(this.root == value) {
       return parent;
     }
 
-    if(value == node) {
+    if(node == value) {
+      console.log("node == value : " + parent.content.id)
       return parent;
-    }
+    } else {
 
-    for(let child of node.getChildren()) {
-      if(child == value) {
-        return this.getParentNodeByNode(child, value, node);
+      for(let child of node.getChildren()) {
+
+        let result: Node = this.getParentNodeByNode(child, value, node);
+
+        if(result == null) {
+          console.log("Return result")
+          return result;
+        }
+
+        // if (child == value) {
+        //   console.log("child == value : " + node.content.id)
+        //   return node;
+        // }
       }
     }
+    console.log("Return null")
   }
 
 
