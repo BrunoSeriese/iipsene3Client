@@ -23,6 +23,10 @@ export class DashboardContentComponent implements OnInit {
     this.sharedNodeService.updateSelectedNode(this.node);
   }
 
+  public updateNode(){
+    this.sharedNodeService.updateSelectedNode(this.node);
+  }
+
   public removeNode(node: Node, value: Node): void {
     if(node == null) {
       return;
