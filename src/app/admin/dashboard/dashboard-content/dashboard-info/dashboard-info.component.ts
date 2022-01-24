@@ -26,9 +26,10 @@ export class DashboardInfoComponent implements OnInit {
     this.location = this.route.snapshot.params['id']
     if (this.route) {
       this.route.params.subscribe(params => {
-        console.log(params)
+
         this.location = params['id'];
         console.log(this.location);
+        console.log(this.node.content);
 
       });
     }
