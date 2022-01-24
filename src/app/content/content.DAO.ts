@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {ContentModel} from "./content.model";
 import {Content} from "./content.interface";
@@ -9,6 +9,7 @@ import {Video} from "./content-component/video/video.model";
 import {Result} from "./content-component/result/result.model";
 import {Explanation} from "./content-component/explanation/explanation.model";
 import {ContentTreeService} from "./tree/content-tree.service";
+import {LoginService} from "../admin/login/login.service";
 
 
 @Injectable({
@@ -18,7 +19,8 @@ export class ContentDAO {
   private baseURL: String = "http://localhost:8080/api/v1";
   private contents: Content[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private loginService: LoginService) {
   }
 
   public getAll(): Observable<ContentModel[]> {
@@ -26,14 +28,33 @@ export class ContentDAO {
       .get<ContentModel[]>(this.baseURL + "/contents");
   }
 
-  public createAll(contents: ContentModel[]) {
-    let newContents: Content[] = this.convertArray(contents);
+  public addContent(content: ContentModel, parentId: number) {
+    let requestOptions: any = {
+      headers: new HttpHeaders({"Authorization": "Bearer " + this.loginService.token}),
+    };
+    this.http
+      .delete(this.baseURL + '/contents/all', requestOptions);
+    this.http
+      .post(this.baseURL + '/contents/' + parentId, content, requestOptions);
   }
 
-  public addContent(content: ContentModel, node: number){
-    this.http.post(this.baseURL + '/contents/' + node, content);
+  public convertToModels(contents: Content[]): ContentModel[] {
+    let newContentModels: ContentModel[] = [];
+    for (let content of contents) {
+      if(content instanceof Question) {
+        newContentModels.push(new ContentModel(content.id, content.value, "Question", content.answers));
+      } else if(content instanceof Video) {
+        newContentModels.push(new ContentModel(content.id, content.value, "Video", content.answers));
+      } else if(content instanceof Result) {
+        newContentModels.push(new ContentModel(content.id, content.value, "Result", content.answers));
+      } else if(content instanceof Explanation) {
+        newContentModels.push(new ContentModel(content.id, content.value, "Explanation", content.answers));
+      }
+    }
+    return newContentModels;
   }
-  public convertArray(contents: ContentModel[]) {
+
+  public convertArray(contents: ContentModel[]): Content[] {
     let newContents: Content[] = [];
     for (let content of contents) {
       if(content.type == "Question") {
