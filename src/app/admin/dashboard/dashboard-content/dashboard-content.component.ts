@@ -12,9 +12,12 @@ export class DashboardContentComponent implements OnInit {
   @Input("contents") public contents: ContentModel[];
   @Input("node") public node: Node;
 
+
   constructor() { }
 
+
   public ngOnInit(): void {
+
   }
 
 }

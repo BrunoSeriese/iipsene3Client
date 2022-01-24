@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ContentDAO} from "../../../../content/content.DAO";
 import {ContentModel} from "../../../../content/content.model";
+import {Node} from "../../../../content/tree/node.model";
 
 @Component({
   selector: 'app-dashboard-info',
@@ -10,6 +11,7 @@ import {ContentModel} from "../../../../content/content.model";
 })
 export class DashboardInfoComponent implements OnInit {
   location: string;
+  @Input("node") public node: Node;
 
 
 
