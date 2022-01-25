@@ -2,11 +2,37 @@
 
 @include content;
 @include corner-styling;
-.yt_video {
+
+.video-container{
+  margin: 8vh auto auto auto;
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 45vw;
-  height: 50vh;
+  height: 60%;
+  width: 80%;
+}
+.yt_video {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px){
+  .video-container {
+    width: 80%;
+    height: 0;
+    padding-top: 56.25%;
+    margin: 12vh auto auto auto;
+  }
+  .yt_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media screen and (max-width: 480px){
+
 }
