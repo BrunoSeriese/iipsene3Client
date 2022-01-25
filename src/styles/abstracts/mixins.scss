@@ -1,8 +1,8 @@
 @mixin nav-button {
 
   .nav-button {
-    font-size: 1.4rem;
-    padding: 0 0 0 2em;
+    font-size: calc(.8rem + .5vw);
+    padding: 0 1em 0 1em;
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -15,20 +15,22 @@
     box-shadow: none;
     text-align: left;
     border-radius: 0;
-    width: 21vw;
-    height: 9vh;
+    width: 18vw;
+    height: 6vh;
   }
+
   .nav-button:after {
     content: '';
     position: absolute;
     top: 0;
-    right: 3vw;
+    right: 1.5vw;
     height: 100%;
     width: 3.5em;
     display: inline-block;
     transition: all 0.2s ease-out;
     background: url(../../assets/images/streep-black.png) no-repeat center right;
     vertical-align: middle;
+    text-align: left;
     //margin-left: 1.5em;
   }
 
@@ -36,20 +38,31 @@
     text-decoration: none;
     background: black;
     color: white;
-
   }
   .nav-button:hover::after {
     background-image: url(../../assets/images/streep-white.png);
   }
 
+
+  @media screen and (max-width: 1200px) {
+    .nav-button {
+      width: 24vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-button {
+      width: 48vw;
+    }
+  }
+
   .nav-button:disabled {
     opacity: 0.35;
   }
-
 }
 
-@mixin logo_header{
-  .logo-header{
+@mixin logo_header {
+  .logo-header {
     margin-top: 2vh;
     padding-left: 3rem;
     padding-top: 3rem;
@@ -57,7 +70,7 @@
     border: none;
   }
 
-  .logo-header::before{
+  .logo-header::before {
     font-size: 50px;
     content: "";
     position: absolute;
@@ -67,7 +80,7 @@
     width: 40%;
     border-top: 8px solid #fff;
   }
-  .logo-header::after{
+  .logo-header::after {
     content: "";
     position: absolute;
     left: 0;
@@ -79,9 +92,37 @@
 }
 
 @mixin content {
-  .content-header{
-    font-size: 3rem;
+  .content-header {
+    font-size: calc(1.2rem + 1vw);
     font-weight: 550;
+    margin: 5vh 0 0 0;
+    padding-left: calc(5% + .4vw);
+    padding-top: calc(4% + 0.4vh);
   }
 }
 
+@mixin corner-styling {
+
+  .corner-styling {
+    position: relative;
+  }
+
+  .corner-styling::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 5px;
+    width: 40%;
+    border-top: calc(4px + .1vw) solid #fff;
+  }
+  .corner-styling::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60%;
+    width: 5px;
+    border-left: calc(4px + .1vw) solid #fff;
+  }
+}

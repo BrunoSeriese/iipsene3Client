@@ -1,13 +1,30 @@
 @import "src/styles/abstracts/mixins";
+
 @include logo_header;
+@include corner-styling;
 
 .content-wrapper {
-  padding-left: 1vw;
-  height: 72.5vh;
+  height: 70vh;
+  margin-bottom: 8vh;
 }
 
 @media screen and (max-width: 1200px) {
-  .navbar {
-    position: center;
+  //.navbar {
+  //  position: center;
+  //}
+
+  .content-wrapper {
+    margin-bottom: 2vh;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    row-gap: 1vh;
+    flex-direction: column;
+  }
+  .content-wrapper {
+    margin-bottom: 0;
+  }
+
 }

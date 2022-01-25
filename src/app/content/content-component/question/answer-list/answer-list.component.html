@@ -1,5 +1,5 @@
-<div class="offset-1" *ngFor="let answer of answers; index as i">
-  <p class="list-group-item-text clickable" (click)= radioButtonChangeHandler(i)>
+<div class="offset-1 answerlist" *ngFor="let answer of answers; index as i">
+  <p class="clickable" (click)= radioButtonChangeHandler(i)>
     <input class="radiobutton" type="radio" [checked]="selectedAnswer == i">
     {{ answer.value }}
   </p>

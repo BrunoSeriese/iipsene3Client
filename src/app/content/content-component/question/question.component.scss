@@ -1,2 +1,19 @@
 @import "src/styles/abstracts/mixins";
+
+@include corner-styling;
 @include content;
+
+.answerlist-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60%;
+  margin-top: 6vh;
+}
+
+@media screen and (max-width: 1199px) {
+  .answerlist-layout {
+    //height: 70%;
+    margin-top: 10vh;
+  }
+}
