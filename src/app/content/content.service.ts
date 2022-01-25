@@ -80,6 +80,10 @@ export class ContentService {
     return result.content.id;
   }
 
+  public getParentNodeByNode(node: Node): Node {
+    return this.contentTree.getParentNodeByNode(this.contentTree.getRoot(), node, null);
+  }
+
   public getLevel(node: Node): number {
     return this.contentTree.level(this.contentTree.getRoot(), node, 0);
   }

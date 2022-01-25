@@ -30,18 +30,13 @@ export class DashboardContentComponent implements OnInit {
     this.sharedNodeService.updateSelectedNode(this.node);
   }
 
-  public removeNode(node: Node, value: Node): void {
-    if(node == null) {
-      return;
-    }
-
-    for(let child of node.getChildren()) {
-      if(child == value) {
-        node.removeChild(child);
-        return;
-      }
-      this.removeNode(child, value);
-    }
+  public removeNode(): void {
+    let parent: Node = this.contentService.getParentNodeByNode(this.node);
+    console.log(parent.content.value)
+    let index: number = parent.getChildren().indexOf(this.node);
+    console.log(index);
+    parent.content.answers.splice(index, 1);
+    parent.removeChild(this.node);
   }
 
   public getInstance(content: Content): string {
