@@ -1,6 +1,6 @@
 <form class="myNiceForm mt-2">
   <div class="form-group">
-    <ul   class="myColor mySize">
+    <ul   class="myColor mySize myUl">
       <li class="myColor p-1" > <b class="text-black">ID:</b>{{node.content.id}}</li>
       <input #myID type="number" placeholder="{{node.content.id}}" class="form-control">
       <li class="myColor p-1" ><b class="text-black">Waarde:</b>{{node.content.value}}</li>
@@ -9,10 +9,10 @@
 
   </div>
   <div class="form-group">
+    <h3 class="text-black">Antwoorden:</h3>
     <ol class="mySize"  type="A">
-      <h3 class="text-black">Antwoorden:</h3>
-      <li *ngFor="let answer of node.content.answers" class="myColor" ><p  class="text-black mt-1 ">{{answer.value}}</p>
-        <input   required type="text" class="form-control mySize"  placeholder="{{answer.value}}"></li>
+      <li *ngFor="let answer of node.content.answers" class="myColor" >
+        <input   required type="text" class="form-control mySize"  value="{{answer.value}}"></li>
     </ol>
     <button class="btn btn-primary ml-3">Update</button>
   </div>
