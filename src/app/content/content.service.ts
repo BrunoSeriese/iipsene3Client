@@ -80,5 +80,9 @@ export class ContentService {
     return result.content.id;
   }
 
+  public getHeight(node: Node): number {
+    return this.contentTree.height(node);
+  }
+
 
 }

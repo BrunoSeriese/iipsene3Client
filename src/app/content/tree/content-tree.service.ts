@@ -76,9 +76,10 @@ export class ContentTreeService {
       return totalHeight;
     }
 
-    for(let child of node.getChildren()) {
-      const currentHeight: number = this.height(child);
-      if(currentHeight > totalHeight) {
+    for(let i in node.content.answers) {
+      const currentHeight: number = this.height(node.getChildren()[i]);
+
+      if (currentHeight > totalHeight) {
         totalHeight = currentHeight;
       }
     }

@@ -7,6 +7,7 @@ import {Result} from "../../../content/content-component/result/result.model";
 import {Explanation} from "../../../content/content-component/explanation/explanation.model";
 import {Video} from "../../../content/content-component/video/video.model";
 import {SharedNodeService} from "./shared-node.service";
+import {ContentService} from "../../../content/content.service";
 
 @Component({
   selector: 'app-dashboard-content',
@@ -17,10 +18,13 @@ export class DashboardContentComponent implements OnInit {
   @Input("nodes") public nodes: Node;
   @Input("node") public node: Node;
 
-  constructor(private sharedNodeService: SharedNodeService) { }
+  constructor(private sharedNodeService: SharedNodeService,
+              public contentService: ContentService) {
+  }
 
   public ngOnInit(): void {
     this.sharedNodeService.updateSelectedNode(this.node);
+    console.log("Total height : " + this.contentService.getHeight(this.nodes) + ", Node height : " + this.contentService.getHeight(this.node))
   }
 
   public updateNode(){
