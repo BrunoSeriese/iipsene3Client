@@ -38,7 +38,7 @@ export class DashboardContentComponent implements OnInit {
 
     let contentIds: number[] = this.getContentIds(this.nodes, []);
     let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
-    this.node.addChild(new Node(new Question(contentId, "", [])));
+    this.node.addChild(new Node(new Question(contentId, "new Content", [])));
   }
 
   public removeNode(): void {
@@ -103,6 +103,10 @@ export class DashboardContentComponent implements OnInit {
     } else if (content instanceof Video) {
       return "Video";
     }
+  }
+
+  public isResult(): boolean {
+    return this.node.content instanceof Result;
   }
 
 }
