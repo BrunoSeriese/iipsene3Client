@@ -1,6 +1,7 @@
 @import "src/styles/abstracts/mixins";
-@include content;
 
+@include content;
+@include corner-styling;
 .yt_video {
   position: relative;
   top: 50%;

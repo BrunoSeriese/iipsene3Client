@@ -1,9 +1,11 @@
 @import "src/styles/abstracts/mixins";
 @include logo_header;
+@include corner-styling;
 
 .content-wrapper {
-  padding-left: 1vw;
-  height: 72.5vh;
+  //padding-left: 1vw;
+  height: 75vh;
+  margin-bottom: 8vh;
 }
 
 @media screen and (max-width: 1200px) {

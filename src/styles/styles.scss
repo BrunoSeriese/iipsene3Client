@@ -9,6 +9,7 @@
   color: white;
   font-family: Arial, serif;
   letter-spacing: 0.05rem;
+  overflow: hidden;
 }
 
 body {
@@ -16,10 +17,7 @@ body {
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
   -o-background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
-
-
