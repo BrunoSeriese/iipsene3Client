@@ -1,11 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ContentModel} from "../../../content/content.model";
 import {Node} from "../../../content/tree/node.model";
-import {Content} from "../../../content/content.interface";
-import {Question} from "../../../content/content-component/question/question.model";
-import {Result} from "../../../content/content-component/result/result.model";
-import {Explanation} from "../../../content/content-component/explanation/explanation.model";
-import {Video} from "../../../content/content-component/video/video.model";
 import {SharedNodeService} from "./shared-node.service";
 import {ContentService} from "../../../content/content.service";
 import {Answer} from "../../../content/shared/answer/answer.model";
@@ -38,7 +33,7 @@ export class DashboardContentComponent implements OnInit {
 
     let contentIds: number[] = this.getContentIds(this.nodes, []);
     let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
-    this.node.addChild(new Node(new Question(contentId, "new Content", [])));
+    this.node.addChild(new Node(new ContentModel(contentId, "new Content", "Question", [])));
   }
 
   public removeNode(): void {
@@ -93,20 +88,8 @@ export class DashboardContentComponent implements OnInit {
     return answerIds;
   }
 
-  public getInstance(content: Content): string {
-    if(content instanceof Question) {
-      return "Question";
-    } else if (content instanceof Result) {
-      return "Result";
-    } else if (content instanceof Explanation) {
-      return "Explanation";
-    } else if (content instanceof Video) {
-      return "Video";
-    }
-  }
-
   public isResult(): boolean {
-    return this.node.content instanceof Result;
+    return this.node.content.type == "Result";
   }
 
 }

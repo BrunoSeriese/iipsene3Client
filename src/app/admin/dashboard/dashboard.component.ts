@@ -3,12 +3,7 @@ import {ContentDAO} from "../../content/content.DAO";
 import {ContentModel} from "../../content/content.model";
 import {Answer} from "../../content/shared/answer/answer.model";
 import {ContentService} from "../../content/content.service";
-import {Content} from "../../content/content.interface";
 import {Node} from "../../content/tree/node.model";
-import {Question} from "../../content/content-component/question/question.model";
-import {Result} from "../../content/content-component/result/result.model";
-import {Explanation} from "../../content/content-component/explanation/explanation.model";
-import {Video} from "../../content/content-component/video/video.model";
 import {SharedNodeService} from "./dashboard-content/shared-node.service";
 import {applySourceSpanToExpressionIfNeeded} from "@angular/compiler/src/output/output_ast";
 
@@ -33,8 +28,7 @@ export class DashboardComponent implements OnInit {
 
   public getContent(): void {
     this.contentDAO.getAll().subscribe(contentModels =>{
-      let contents: Content[] = this.contentDAO.convertArray(contentModels);
-      this.nodes = this.contentService.createTree(contents);
+      this.nodes = this.contentService.createTree(contentModels);
     });
   }
 
@@ -45,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
   public save(): void {
     this.updateNodeArray(this.nodes);
-    let contents: Content[] = [];
+    let contents: ContentModel[] = [];
     this.nodeArray.forEach(node => {
       contents.push(node.content);
     });
@@ -57,9 +51,8 @@ export class DashboardComponent implements OnInit {
       parentIds.push(parentId);
     }
 
-    let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
     this.contentDAO.deleteAll();
-    this.contentDAO.addContent(contentModels, parentIds);
+    this.contentDAO.addContent(contents, parentIds);
   }
 
   public display(node: Node, contentArray: Node[]): Node[] {
@@ -74,22 +67,5 @@ export class DashboardComponent implements OnInit {
     }
     return contentArray;
   }
-
-  public getInstance(content: Content): string {
-    if(content instanceof Question) {
-      return "Question";
-    } else if (content instanceof Result) {
-      return "Result";
-    } else if (content instanceof Explanation) {
-      return "Explanation";
-    } else if (content instanceof Video) {
-      return "Video";
-    }
-  }
-
-
-
-
-
 
 }

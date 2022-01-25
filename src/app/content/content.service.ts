@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Content} from "./content.interface";
 import {ContentTreeService} from "./tree/content-tree.service";
 import {Node} from "./tree/node.model";
 import {ContentDAO} from "./content.DAO";
@@ -17,7 +16,7 @@ export class ContentService {
 
   }
 
-  public createTree(contents: Content[]): Node {
+  public createTree(contents: ContentModel[]): Node {
     let node: Node = this.contentTree.create(contents);
     this.currentNode = node;
     return node;
@@ -42,17 +41,13 @@ export class ContentService {
     }
   }
 
-  public getContent(): Content {
+  public getContent(): ContentModel {
     return this.currentNode != null ? this.currentNode.content : null;
   }
 
   public getContentObservable(): Observable<ContentModel[]> {
     return this.contentDAO.getAll();
   }
-
-  public convertArray(contents: ContentModel[]): Content[] {
-    return this.contentDAO.convertArray(contents);
-}
 
   public getNodeByAnswerIndex(index: number): Node {
     return this.contentTree.getNodeByAnswerIndex(this.currentNode, index);

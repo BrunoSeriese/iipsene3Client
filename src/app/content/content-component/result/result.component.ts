@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {Result} from "./result.model";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import {ContentModel} from "../../content.model";
 pdfMake.vfs = pdfFonts.pdfMake.vfs
 
 @Component({
@@ -10,7 +10,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent {
-  @Input() public result: Result;
+  @Input() public result: ContentModel;
 
   constructor() { }
 

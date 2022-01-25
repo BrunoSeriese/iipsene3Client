@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentService} from "../content.service";
-import {Content} from "../content.interface";
+import {ContentModel} from "../content.model";
 
 @Component({
   selector: 'app-content-start',
@@ -8,12 +8,12 @@ import {Content} from "../content.interface";
   styleUrls: ['./content-start.component.scss']
 })
 export class ContentStartComponent implements OnInit {
-  public content: Content;
+  public content: ContentModel;
 
   constructor(public contentService: ContentService) {
     this.contentService.getContentObservable()
       .subscribe(contents => {
-        this.content = this.contentService.createTree(this.contentService.convertArray(contents)).content;
+        this.content = this.contentService.createTree(contents).content;
       });
   }
 

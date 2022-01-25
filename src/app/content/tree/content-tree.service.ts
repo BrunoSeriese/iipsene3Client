@@ -1,19 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Node} from "./node.model";
-import {Content} from "../content.interface";
 import {Iterator} from "./iterator.model";
-import {Result} from "../content-component/result/result.model";
-import {Question} from "../content-component/question/question.model";
-import {Answer} from "../shared/answer/answer.model";
-import {Explanation} from "../content-component/explanation/explanation.model";
-import {Video} from "../content-component/video/video.model";
-import {ContentDAO} from "../content.DAO";
+import {ContentModel} from "../content.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentTreeService {
-  private contents: Content[];
+  private contents: ContentModel[];
   private root: Node;
   private parent: Node;
 
@@ -24,23 +18,23 @@ export class ContentTreeService {
     return this.root;
   }
 
-  public create(contents: Content[]): Node {
+  public create(contents: ContentModel[]): Node {
     this.contents = contents;
-    const iterator: Iterator<Content> = new Iterator<Content>(this.contents);
+    const iterator: Iterator<ContentModel> = new Iterator<ContentModel>(this.contents);
     this.root = this.construct(iterator);
     return this.root;
   }
 
-  private construct(iterator: Iterator<Content>): Node {
+  private construct(iterator: Iterator<ContentModel>): Node {
     if (!iterator.hasNext()) {
 
       return null;
     }
 
-    const content: Content = iterator.next();
+    const content: ContentModel = iterator.next();
     const node: Node = new Node(content);
 
-    if (!(content instanceof Result)) {
+    if (!(content.type == "Result")) {
       for (let answer of node.content.answers) {
         const child: Node = this.construct(iterator);
         node.addChild(child);
@@ -61,10 +55,7 @@ export class ContentTreeService {
       value += answer.value + ", ";
     }
 
-
-
     for(let child of node.getChildren()) {
-
       this.display(child);
     }
   }
