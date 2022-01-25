@@ -1,10 +1,27 @@
 <h4  class="text-black">TEST {{node.content.id}} </h4>
-<ul  class="myColor">
-  <li class="myColor" >ID:{{node.content.id}}</li>
-  <li class="myColor" >VALUE:{{node.content.value}}</li>
-</ul>
+<!--<ul  class="myColor">-->
+<!--  <li class="myColor" >ID:{{node.content.id}}</li>-->
+<!--  <li class="myColor" >VALUE:{{node.content.value}}</li>-->
+<!--</ul>-->
 
-<ol  type="A">
-  <h3 class="text-black">Answers:</h3>
-  <li *ngFor="let answer of node.content.answers" class="myColor" ><p class="text-black">{{answer.value}}</p></li>
-</ol>
+
+
+<form class="myNiceForm">
+  <div class="form-group">
+    <ul  class="myColor">
+      <li class="myColor" >ID:{{node.content.id}}</li>
+      <input type="number" class="form-control">
+      <li class="myColor" >VALUE:{{node.content.value}}</li>
+      <input  required type="text" class="form-control" id="city1" placeholder="City">
+    </ul>
+
+  </div>
+  <div class="form-group">
+    <ol  type="A">
+      <h3 class="text-black">Answers:</h3>
+      <li *ngFor="let answer of node.content.answers" class="myColor" ><p class="text-black">{{answer.value}}</p>
+        <input  required type="text" class="form-control"  placeholder="Answer"></li>
+    </ol>
+  </div>
+
+</form>
