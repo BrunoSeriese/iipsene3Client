@@ -1,0 +1,10 @@
+@import "src/styles/abstracts/variables";
+
+.navbar{
+  background-color: $codGray!important;
+}
+
+.navbar-brand{
+  color: $scorpio!important;
+  font-size: 1.2rem;
+}

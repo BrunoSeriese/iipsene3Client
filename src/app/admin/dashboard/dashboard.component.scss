@@ -1,3 +1,4 @@
+@import "src/styles/abstracts/variables";
 .scroll-div {
 
   overflow-y: scroll;
@@ -21,4 +22,8 @@
 
 .control-buttons button {
   width: 100px;
+}
+
+.myBckgrnd{
+  background-color: #f8f8ff!important;
 }
