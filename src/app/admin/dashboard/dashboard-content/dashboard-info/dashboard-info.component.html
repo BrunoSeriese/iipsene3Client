@@ -1,12 +1,13 @@
-<form class="myNiceForm mt-2">
-  <div class="form-group">
+<form class="myNiceForm d-flex mt-2">
+
+  <div class="form-group col-ms-6">
     <ul   class="myColor mySize myUl">
       <li class="myColor p-1" ><b class="text-black">Waarde:</b>
         <input #value  required type="text" class="form-control"  value="{{node.content.value}}"></li>
     </ul>
 
   </div>
-  <div class="form-group">
+  <div class="form-group col-ms-6">
     <h3 class="text-black">Antwoorden:</h3>
     <ol class="mySize"  type="A">
       <li *ngFor="let answer of node.content.answers, index as i" class="myColor" >
