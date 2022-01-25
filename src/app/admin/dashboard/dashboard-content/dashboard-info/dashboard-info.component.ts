@@ -38,7 +38,7 @@ export class DashboardInfoComponent implements OnInit {
     for(let i in this.copyContent.answers) {
       this.copyContent.answers[i].value = (<HTMLInputElement>document.getElementById("answer" + i)).value;
     }
-    console.log(this.copyContent)
+    this.node.content = this.copyContent;
   }
 
 }
