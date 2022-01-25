@@ -18,7 +18,6 @@ import {Answer} from "../../../content/shared/answer/answer.model";
 export class DashboardContentComponent implements OnInit {
   @Input("nodes") public nodes: Node;
   @Input("node") public node: Node;
-  public
 
   constructor(private sharedNodeService: SharedNodeService,
               public contentService: ContentService) {
@@ -33,18 +32,13 @@ export class DashboardContentComponent implements OnInit {
   }
 
   public addNode() {
-    // let answerIds: number[] = this.getAnswerIds(this.nodes, []);
-    // let answerId: number = this.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
-    // this.node.content.answers.push(new Answer(answerId, ""));
+    let answerIds: number[] = this.getAnswerIds(this.nodes, []);
+    let answerId: number = this.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
+    this.node.content.answers.push(new Answer(answerId, ""));
 
-    // let contentIds: number[] = this.getContentIds(this.nodes, []);
-    // let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
-    // this.node.addChild(new Node(new Question(contentId, "", [])));
-
-    let list: number[] = [1, 5, 6, 7, 8, 8, 10];
-
-    // let contentId: number = this.getLowestNonExistingId(list, 0, list.length - 1);
-    // console.log(contentId);
+    let contentIds: number[] = this.getContentIds(this.nodes, []);
+    let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
+    this.node.addChild(new Node(new Question(contentId, "", [])));
   }
 
   public removeNode(): void {
@@ -54,36 +48,22 @@ export class DashboardContentComponent implements OnInit {
     parent.removeChild(this.node);
   }
 
-
-
-
-
   public getLowestNonExistingId(list: number[], first: number, last: number) {
     if (first > last) {
-      console.log("first > last");
-      return last + 1;
+      return last + 2;
     }
 
     if (first != list[first] - 1) {
-      console.log("first != list.get(first) - 1");
       return first + 1;
     }
 
-    let mid: number = (first + last) / 2;
+    let mid: number = Math.trunc((first + last) / 2);
 
     if (list[mid] - 1 == mid) {
-      console.log("list.get(mid) - 1 == mid");
       return this.getLowestNonExistingId(list, mid + 1, last);
     }
-    console.log("return end");
     return this.getLowestNonExistingId(list, first, mid);
   }
-
-
-
-
-
-
 
   public getContentIds(node: Node, contentIds: number[]): number[] {
     if(node == null) {
@@ -93,7 +73,7 @@ export class DashboardContentComponent implements OnInit {
     contentIds.push(node.content.id);
 
     for(let child of node.getChildren()) {
-      this.getAnswerIds(child, contentIds);
+      this.getContentIds(child, contentIds);
     }
     return contentIds;
   }
