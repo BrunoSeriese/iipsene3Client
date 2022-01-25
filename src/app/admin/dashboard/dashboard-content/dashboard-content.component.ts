@@ -33,13 +33,18 @@ export class DashboardContentComponent implements OnInit {
   }
 
   public addNode() {
-    let answerIds: number[] = this.getAnswerIds(this.nodes, []);
-    let answerId: number = this.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
-    this.node.content.answers.push(new Answer(answerId, ""));
+    // let answerIds: number[] = this.getAnswerIds(this.nodes, []);
+    // let answerId: number = this.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
+    // this.node.content.answers.push(new Answer(answerId, ""));
 
-    let contentIds: number[] = this.getContentIds(this.nodes, []);
-    let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
-    this.node.addChild(new Node(new Question(contentId, "", [])));
+    // let contentIds: number[] = this.getContentIds(this.nodes, []);
+    // let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
+    // this.node.addChild(new Node(new Question(contentId, "", [])));
+
+    let list: number[] = [1, 5, 6, 7, 8, 8, 10];
+
+    // let contentId: number = this.getLowestNonExistingId(list, 0, list.length - 1);
+    // console.log(contentId);
   }
 
   public removeNode(): void {
@@ -49,22 +54,36 @@ export class DashboardContentComponent implements OnInit {
     parent.removeChild(this.node);
   }
 
+
+
+
+
   public getLowestNonExistingId(list: number[], first: number, last: number) {
-    if(first > last) {
+    if (first > last) {
+      console.log("first > last");
       return last + 1;
     }
 
-    if(first != list[first] - 1) {
-      return first;
+    if (first != list[first] - 1) {
+      console.log("first != list.get(first) - 1");
+      return first + 1;
     }
 
     let mid: number = (first + last) / 2;
 
-    if(list[mid] - 1 == mid) {
+    if (list[mid] - 1 == mid) {
+      console.log("list.get(mid) - 1 == mid");
       return this.getLowestNonExistingId(list, mid + 1, last);
     }
+    console.log("return end");
     return this.getLowestNonExistingId(list, first, mid);
   }
+
+
+
+
+
+
 
   public getContentIds(node: Node, contentIds: number[]): number[] {
     if(node == null) {
