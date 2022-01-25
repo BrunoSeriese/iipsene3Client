@@ -49,6 +49,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     DashboardContentComponent,
     DashboardItemComponent,
+    DashboardInfoComponent
 
   ],
   imports: [
