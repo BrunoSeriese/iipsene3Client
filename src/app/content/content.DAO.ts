@@ -18,6 +18,7 @@ import {LoginService} from "../admin/login/login.service";
 export class ContentDAO {
   private baseURL: String = "http://localhost:8080/api/v1";
 
+
   constructor(private http: HttpClient,
               private loginService: LoginService) {
   }
