@@ -13,4 +13,8 @@ export class Node {
     this.children.push(child);
   }
 
+  public removeChild(child: Node): void {
+    this.children.splice(this.children.indexOf(child), 1);
+  }
+
 }

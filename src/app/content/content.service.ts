@@ -72,5 +72,13 @@ export class ContentService {
     return array == null || array.length == 0;
   }
 
+  public getParentNodeIdByNode(node: Node): number {
+    let result: Node = this.contentTree.getParentNodeByNode(this.contentTree.getRoot(), node, null);
+    if(result == null) {
+      return null;
+    }
+    return result.content.id;
+  }
+
 
 }

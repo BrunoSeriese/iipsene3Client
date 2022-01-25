@@ -15,6 +15,7 @@ import {ContentDAO} from "../content.DAO";
 export class ContentTreeService {
   private contents: Content[];
   private root: Node;
+  private parent: Node;
 
   constructor() {
   }
@@ -87,4 +88,20 @@ export class ContentTreeService {
   public getNodeByAnswerIndex(node: Node, index: number): Node {
     return node != null ? node.getChildren()[index] : null;
   }
+
+  public getParentNodeByNode(current: Node, value: Node, parent: Node): Node {
+    if(this.root == value) {
+      return null;
+    }
+
+    if(current == value) {
+      this.parent = parent;
+    }
+
+    for(let child of current.getChildren()) {
+      this.getParentNodeByNode(child, value, current);
+    }
+    return this.parent;
+  }
+
 }

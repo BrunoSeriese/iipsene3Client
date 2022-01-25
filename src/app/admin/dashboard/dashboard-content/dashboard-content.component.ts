@@ -1,7 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ContentModel} from "../../../content/content.model";
+import {Node} from "../../../content/tree/node.model";
 import {Content} from "../../../content/content.interface";
-import {Answer} from "../../../content/shared/answer/answer.model";
+import {Question} from "../../../content/content-component/question/question.model";
+import {Result} from "../../../content/content-component/result/result.model";
+import {Explanation} from "../../../content/content-component/explanation/explanation.model";
+import {Video} from "../../../content/content-component/video/video.model";
+import {SharedNodeService} from "./shared-node.service";
 
 @Component({
   selector: 'app-dashboard-content',
@@ -9,22 +14,43 @@ import {Answer} from "../../../content/shared/answer/answer.model";
   styleUrls: ['./dashboard-content.component.scss']
 })
 export class DashboardContentComponent implements OnInit {
-  @Input("content") public content: ContentModel;
-  @Input("contents") public contents: ContentModel[];
+  @Input("nodes") public nodes: Node;
+  @Input("node") public node: Node;
 
-  constructor() { }
+  constructor(private sharedNodeService: SharedNodeService) { }
 
   public ngOnInit(): void {
+    this.sharedNodeService.updateSelectedNode(this.node);
   }
 
-  public deleteContent(){
-    let index = this.contents.findIndex(x => x.id === this.content.id);
-    this.contents.splice(index, 1)
+  public updateNode(){
+    this.sharedNodeService.updateSelectedNode(this.node);
   }
 
-  public deleteAnswer(answer: Answer){
-    let index = this.content.answers.findIndex(x => x.id === answer.id);
-    this.content.answers.splice(index, 1);
+  public removeNode(node: Node, value: Node): void {
+    if(node == null) {
+      return;
+    }
+
+    for(let child of node.getChildren()) {
+      if(child == value) {
+        node.removeChild(child);
+        return;
+      }
+      this.removeNode(child, value);
+    }
+  }
+
+  public getInstance(content: Content): string {
+    if(content instanceof Question) {
+      return "Question";
+    } else if (content instanceof Result) {
+      return "Result";
+    } else if (content instanceof Explanation) {
+      return "Explanation";
+    } else if (content instanceof Video) {
+      return "Video";
+    }
   }
 
 }

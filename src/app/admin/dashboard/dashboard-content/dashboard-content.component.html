@@ -1,7 +1,9 @@
-<h4>{{content.type}}: {{content.value}}<button (click)="deleteContent()">X</button></h4>
+<h4>{{getInstance(node.content)}}:
+  <a (click)="updateNode()" routerLink="{{node.content.id}}" class="btn">{{node.content.value}} </a>
+  <button (click)="removeNode(nodes, node)">X</button>
+</h4>
 <ol type="A">
-  <li *ngFor="let answer of content.answers">Answer: {{answer.value}}
-    <button (click)="deleteAnswer(answer)">X</button>
-    <app-dashboard-item [content]="content" [contents]="contents"></app-dashboard-item>
-  </li>
+<!--  <li *ngFor="let answer of content.answers">Answer: {{answer.value}}-->
+<!--&lt;!&ndash;    <app-dashboard-item [content]="content" [contents]="contents"></app-dashboard-item>&ndash;&gt;-->
+<!--  </li>-->
 </ol>
