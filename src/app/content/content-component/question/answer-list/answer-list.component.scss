@@ -5,6 +5,7 @@
   height: 20px;
   margin-left: 1rem;
   margin-right: 1rem;
+  transform: translateY(0.2vh);
 }
 
 .clickable {
@@ -13,22 +14,12 @@
   padding: 0.5em 0;
 }
 
-.list-group-item-text {
-  //margin-top: 2vh;
-  //font-size: 1.5rem;
-}
-
-.answerlist{
+.answerlist {
   width: fit-content;
   cursor: pointer;
-  font-size: calc(.8rem + .6vw);
+  font-size: calc(0.8rem + 0.6vw);
   font-weight: 500;
-  //position: relative;
-  //display: flex;
-  //flex-direction: column;
-  //flex-wrap: wrap;
-  //border-bottom: 5px white solid;
-  //justify-content: space-around;
+
 }
 
 input[type=radio] {
@@ -36,6 +27,22 @@ input[type=radio] {
   -webkit-appearance: none;
   outline: 0.1em solid;
   outline-offset: 0.15em;
+}
+
+@media screen and (max-width: 1200px) {
+  input[type=radio] {
+    outline-offset: 0.25em;
+  }
+
+  .radiobutton {
+    transform: translateY(0.3vh);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .radiobutton {
+    transform: translateY(0.4vh);
+  }
 }
 
 input[type=radio]:checked {
