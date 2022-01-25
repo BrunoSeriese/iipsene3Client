@@ -18,7 +18,6 @@ import {Answer} from "../../../content/shared/answer/answer.model";
 export class DashboardContentComponent implements OnInit {
   @Input("nodes") public nodes: Node;
   @Input("node") public node: Node;
-  public
 
   constructor(private sharedNodeService: SharedNodeService,
               public contentService: ContentService) {
@@ -51,7 +50,7 @@ export class DashboardContentComponent implements OnInit {
 
   public getLowestNonExistingId(list: number[], first: number, last: number) {
     if (first > last) {
-      return last + 1;
+      return last + 2;
     }
 
     if (first != list[first] - 1) {
@@ -74,7 +73,7 @@ export class DashboardContentComponent implements OnInit {
     contentIds.push(node.content.id);
 
     for(let child of node.getChildren()) {
-      this.getAnswerIds(child, contentIds);
+      this.getContentIds(child, contentIds);
     }
     return contentIds;
   }
