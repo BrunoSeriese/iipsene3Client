@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentDAO} from "../../content/content.DAO";
 import {ContentModel} from "../../content/content.model";
-import {Answer} from "../../content/shared/answer/answer.model";
 import {ContentService} from "../../content/content.service";
 import {Node} from "../../content/tree/node.model";
 import {SharedNodeService} from "./dashboard-content/shared-node.service";
-import {applySourceSpanToExpressionIfNeeded} from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: 'app-dashboard',
