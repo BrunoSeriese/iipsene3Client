@@ -1,4 +1,5 @@
 @import "src/styles/abstracts/mixins";
+
 @include content;
 @include corner-styling;
 //@include nav-button;
@@ -11,7 +12,13 @@
 //  position: relative;
 //}
 
-.svdjbutton{
+.result-layout {
+  height: 50%;
+  margin-top: 10vh;
+}
+
+
+.svdjbutton {
   font-size: 1.25rem;
   line-height: 1.2;
   font-weight: 600;
@@ -33,7 +40,7 @@
   box-sizing: border-box;
 }
 
-.svdjbutton::after{
+.svdjbutton::after {
   content: '';
   position: absolute;
   top: 0;
@@ -53,6 +60,7 @@
   color: white;
 
 }
+
 .svdjbutton:hover::after {
   background-image: url(../../../../../src/assets/images/streep-white.png)
 }
