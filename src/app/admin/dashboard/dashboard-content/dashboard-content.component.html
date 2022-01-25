@@ -1,6 +1,7 @@
 <h4>{{ "&emsp;".repeat(contentService.getLevel(node)) }}{{ getInstance(node.content) }}:
   <a (click)="updateNode()" routerLink="{{ node.content.id }}" class="btn">{{ node.content.value }} </a>
-  <button (click)="removeNode(nodes, node)">X</button>
+  <button (click)="removeNode(nodes, node)">+</button>
+  <button (click)="addNode(nodes, node)">x</button>
 </h4>
 <ol type="A">
 <!--  <li *ngFor="let answer of content.answers">Answer: {{answer.value}}-->

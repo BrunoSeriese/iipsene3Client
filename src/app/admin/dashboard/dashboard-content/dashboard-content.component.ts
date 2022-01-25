@@ -24,7 +24,6 @@ export class DashboardContentComponent implements OnInit {
 
   public ngOnInit(): void {
     this.sharedNodeService.updateSelectedNode(this.node);
-    console.log("Node level : " + this.contentService.getLevel(this.node))
   }
 
   public updateNode(){
