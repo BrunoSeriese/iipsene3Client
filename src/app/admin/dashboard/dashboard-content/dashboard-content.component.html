@@ -1,8 +1,10 @@
+<div class="d-flex flex-column flex-nowrap">
 <h4>{{ "&emsp;".repeat(contentService.getLevel(node)) }}{{ getInstance(node.content) }}:
   <a (click)="updateNode()" routerLink="{{ node.content.id }}" class="btn">{{ node.content.value }} </a>
-  <button (click)="addNode()" *ngIf="!isResult()">+</button>
-  <button (click)="removeNode()"
+  <button class="adminButton m-1" (click)="addNode()" *ngIf="!isResult()">+</button>
+  <button class="adminButton m-1" (click)="removeNode()"
           *ngIf="(node != this.nodes) && (contentService.getParentNodeByNode(node).content.answers.length != 1)">
     x
   </button>
 </h4>
+</div>

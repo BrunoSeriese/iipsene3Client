@@ -2,13 +2,17 @@
 
 <div class="col-ms-6">
   <div class="background d-flex justify-content-evenly">
-    <div class="scroll-div contents">
+    <div class="scroll-div contents d-flex flex-column">
       <div class="row" *ngFor="let node of updateNodeArray(nodes), index as i" >
         <div class="col-ms-5">
           <app-dashboard-content [nodes]="nodes" [node]="node"></app-dashboard-content>
         </div>
       </div>
-      <button class="btn btn-primary" (click)="save()">Save</button>
+      <div class="align-self-center flex-nowrap">
+        <button class="btn btn-dark " (click)="save()">Save</button>
+
+      </div>
+
     </div>
 
     <div class="scroll-div results">
