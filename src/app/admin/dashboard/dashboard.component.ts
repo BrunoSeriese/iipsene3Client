@@ -35,13 +35,7 @@ export class DashboardComponent implements OnInit {
     this.contentDAO.getAll().subscribe(contentModels =>{
       let contents: Content[] = this.contentDAO.convertArray(contentModels);
       this.nodes = this.contentService.createTree(contents);
-      //console.log(this.display(this.nodes, []));
-      console.log(this.nodes)
     });
-  }
-
-  public logger(): void {
-    console.log(this.nodes);
   }
 
   public updateNodeArray(node: Node): Node[] {
@@ -62,8 +56,6 @@ export class DashboardComponent implements OnInit {
       let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[i]);
       parentIds.push(parentId);
     }
-
-    console.log(parentIds);
 
     let contentModels: ContentModel[] = this.contentDAO.convertToModels(contents);
     this.contentDAO.deleteAll();
