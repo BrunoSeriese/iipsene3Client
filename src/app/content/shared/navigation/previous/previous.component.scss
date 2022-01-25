@@ -7,44 +7,5 @@
   content: 'Previous';
 }
 
-@media screen and (max-width: 600px) {
-  .nav-button:before {
-    content: '';
-    //background-size: 5vh 5vw;
-    //right: 7vw;
-  }
-}
 
-@media screen and (max-width: 1200px) {
-  .nav-button {
-    padding: .75em 7em .75em 1.5em;
-    letter-spacing: .5px;
-  }
 
-  //.nav-button:before {
-  //  content: '';
-  //}
-  //
-  //.nav-button:after {
-  //  height: 6vh;
-  //  content: '';
-  //  position: relative;
-  //  top: 0;
-  //  //right: 10%;
-  //  height: 100%;
-  //  width: 100%;
-  //  //display: inline-block;
-  //  transition: all 0.2s ease-out;
-  //  background: url(../../../../../assets/images/pijl.png) no-repeat center right;
-  //  background-size: 10vh 4vw;
-  //  -webkit-transform: scaleX(-1);
-  //  transform: scaleX(-1);
-  //}
-}
-
-@media screen and (max-width: 1800px) {
-  .nav-button {
-    font-size: calc(.8rem + .4vw);
-    padding: .75em 7em .75em 1.5em;
-  }
-}

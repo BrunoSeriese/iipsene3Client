@@ -1,20 +1,44 @@
 @import "src/styles/abstracts/mixins";
+
 @include nav-button;
 @include logo_header;
 
-.btn-custom{
-  float:right;
+.btn-custom {
+  float: right;
   height: 7vh;
+  width: 14vw;
 }
 
-.img-custom{
+@media (max-width: 1200px) {
+  .btn-custom {
+    width: 20vw;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-custom {
+    width: 25vw;
+  }
+  .btn-custom::after {
+    width: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-custom {
+    width: 35%;
+  }
+}
+
+.img-custom {
   margin: 1vh 0 1vh 1vh;
   height: 5vh;
   width: auto;
 }
 
-.header-balk{
+.header-balk {
   background: rgba(255, 255, 255, 0.3);
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid black;
   height: 6%;
 }

@@ -2,7 +2,7 @@
 
   .nav-button {
     font-size: calc(.8rem + .5vw);
-    padding: 0 0 0 2rem;
+    padding: 0 1em 0 1em;
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -15,9 +15,10 @@
     box-shadow: none;
     text-align: left;
     border-radius: 0;
-    width: 16vw;
+    width: 18vw;
     height: 6vh;
   }
+
   .nav-button:after {
     content: '';
     position: absolute;
@@ -29,6 +30,7 @@
     transition: all 0.2s ease-out;
     background: url(../../assets/images/streep-black.png) no-repeat center right;
     vertical-align: middle;
+    text-align: left;
     //margin-left: 1.5em;
   }
 
@@ -36,16 +38,27 @@
     text-decoration: none;
     background: black;
     color: white;
-
   }
   .nav-button:hover::after {
     background-image: url(../../assets/images/streep-white.png);
   }
 
+
+  @media screen and (max-width: 1200px) {
+    .nav-button {
+      width: 24vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-button {
+      width: 48vw;
+    }
+  }
+
   .nav-button:disabled {
     opacity: 0.35;
   }
-
 }
 
 @mixin logo_header {
@@ -77,7 +90,6 @@
     border-left: 8px solid #fff;
   }
 }
-
 
 @mixin content {
   .content-header {
