@@ -1,0 +1,20 @@
+@import "src/styles/abstracts/mixins";
+@include nav-button;
+@include logo_header;
+
+.btn-custom{
+  float:right;
+  height: 100%;
+}
+
+.img-custom{
+  margin: 1vh 0 0 1vh;
+  height: 8vh;
+  width: auto;
+}
+
+.header-balk{
+  background: rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid black;
+  height: 11vh;
+}
