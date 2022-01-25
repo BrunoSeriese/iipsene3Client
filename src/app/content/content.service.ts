@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Content} from "./content.interface";
 import {ContentTreeService} from "./tree/content-tree.service";
 import {Node} from "./tree/node.model";
@@ -80,8 +80,8 @@ export class ContentService {
     return result.content.id;
   }
 
-  public getHeight(node: Node): number {
-    return this.contentTree.height(node);
+  public getLevel(node: Node): number {
+    return this.contentTree.level(this.contentTree.getRoot(), node, 0);
   }
 
 
