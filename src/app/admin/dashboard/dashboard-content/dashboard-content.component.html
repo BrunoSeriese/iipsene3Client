@@ -1,6 +1,6 @@
 <h4>{{ "&emsp;".repeat(contentService.getLevel(node)) }}{{ getInstance(node.content) }}:
   <a (click)="updateNode()" routerLink="{{ node.content.id }}" class="btn">{{ node.content.value }} </a>
-<!--  <button (click)="addNode(nodes, node)">+</button>-->
+  <button (click)="addNode()">+</button>
   <button (click)="removeNode()">x</button>
 </h4>
 <ol type="A">
