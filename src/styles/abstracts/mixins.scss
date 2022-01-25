@@ -78,13 +78,14 @@
   }
 }
 
+
 @mixin content {
   .content-header {
-    font-size: calc(2rem + .8vw);
+    font-size: calc(1.2rem + 1vw);
     font-weight: 550;
     margin: 5vh 0 0 0;
-    padding-left: 10%;
-    padding-top: 6%;
+    padding-left: calc(5% + .4vw);
+    padding-top: calc(4% + 0.4vh);
   }
 }
 
@@ -101,7 +102,7 @@
     top: 0;
     height: 5px;
     width: 40%;
-    border-top: 5px solid #fff;
+    border-top: calc(4px + .1vw) solid #fff;
   }
   .corner-styling::after {
     content: "";
@@ -110,6 +111,6 @@
     top: 0;
     height: 60%;
     width: 5px;
-    border-left: 5px solid #fff;
+    border-left: calc(4px + .1vw) solid #fff;
   }
 }

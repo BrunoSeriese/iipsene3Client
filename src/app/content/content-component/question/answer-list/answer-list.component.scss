@@ -21,7 +21,7 @@
 .answerlist{
   width: fit-content;
   cursor: pointer;
-  font-size: 2.5vh;
+  font-size: calc(.8rem + .6vw);
   font-weight: 500;
   //position: relative;
   //display: flex;

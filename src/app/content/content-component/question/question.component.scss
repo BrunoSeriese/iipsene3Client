@@ -11,6 +11,9 @@
 }
 
 
-@media screen and (max-width: 768px){
-
+@media screen and (max-width: 1200px){
+  .answerlist-layout {
+    //height: 70%;
+    margin-top: 10vh;
+  }
 }
