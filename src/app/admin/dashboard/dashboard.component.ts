@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
   constructor(private contentService: ContentService,
               private contentDAO: ContentDAO) {
     this.getContent();
+
   }
 
   public ngOnInit(): void {
@@ -34,7 +35,8 @@ export class DashboardComponent implements OnInit {
     this.contentDAO.getAll().subscribe(contentModels =>{
       let contents: Content[] = this.contentDAO.convertArray(contentModels);
       this.nodes = this.contentService.createTree(contents);
-      console.log(this.display(this.nodes, []));
+      //console.log(this.display(this.nodes, []));
+      console.log(this.nodes)
     });
   }
 

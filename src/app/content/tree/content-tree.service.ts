@@ -77,12 +77,32 @@ export class ContentTreeService {
     }
 
     for(let child of node.getChildren()) {
-      const currentHeight: number = this.height(child);
-      if(currentHeight > totalHeight) {
+      let currentHeight: number = this.height(child);
+
+      if (currentHeight > totalHeight) {
         totalHeight = currentHeight;
       }
     }
+
     return ++totalHeight;
+  }
+
+  public level(node: Node, value: Node, level: number): number {
+    if(node == null) {
+      return 0;
+    }
+
+    if(node == value) {
+      return level;
+    }
+
+    for(let child of node.getChildren()) {
+      let downLevel: number = this.level(child, value, level + 1);
+      if(downLevel != 0) {
+        return downLevel;
+      }
+    }
+    return 0;
   }
 
   public getNodeByAnswerIndex(node: Node, index: number): Node {
