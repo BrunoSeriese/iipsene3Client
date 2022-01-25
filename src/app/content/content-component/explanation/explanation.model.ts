@@ -14,6 +14,10 @@ export class Explanation implements Content {
     return this._value;
   }
 
+  set value(value: string) {
+    this._value = value;
+  }
+
   get answers(): Answer[] {
     return [this._answers];
   }
