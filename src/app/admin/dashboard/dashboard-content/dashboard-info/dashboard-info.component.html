@@ -2,8 +2,29 @@
 
   <div class="form-group col-ms-6">
     <ul   class="myColor mySize myUl">
-      <li class="myColor p-1" ><b class="text-black">Waarde:</b>
-        <input #value  required type="text" class="form-control"  value="{{node.content.value}}"></li>
+      <li class="myColor p-1" >
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle"
+                  type="button" id="dropdownMenuButton"
+                  data-bs-target="#dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+            {{ getInstance(node.content) }}
+          </button>
+          <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div *ngFor="let dropdown_content of types">
+              <div *ngIf="dropdown_content != getInstance(node.content)">
+                <a class="dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <b class="text-black">Waarde:</b>
+        <input #value  required type="text" class="form-control"  value="{{node.content.value}}">
+      </li>
     </ul>
 
   </div>
@@ -13,6 +34,7 @@
       <li *ngFor="let answer of node.content.answers, index as i" class="myColor" >
         <input required id="answer{{i}}" type="text" class="form-control mySize" value="{{answer.value}}"></li>
     </ol>
+    <p class="alert-warning" *ngIf="showTypeChangeErrorMessage">Can't change type if {{ getInstance(node.content) }} has answers</p>
     <button type="button" class="btn btn-primary ml-3" (click)="onUpdate(value.value)">Update</button>
   </div>
 
