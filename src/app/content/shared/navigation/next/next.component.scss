@@ -1,11 +1,11 @@
 @import "src/styles/transitions/animations";
 @import "src/styles/abstracts/mixins";
+
 @include nav-button;
 
-.nav-button:before{
+.nav-button:before {
   content: 'Next';
 }
-
 
 @media screen and (max-width: 600px) {
   .nav-button:before {
@@ -14,30 +14,38 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .nav-button:before {
-
-    content: '';
-    font-size: 1rem;
-
-
-
+  .nav-button {
+    padding: .75em 7em .75em 1.5em;
+    letter-spacing: .5px;
   }
 
-  .nav-button:after {
-    height: 6vh;
-    content: '';
-    position: absolute;
-    top: 0;
-    //right:vw;
-    left: 1vw;
-    height: 100%;
-    width: 3.5em;
-    display: inline-block;
-    transition: all 0.2s ease-out;
-    background: url(../../../../../assets/images/pijl.png) no-repeat center right;
-    background-size: 10vh 4vw;
-    //-webkit-transform: scaleX(-1);
-    //transform: scaleX(-1);
+  //.nav-button:before {
+  //  content: '';
+  //  font-size: 1rem;
+  //}
+  //
+  //.nav-button:after {
+  //  height: 6vh;
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  //right:vw;
+  //  left: 1vw;
+  //  height: 100%;
+  //  width: 3.5em;
+  //  display: inline-block;
+  //  transition: all 0.2s ease-out;
+  //  background: url(../../../../../assets/images/pijl.png) no-repeat center right;
+  //  background-size: 10vh 4vw;
+  //  //-webkit-transform: scaleX(-1);
+  //  //transform: scaleX(-1);
+  //
+  //}
+}
 
+@media screen and (max-width: 1800px) {
+  .nav-button {
+    font-size: calc(.8rem + .4vw);
+    padding: .75em 7em .75em 1.5em;
   }
 }
