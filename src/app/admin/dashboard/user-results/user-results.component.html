@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<button class="btn btn-primary" (click)="getAll()">All</button>
+<button class="btn btn-primary" (click)="getAllOfPastWeek()">Past Week</button>
+<button class="btn btn-primary" (click)="getAllOfPastMonth()">Past Month</button>
+<button class="btn btn-primary" (click)="getAllOfPastYear()">Past Year</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Result</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userResult of userResults">
+      <td>{{ userResult.dateAdded }}</td>
+      <td>{{ userResult.result }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary">Download</button>
+
+<router-outlet></router-outlet>
