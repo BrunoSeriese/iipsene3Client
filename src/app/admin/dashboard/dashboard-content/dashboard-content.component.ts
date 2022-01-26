@@ -31,10 +31,12 @@ export class DashboardContentComponent implements OnInit {
   public addNode() {
     this.nodes = this.sharedNodeService.nodes;
     let answerIds: number[] = this.sharedNodeService.getAnswerIds(this.nodes, []);
+    answerIds.sort((a, b) => (a < b ? -1 : 1));
     let answerId: number = this.sharedNodeService.getLowestNonExistingId(answerIds, 0, answerIds.length - 1) + 1;
     this.node.content.answers.push(new Answer(answerId, ""));
 
     let contentIds: number[] = this.sharedNodeService.getContentIds(this.nodes, []);
+    contentIds.sort((a, b) => (a < b ? -1 : 1));
     let contentId: number= this.sharedNodeService.getLowestNonExistingId(contentIds, 0, contentIds.length - 1) + 1;
     this.node.addChild(new Node(new Content(contentId, "new Content", "Question", [])));
     this.updateNode();

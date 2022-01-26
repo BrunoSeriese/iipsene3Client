@@ -59,6 +59,7 @@ export class DashboardInfoComponent implements OnInit {
 
     if(type == "Result") {
       let answerIds: number[] = this.sharedNodeService.getAnswerIds(this.nodes, []);
+      answerIds.sort((a, b) => (a < b ? -1 : 1));
       let answerId: number = this.sharedNodeService.getLowestNonExistingId(answerIds, 0, answerIds.length - 1) + 1;
       this.copyContent.answers.push(new Answer(answerId, ""));
     }
