@@ -1,7 +1,4 @@
 <form class="myNiceForm d-flex flex-column mt-2">
-
-
-
   <div class="form-group d-flex flex-column overflow-visible">
     <div class="dropdown overflow-visible">
       <button class="btn btn-secondary dropdown-toggle myMargin"
@@ -10,11 +7,11 @@
               data-bs-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
-        {{ node.content.type }}
+        {{ selected }}
       </button>
       <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div *ngFor="let dropdown_content of types">
-          <div *ngIf="dropdown_content != node.content.type">
+          <div *ngIf="dropdown_content != copyContent.type">
             <a class="dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
           </div>
         </div>
@@ -23,7 +20,7 @@
 
     <ul   class="myColor d-flex  myUl">
       <li class="myColor p-1" ><b class="text-black">Waarde:</b>
-        <input #value  required type="text" class="form-control"  value="{{node.content.value}}"></li>
+        <input #value  required type="text" class="form-control"  value="{{copyContent.value}}"></li>
     </ul>
 
   </div>
@@ -32,14 +29,13 @@
     <h4 class="m-4 p-3"><b class="text-black ">Antwoorden:</b></h4>
     <ol class="mySize d-flex flex-column flex-wrap "   type="A">
 
-      <li *ngFor="let answer of node.content.answers, index as i" class="myColor col-ms-6 m-2" >
+      <li *ngFor="let answer of copyContent.answers, index as i" class="myColor col-ms-6 m-2" >
         <input required id="answer{{i}}" type="text" class="form-control mySize" value="{{answer.value}}"></li>
     </ol>
+    <p class="alert-warning" *ngIf="showTypeChangeErrorMessage">Can't change type if {{ node.content.type }} has answers</p>
     <div class="buttonContainer align-self-center">
     <button type="button" class="btn btn-dark ml-3" (click)="onUpdate(value.value)">Update</button>
     </div>
-    <p class="alert-warning" *ngIf="showTypeChangeErrorMessage">Can't change type if {{ node.content.type }} has answers</p>
-
   </div>
 
 </form>

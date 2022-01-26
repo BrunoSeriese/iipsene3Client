@@ -15,6 +15,8 @@ export class DashboardInfoComponent implements OnInit {
   copyContent: ContentModel;
   types: string[] = ["Question", "Result", "Explanation", "Video"];
   showTypeChangeErrorMessage: boolean = false;
+  selected: string;
+
 
   constructor(private route: ActivatedRoute,
               public sharedNodeService: SharedNodeService) {
@@ -28,13 +30,14 @@ export class DashboardInfoComponent implements OnInit {
       this.route.params.subscribe(params => {
         this.node = this.sharedNodeService.selectedNode;
         this.copyContent = this.node.content;
+        this.selected = this.copyContent.type;
         this.location = params['id'];
       });
     }
   }
 
   public onUpdate(value: string): void {
-    if(this.node.getChildren().length == 0 ) {
+    if(this.node.getChildren().length != 0 ) {
       this.showTypeChangeErrorMessage = true;
       return;
     } else {
@@ -45,11 +48,12 @@ export class DashboardInfoComponent implements OnInit {
     for(let i in this.copyContent.answers) {
       this.copyContent.answers[i].value = (<HTMLInputElement>document.getElementById("answer" + i)).value;
     }
+    this.copyContent.type = this.selected;
     this.node.content = this.copyContent;
   }
 
   public onSelected(type: string): void {
-    this.copyContent.type = type;
+    this.selected = type;
   }
 
 }
