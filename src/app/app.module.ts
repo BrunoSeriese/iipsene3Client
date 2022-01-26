@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {NavbarComponent} from "./content/shared/navigation/navbar/navbar.component";
 import { QuestionComponent } from './content/content-component/question/question.component';
 import { AnswerListComponent } from './content/content-component/question/answer-list/answer-list.component';
 import { NextComponent } from './content/shared/navigation/next/next.component';
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     ContentStartComponent,
     HeaderComponent,
     DashboardContentComponent,
-    DashboardInfoComponent
+    DashboardInfoComponent,
+    NavbarComponent
 
   ],
   imports: [
