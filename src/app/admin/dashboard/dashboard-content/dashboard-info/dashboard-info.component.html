@@ -11,7 +11,7 @@
       </button>
       <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div *ngFor="let dropdown_content of types">
-          <div *ngIf="dropdown_content != copyContent.type">
+          <div *ngIf="dropdown_content != selected">
             <a class="dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
           </div>
         </div>
