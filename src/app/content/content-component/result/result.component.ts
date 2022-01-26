@@ -58,7 +58,7 @@ export class ResultComponent {
                   fontSize: 12
                 },
                 {
-                  text: "U heeft bij ons een questionnaire ingevuld en hiervoor heeft u het volgende advies gekregen. Sinds u dit advies heeft ontvangen betekent het helaas niet dat u de subsidie ook zult ontvangen.",
+                  text: "U heeft bij ons de subsidiewijzer ingevuld en hiervoor heeft u het volgende advies gekregen. Sinds u dit advies heeft ontvangen betekent het helaas niet dat u de subsidie ook zult ontvangen.",
                   nodeName: "P",
                   position: "relative",
                   overflow: "hidden",
