@@ -49,7 +49,7 @@ export class DashboardInfoComponent implements OnInit {
   }
 
   public onSelected(type: string): void {
-
+    this.copyContent.type = type;
   }
 
 }
