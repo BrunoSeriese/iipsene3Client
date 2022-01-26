@@ -51,54 +51,7 @@ a {
   }
 
   .nav-button:after {
-    right: 1vw;
+    right: 3vw;
+    width: 2.5em;
   }
 }
-
-//
-//.svdjbutton {
-//  font-size: 1.25rem;
-//  line-height: 1.2;
-//  font-weight: 600;
-//  letter-spacing: 1.5px;
-//  background-color: #fff;
-//  color: #000;
-//  border: 1px solid #000;
-//  padding: 1em 6em 1em 2em;
-//  position: relative;
-//  overflow: hidden;
-//  transition: all .5s;
-//  box-shadow: none;
-//  text-align: left;
-//  border-radius: 0;
-//
-//  display: inline-block;
-//  text-decoration: none;
-//  overflow-wrap: break-word;
-//  box-sizing: border-box;
-//}
-//
-//.svdjbutton::after {
-//  content: '';
-//  position: absolute;
-//  top: 0;
-//  right: 2em;
-//  height: 100%;
-//  width: 3.5em;
-//  display: inline-block;
-//  transition: all .2s ease-out;
-//  background: url(../../../../../src/assets/images/streep-black.png) no-repeat center right;
-//  vertical-align: middle;
-//  margin-left: 1.5em;
-//}
-//
-//.svdjbutton:hover {
-//  text-decoration: none;
-//  background: black;
-//  color: white;
-//
-//}
-//
-//.svdjbutton:hover::after {
-//  background-image: url(../../../../../src/assets/images/streep-white.png)
-//}
