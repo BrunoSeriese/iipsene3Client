@@ -55,7 +55,7 @@ export class ContentDAO {
     this.http
       .post(this.baseURL + "/contents", bodies, requestOptions)
       .subscribe(() => {
-        this.addAnswers(contents);
+       // this.addAnswers(contents);
       });
   }
 
