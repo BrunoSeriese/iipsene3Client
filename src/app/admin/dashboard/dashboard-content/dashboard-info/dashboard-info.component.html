@@ -1,7 +1,7 @@
 <form class="myNiceForm d-flex flex-column mt-2">
   <div class="form-group d-flex flex-column overflow-visible">
     <div class="dropdown overflow-visible">
-      <button class="btn btn-secondary dropdown-toggle myMargin"
+      <button class="btn-mid btn-white dropdown-toggle myMargin"
               type="button" id="dropdownMenuButton"
               data-bs-target="#dropdown"
               data-bs-toggle="dropdown"
@@ -9,24 +9,24 @@
               aria-expanded="false">
         {{ selected }}
       </button>
-      <div id="dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div id="dropdown" class="myMargin dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div *ngFor="let dropdown_content of types">
           <div *ngIf="dropdown_content != copyContent.type">
-            <a class="dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
+            <a class=" btn-mid btn-white dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
           </div>
         </div>
       </div>
     </div>
 
     <ul   class="myColor d-flex  myUl">
-      <li class="myColor p-1" ><b class="text-black">Waarde:</b>
+      <li class="myColor p-1" ><b class="text-white">Waarde:</b>
         <input #value  required type="text" class="form-control"  value="{{copyContent.value}}"></li>
     </ul>
 
   </div>
   <div class="form-group col-ms-6 d-flex flex-column">
     <hr>
-    <h4 class="m-4 p-3"><b class="text-black ">Antwoorden:</b></h4>
+    <h4 class="m-4 p-3"><b class="text-white ">Antwoorden:</b></h4>
     <ol class="mySize d-flex flex-column flex-wrap "   type="A">
 
       <li *ngFor="let answer of copyContent.answers, index as i" class="myColor col-ms-6 m-2" >
@@ -34,7 +34,7 @@
     </ol>
     <p class="alert-warning" *ngIf="showTypeChangeErrorMessage">Can't change type if {{ node.content.type }} has answers</p>
     <div class="buttonContainer align-self-center">
-    <button type="button" class="btn btn-dark ml-3" (click)="onUpdate(value.value)">Update</button>
+    <button type="button" class="btn-mid btn-white" (click)="onUpdate(value.value)">Update</button>
     </div>
   </div>
 
