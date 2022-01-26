@@ -17,7 +17,6 @@ export class ContentDAO {
   public getAll(): Observable<Content[]> {
     return this.http
       .get<Content[]>(this.baseURL + "/contents");
-
   }
 
   public addAllContent(contents: Content[], parentIds: number[]) {

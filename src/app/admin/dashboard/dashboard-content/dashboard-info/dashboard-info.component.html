@@ -11,8 +11,8 @@
       </button>
       <div id="dropdown" class="myMargin dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div *ngFor="let dropdown_content of types">
-          <div *ngIf="dropdown_content != copyContent.type">
-            <a class=" btn-mid btn-white dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
+          <div *ngIf="dropdown_content != selected">
+            <a class="btn-mid btn-white dropdown-item" (click)="onSelected(dropdown_content)">{{dropdown_content}}</a>
           </div>
         </div>
       </div>
