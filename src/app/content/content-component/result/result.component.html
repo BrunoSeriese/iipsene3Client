@@ -1,9 +1,13 @@
-<h1 class="content-header corner-styling">{{ result.value }}</h1>
+<div class="col-lg-12">
+  <h1 class="content-header corner-styling">Uit de subsidiewijzer is gebleken dat u eventueel in aanmerking komt voor de
+    subsidie: <br> <u class="underline">{{ result.value }}</u></h1>
 
+  <div class="result-wrapper">
+    <p class="result-layout"><b>{{ result.answers[0].value }}</b> <br><br>U heeft bij ons een questionnaire ingevuld en
+      hiervoor heeft u het volgende advies gekregen. Sinds u dit advies heeft ontvangen betekent het helaas niet dat u
+      de subsidie ook zult ontvangen.
+    </p>
+  </div>
 
-<p class="result-layout">{{ result.answers[0].value }}</p>
-
-<div class="navbar justify-content-evenly">
-  <button class="svdjbutton" (click)="generatePDF()">Download Result</button>
-  <button routerLink="/" class="svdjbutton">Home</button>
 </div>
+
