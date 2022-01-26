@@ -28,12 +28,10 @@ export class DashboardComponent implements OnInit {
     this.contentDAO.getAll().subscribe(contentModels =>{
       this.nodes = this.contentService.createTree(contentModels);
       if(this.nodes == null) {
-        console.log("hello")
         this.nodes = this.contentService.createTree([
           new Content(1, "new Question", "Question", [new Answer(1, "")]),
           new Content(2, "new Result", "Result", [new Answer(2, "")])
         ]);
-        console.log(this.nodes)
       }
     });
   }
