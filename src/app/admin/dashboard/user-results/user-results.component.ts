@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {UserResult} from "./user-result.model";
 import {UserResultsService} from "./user-results.service";
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs
 
 @Component({
   selector: 'app-user-results',
@@ -42,5 +45,43 @@ export class UserResultsComponent implements OnInit {
       .subscribe(userResult => {
         this.userResults = userResult;
       });
+  }
+
+  public generatePDF(): void {
+    let docDefinition = {
+      info: {
+        title: 'SVDJ Subsidie Advies',
+        author: 'Severin, Vincent'
+      },
+      content: [
+        this.createTable(this.userResults, ["Date", "Result"])
+      ]
+    };
+    pdfMake.createPdf(docDefinition).download('GebruikerResultaten.pdf').open();
+  }
+
+  public createTable(userResults: UserResult[], columns: string[]): any {
+    return {
+      table: {
+        headerRows: 1,
+        body: this.createTableBody(userResults, columns)
+      }
+    };
+  }
+
+  public createTableBody(userResults: UserResult[], columns: string[]): any {
+    let body = [];
+
+    body.push(columns);
+
+    userResults.forEach(userResults => {
+      let row = [];
+      row.push(userResults.dateAdded);
+      row.push(userResults.result);
+
+      body.push(row);
+    });
+
+    return body;
   }
 }
