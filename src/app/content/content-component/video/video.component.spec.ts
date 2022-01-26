@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoComponent } from './video.component';
 import {Answer} from "../../shared/answer/answer.model";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
 
 describe('VideoComponent', () => {
   let component: VideoComponent;
@@ -19,7 +19,7 @@ describe('VideoComponent', () => {
     fixture = TestBed.createComponent(VideoComponent);
     component = fixture.componentInstance;
 
-    component.video = new ContentModel(7, "Een mooie video over koffie", "Video", [new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")]);
+    component.video = new Content(7, "Een mooie video over koffie", "Video", [new Answer(10, "https://www.youtube.com/watch?v=WrZZ_L7rf-A")]);
 
     fixture.detectChanges();
   });

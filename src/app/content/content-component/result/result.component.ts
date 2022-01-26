@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
 import {UserResultsService} from "../../../admin/dashboard/user-results/user-results.service";
 pdfMake.vfs = pdfFonts.pdfMake.vfs
 
@@ -11,7 +11,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  @Input() public result: ContentModel;
+  @Input() public result: Content;
 
   constructor(private userResultsService: UserResultsService) { }
 

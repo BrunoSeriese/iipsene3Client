@@ -3,7 +3,7 @@
 <div class="col-ms-6 ">
   <div class="background d-flex justify-content-evenly myBckgrnd">
     <div class="scroll-div contents d-flex flex-column p-1">
-      <div class="row" *ngFor="let node of updateNodeArray(nodes), index as i" >
+      <div class="row" *ngFor="let node of updateNodeArray(nodes)" >
         <div class="col-ms-5">
           <app-dashboard-content [nodes]="nodes" [node]="node"></app-dashboard-content>
         </div>

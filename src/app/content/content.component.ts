@@ -1,7 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ContentModel} from "./content.model";
-import {ContentService} from "./content.service";
-
+import {Content} from "./content";
 
 @Component({
   selector: 'app-content',
@@ -9,9 +7,5 @@ import {ContentService} from "./content.service";
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent {
-  @Input("content") public content: ContentModel;
-
-  constructor() {
-  }
-
+  @Input("content") public content: Content;
 }

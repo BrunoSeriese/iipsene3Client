@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NavigationService} from "../../shared/navigation.service";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
 
 @Component({
   selector: 'app-explanation',
@@ -8,7 +8,7 @@ import {ContentModel} from "../../content.model";
   styleUrls: ['./explanation.component.scss']
 })
 export class ExplanationComponent implements OnInit {
-  @Input() public explanation: ContentModel;
+  @Input() public explanation: Content;
 
   constructor(private navigationService: NavigationService) { }
 

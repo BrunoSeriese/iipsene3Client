@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ContentDAO} from "../../../../content/content.DAO";
-import {ContentModel} from "../../../../content/content.model";
+import {Content} from "../../../../content/content";
 import {Node} from "../../../../content/tree/node.model";
 import {SharedNodeService} from "../shared-node.service";
 @Component({
@@ -10,13 +9,12 @@ import {SharedNodeService} from "../shared-node.service";
   styleUrls: ['./dashboard-info.component.scss']
 })
 export class DashboardInfoComponent implements OnInit {
-  location: string;
-  node: Node;
-  copyContent: ContentModel;
-  types: string[] = ["Question", "Result", "Explanation", "Video"];
-  showTypeChangeErrorMessage: boolean = false;
-  selected: string;
-
+  private location: string;
+  public node: Node;
+  public copyContent: Content;
+  public types: string[] = ["Question", "Result", "Explanation", "Video"];
+  public showTypeChangeErrorMessage: boolean = false;
+  public selected: string;
 
   constructor(private route: ActivatedRoute,
               public sharedNodeService: SharedNodeService) {

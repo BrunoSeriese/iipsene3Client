@@ -4,15 +4,10 @@
 @include corner-styling;
 
 .content-wrapper {
-
   margin-bottom: 8vh;
 }
 
 @media screen and (max-width: 1200px) {
-  //.navbar {
-  //  position: center;
-  //}
-
   .content-wrapper {
     margin-bottom: 2vh;
   }

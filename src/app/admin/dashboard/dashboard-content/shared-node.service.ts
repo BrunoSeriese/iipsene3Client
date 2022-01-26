@@ -1,17 +1,13 @@
 import {Node} from "../../../content/tree/node.model";
 
 export class SharedNodeService{
+  private _selectedNode: Node;
 
-  selectedNode: Node;
-  constructor() {
+  public updateSelectedNode(node: Node){
+    this._selectedNode = node;
   }
 
-  updateSelectedNode(node: Node){
-    this.selectedNode = node;
-
+  public get selectedNode(): Node {
+    return this._selectedNode;
   }
-
-
-
-
 }

@@ -34,12 +34,6 @@ a {
   font-size: calc(1rem + .2vw);
 }
 
-//@media screen and (max-width: 480px) {
-//  .nav-button {
-//    width: 100%;
-//  }
-//}
-
 @media screen and (max-width: 768px) {
   .navbar {
     row-gap: 1vh;

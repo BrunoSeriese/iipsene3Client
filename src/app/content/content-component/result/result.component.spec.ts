@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
 import {Answer} from "../../shared/answer/answer.model";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -10,7 +11,8 @@ describe('ResultComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultComponent ]
+      declarations: [ ResultComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });
@@ -19,7 +21,7 @@ describe('ResultComponent', () => {
     fixture = TestBed.createComponent(ResultComponent);
     component = fixture.componentInstance;
 
-    component.result = new ContentModel(3, "Je krijgt koffie", "Result", [new Answer(6, "Je krijgt een normale kop koffie")]);
+    component.result = new Content(3, "Je krijgt koffie", "Result", [new Answer(6, "Je krijgt een normale kop koffie")]);
 
     fixture.detectChanges();
   });

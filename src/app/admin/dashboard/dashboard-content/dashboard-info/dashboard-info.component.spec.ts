@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardInfoComponent } from './dashboard-info.component';
-import {ActivatedRoute} from "@angular/router";
 import {RouterTestingModule} from "@angular/router/testing";
 import {SharedNodeService} from "../shared-node.service";
 
@@ -22,9 +21,5 @@ describe('DashboardInfoComponent', () => {
     fixture = TestBed.createComponent(DashboardInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });
