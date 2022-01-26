@@ -3,31 +3,31 @@
 @include content;
 @include corner-styling;
 
-.explanation-wrapper {
+.table-wrapper {
   height: 50vh;
   margin: calc(4% + 0.4vh) calc(5% + 0.4vw);
   font-size: calc(1rem + .2vw);
 }
 
 @media (max-width: 1200px) {
-  .explanation-wrapper {
+  .table-wrapper {
     overflow-y: auto;
   }
 }
 
-.explanation-wrapper::-webkit-scrollbar {
+.table-wrapper::-webkit-scrollbar {
   width: 12px;
   background-color: rgba(0, 0, 0, 0.49);
   border-radius: 10px;
 }
 
-.explanation-wrapper::-webkit-scrollbar-thumb {
+.table-wrapper::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
   background-color: #ffffff;
 }
 
-.explanation-wrapper::-webkit-scrollbar-track {
+.table-wrapper::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
   border-radius: 10px;
 }
