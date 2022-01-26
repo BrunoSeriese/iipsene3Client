@@ -5,16 +5,30 @@
 @include content;
 
 
-.header-text h1 {
-  font-weight: bold;
+.start-header-text {
+  font-weight: 500;
+  font-size: calc(0.8rem + 1.2vw);
 }
+.start-text{
+  font-weight: bold;
+  font-size: calc(1rem + 1vw);
+}
+
 .corner-styling{
   margin-top: 15vh;
 }
 
+.corner-styling::before{
+
+}
+.corner-styling::after{
+  height: 30%;
+}
+
+
 .start-btn{
-  margin-top: 30vh;
-  padding: 2vw;
+  margin-top: 28vh;
+  padding: 2vw 2vw 2vw calc(5% + .4vw);
 }
 
 .main-content{
@@ -25,9 +39,14 @@
 
 .flex-container {
   display: flex;
+  row-gap: 8vh;
   flex-wrap: wrap;
-  padding: 2vw;
+  //padding: 2vw;
+  padding-left: calc(5% + .4vw);
+  padding-top: calc(4% + 0.4vh);
+  width: 90%;
 }
+
 
 @media (max-width: 767px) {
   .main-content{
@@ -36,15 +55,24 @@
   }
 
   .flex-container {
-    padding: 4vw;
+    padding: 6vw;
+    width: 100%;
   }
 
   .corner-styling{
     margin-top: 5vh;
   }
 
+  .corner-styling::before{
+    width: 60%;
+  }
+  .corner-styling::after{
+    height: 20%;
+  }
+
   .start-btn{
+    text-align: center;
     margin-top: 15vh;
-    padding: 4vw;
+    padding: 6vw 6vw 6vw calc(5% + .4vw);
   }
 }
