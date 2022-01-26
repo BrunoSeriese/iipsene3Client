@@ -1,13 +1,16 @@
+@import "src/styles/abstracts/variables";
+@import "src/styles/abstracts/mixins";
+@include btn-mid;
 *{
   overflow: visible !important;
 }
 
 .myColor{
-  color: black;
+  color: #FFFFFF;
 }
 
 .myMargin{
-  margin-left: 2.4rem;
+  margin-left: 2.4rem !important;
 }
 
 .myUl {

@@ -33,6 +33,9 @@ export class UserResultsComponent implements OnInit {
     this.userResultService.getAllOfPastWeek()
       .subscribe(userResult => {
         this.userResults = userResult;
+        this.userResults.forEach(userResult => {
+          userResult.dateAdded = userResult.dateAdded.slice(0, userResult.dateAdded.indexOf("."));
+        });
       });
   }
 
@@ -40,6 +43,9 @@ export class UserResultsComponent implements OnInit {
     this.userResultService.getAllOfPastMonth()
       .subscribe(userResult => {
         this.userResults = userResult;
+        this.userResults.forEach(userResult => {
+          userResult.dateAdded = userResult.dateAdded.slice(0, userResult.dateAdded.indexOf("."));
+        });
       });
   }
 
@@ -47,6 +53,9 @@ export class UserResultsComponent implements OnInit {
     this.userResultService.getAllOfPastYear()
       .subscribe(userResult => {
         this.userResults = userResult;
+        this.userResults.forEach(userResult => {
+          userResult.dateAdded = userResult.dateAdded.slice(0, userResult.dateAdded.indexOf("."));
+        });
       });
   }
 
