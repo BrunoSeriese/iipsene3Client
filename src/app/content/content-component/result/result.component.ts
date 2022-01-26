@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import {ContentModel} from "../../content.model";
+import {UserResultsService} from "../../../admin/dashboard/user-results/user-results.service";
 pdfMake.vfs = pdfFonts.pdfMake.vfs
 
 @Component({
@@ -9,10 +10,14 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent {
+export class ResultComponent implements OnInit {
   @Input() public result: ContentModel;
 
-  constructor() { }
+  constructor(private userResultsService: UserResultsService) { }
+
+  public ngOnInit(): void {
+    this.userResultsService.create(this.result.value);
+  }
 
   public generatePDF(): void {
     let docDefinition = {
