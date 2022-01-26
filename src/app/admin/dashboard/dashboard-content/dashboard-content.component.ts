@@ -36,6 +36,7 @@ export class DashboardContentComponent implements OnInit {
     let contentIds: number[] = this.sharedNodeService.getContentIds(this.nodes, []);
     let contentId: number= this.sharedNodeService.getLowestNonExistingId(contentIds, 0, contentIds.length - 1) + 1;
     this.node.addChild(new Node(new Content(contentId, "new Content", "Question", [])));
+    this.updateNode();
   }
 
   public removeNode(): void {
@@ -43,6 +44,7 @@ export class DashboardContentComponent implements OnInit {
     let index: number = parent.getChildren().indexOf(this.node);
     parent.content.answers.splice(index, 1);
     parent.removeChild(this.node);
+    this.updateNode();
   }
 
   public isResult(): boolean {
