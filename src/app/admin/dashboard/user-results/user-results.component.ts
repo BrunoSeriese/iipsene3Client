@@ -50,7 +50,7 @@ export class UserResultsComponent implements OnInit {
   public generatePDF(): void {
     let docDefinition = {
       info: {
-        title: 'SVDJ Subsidie Advies',
+        title: 'SVDJ Gebruikers Resultaten',
         author: 'Severin, Vincent'
       },
       content: [
@@ -64,7 +64,8 @@ export class UserResultsComponent implements OnInit {
     return {
       table: {
         headerRows: 1,
-        body: this.createTableBody(userResults, columns)
+        widths: ['*', '*'],
+        body: this.createTableBody(userResults, columns),
       }
     };
   }
