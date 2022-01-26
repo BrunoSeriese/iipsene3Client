@@ -6,8 +6,6 @@ import { Injectable } from '@angular/core';
 export class NavigationService {
   private selectedAnswer: number;
 
-  constructor() { }
-
   public getSelected(): number {
     return this.selectedAnswer;
   }

@@ -24,10 +24,9 @@ export class ContentDAO {
   }
 
   public addAllContent(contents: ContentModel[], parentIds: number[]) {
-    this.deleteAll()
-      .subscribe(() => {
+    this.deleteAll().subscribe(() => {
         this.addContent(contents, parentIds);
-      });
+    });
   }
 
   public deleteAll(): Observable<any> {
@@ -56,11 +55,7 @@ export class ContentDAO {
     this.http
       .post(this.baseURL + "/contents", bodies, requestOptions)
       .subscribe(() => {
-          this.addAnswers(contents);
-      }, error => {
-        if(error.status == 500) {
-          this.addContent(contents, parentIds);
-        }
+        this.addAnswers(contents);
       });
   }
 

@@ -49,8 +49,7 @@ export class DashboardComponent implements OnInit {
       parentIds.push(parentId);
     }
 
-    this.contentDAO.deleteAll();
-    this.contentDAO.addContent(contents, parentIds);
+    this.contentDAO.addAllContent(contents, parentIds);
   }
 
   public display(node: Node, contentArray: Node[]): Node[] {

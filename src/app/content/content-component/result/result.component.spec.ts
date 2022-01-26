@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResultComponent } from './result.component';
-import {Result} from "./result.model";
 import {Answer} from "../../shared/answer/answer.model";
+import {ContentModel} from "../../content.model";
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -19,7 +19,7 @@ describe('ResultComponent', () => {
     fixture = TestBed.createComponent(ResultComponent);
     component = fixture.componentInstance;
 
-    component.result = new Result(3, "Je krijgt koffie", new Answer(6, "Je krijgt een normale kop koffie"));
+    component.result = new ContentModel(3, "Je krijgt koffie", "Result", [new Answer(6, "Je krijgt een normale kop koffie")]);
 
     fixture.detectChanges();
   });
