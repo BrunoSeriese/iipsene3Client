@@ -55,27 +55,6 @@ export class ContentDAO {
     }
     this.http
       .post(this.baseURL + "/contents", bodies, requestOptions)
-      .subscribe(() => {
-       // this.addAnswers(contents);
-      });
-  }
-
-  public addAnswers(contents: ContentModel[]): void {
-    let requestOptions: any = {
-      headers: new HttpHeaders({"Authorization": "Bearer " + this.loginService.token}),
-    };
-    let bodies: any[] = [];
-    for(let i in contents) {
-      let body: any = {
-        "id": contents[i].id,
-        "value": contents[i].value,
-        "type": contents[i].type,
-        "answers": contents[i].answers,
-      }
-      bodies.push(body);
-    }
-    this.http
-      .post(this.baseURL + "/contents/answers", bodies, requestOptions)
       .subscribe();
   }
 }

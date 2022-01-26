@@ -20,11 +20,13 @@ import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 import { HeaderComponent } from './admin/dashboard/header/header.component';
 import { DashboardContentComponent } from './admin/dashboard/dashboard-content/dashboard-content.component';
 import {DashboardInfoComponent} from "./admin/dashboard/dashboard-content/dashboard-info/dashboard-info.component";
+import { UserResultsComponent } from './admin/dashboard/user-results/user-results.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: StartComponent},
   {path: 'admin', component: LoginComponent},
+  {path: 'admin/user-results', component: UserResultsComponent },
   {path: 'admin/dashboard', component: DashboardComponent, children: [
       {path: ':id', component: DashboardInfoComponent}
     ]},
@@ -49,7 +51,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     DashboardContentComponent,
     DashboardInfoComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserResultsComponent
 
   ],
   imports: [
