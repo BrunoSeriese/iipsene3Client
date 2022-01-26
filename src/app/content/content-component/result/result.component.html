@@ -1,6 +1,6 @@
 <div class="col-lg-12">
   <h1 class="content-header corner-styling">Uit de subsidiewijzer is gebleken dat u eventueel in aanmerking komt voor de
-    subsidie: <br> <u class="underline">{{ result.value }}</u></h1>
+    subsidie: <br><br> <u class="underline">{{ result.value }}</u></h1>
 
   <div class="result-wrapper">
     <p class="result-layout"><b>{{ result.answers[0].value }}</b> <br><br>U heeft bij ons de subsidiewijzer ingevuld en
@@ -8,10 +8,8 @@
       de subsidie ook zult ontvangen.
     </p>
     <br>
-    <br>
-    <br>
+
     <button class="nav-button" (click)="generatePDF()"></button>
   </div>
-
 </div>
 
