@@ -1,18 +1,51 @@
 @import "src/styles/abstracts/variables";
-.scroll-div {
+@import "src/styles/abstracts/mixins";
 
+@include btn-mid;
+
+.btn-mid{
+  color: #000;
+}
+
+.content-container {
+  display: flex !important;
+  justify-content: space-evenly !important;
+}
+
+.left-side {
+  height: 92.5vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem !important;
+}
+
+.scroll-div {
   overflow-y: scroll;
   width: 50vw;
+}
+
+.scroll-div::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.49);
+  border-radius: 10px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+  background-color: #ffffff;
+}
+
+.scroll-div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
+  border-radius: 10px;
 }
 
 
 .background {
   height: 100vh;
-  background-color: white;
-}
-
-.contents {
-  height: 92.5vh;
+  //background-color: rgba(0, 0, 0, 0.1);
+  //color: #fff;
 
 }
 
@@ -24,6 +57,3 @@
   width: 100px;
 }
 
-.myBckgrnd{
-  background-color: #f8f8ff!important;
-}
