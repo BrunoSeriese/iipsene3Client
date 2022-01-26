@@ -1,6 +1,4 @@
-
 <div class="col-xs-12">
-  <!--  TODO Navbar component toevoegen (ryan of hicham) -->
   <div class="content-wrapper" [ngSwitch]="getInstance()">
     <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
     <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
@@ -11,5 +9,9 @@
   <div class="navbar justify-content-evenly" *ngIf="getInstance() != 'Result'">
     <app-previous></app-previous>
     <app-next></app-next>
+  </div>
+  <div class="navbar justify-content-evenly" *ngIf="getInstance() == 'Result'">
+    <app-previous></app-previous>
+<!--    <button class="nav-button" (click)="generatePDF()"></button>-->
   </div>
 </div>

@@ -2,19 +2,30 @@
 
 @include content;
 @include corner-styling;
-//@include nav-button;
+@include nav-button;
 
-//.nav-button{
-//  width: fit-content;
-//}
-//
-//.nav-button::after{
-//  position: relative;
-//}
+.underline{
+  text-decoration-thickness: 0.08em;}
 
+.nav-button:before {
+  content: 'Result PDF';
+}
+
+.result-wrapper {
+  height: 30vh;
+  margin: calc(4% + 0.4vh) calc(5% + 0.4vw);
+  font-size: calc(1rem + .2vw);
+}
 .result-layout {
-  height: 50%;
-  margin-top: 10vh;
+  //height: 50%;
+  //margin-top: 10vh;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    row-gap: 1vh;
+    flex-direction: column;
+  }
 }
 
 
