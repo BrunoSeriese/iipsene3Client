@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
       let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[i]);
       parentIds.push(parentId);
     }
-
+    console.log(this.nodes)
     this.contentDAO.addAllContent(contents, parentIds);
   }
 

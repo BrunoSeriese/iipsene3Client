@@ -20,19 +20,21 @@ export class DashboardContentComponent implements OnInit {
 
   public ngOnInit(): void {
     this.sharedNodeService.updateSelectedNode(this.node);
+    this.sharedNodeService.nodes = this.nodes;
   }
 
   public updateNode(){
     this.sharedNodeService.updateSelectedNode(this.node);
+    this.sharedNodeService.nodes = this.nodes;
   }
 
   public addNode() {
-    let answerIds: number[] = this.getAnswerIds(this.nodes, []);
-    let answerId: number = this.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
+    let answerIds: number[] = this.sharedNodeService.getAnswerIds(this.nodes, []);
+    let answerId: number = this.sharedNodeService.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
     this.node.content.answers.push(new Answer(answerId, ""));
 
-    let contentIds: number[] = this.getContentIds(this.nodes, []);
-    let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
+    let contentIds: number[] = this.sharedNodeService.getContentIds(this.nodes, []);
+    let contentId: number= this.sharedNodeService.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
     this.node.addChild(new Node(new Content(contentId, "new Content", "Question", [])));
   }
 
@@ -43,53 +45,11 @@ export class DashboardContentComponent implements OnInit {
     parent.removeChild(this.node);
   }
 
-  public getLowestNonExistingId(list: number[], first: number, last: number) {
-    if (first > last) {
-      return last + 2;
-    }
-
-    if (first != list[first] - 1) {
-      return first + 1;
-    }
-
-    let mid: number = Math.trunc((first + last) / 2);
-
-    if (list[mid] - 1 == mid) {
-      return this.getLowestNonExistingId(list, mid + 1, last);
-    }
-    return this.getLowestNonExistingId(list, first, mid);
-  }
-
-  public getContentIds(node: Node, contentIds: number[]): number[] {
-    if(node == null) {
-      return;
-    }
-
-    contentIds.push(node.content.id);
-
-    for(let child of node.getChildren()) {
-      this.getContentIds(child, contentIds);
-    }
-    return contentIds;
-  }
-
-  public getAnswerIds(node: Node, answerIds: number[]): number[] {
-    if(node == null) {
-      return;
-    }
-
-    node.content.answers.forEach(answer => {
-      answerIds.push(answer.id);
-    })
-
-    for(let child of node.getChildren()) {
-      this.getAnswerIds(child, answerIds);
-    }
-    return answerIds;
-  }
-
   public isResult(): boolean {
     return this.node.content.type == "Result";
   }
 
+  public isAllowedToGetChildren(node: Node): boolean {
+    return !(node.content.type != "Question" && node.getChildren().length == 1);
+  }
 }
