@@ -12,6 +12,8 @@
 .btn:focus,.btn:active {
   outline: none !important;
   box-shadow: none;
+  background-color: #161616;
+  color: white;
 }
 .btn:hover{
   border-color: #161616;
