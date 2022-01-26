@@ -1,5 +1,5 @@
-<div class="col-xs-12">
 
+<div class="col-xs-12">
   <div class="content-wrapper" [ngSwitch]="content.type">
     <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
     <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
@@ -7,10 +7,8 @@
     <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
   </div>
 
-  <div class="navbar justify-content-evenly">
+  <div class="navbar justify-content-evenly" *ngIf="content.type != 'Result'">
     <app-previous></app-previous>
     <app-next></app-next>
   </div>
 </div>
-
-

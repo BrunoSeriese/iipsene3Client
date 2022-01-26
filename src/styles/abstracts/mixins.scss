@@ -93,11 +93,13 @@
 
 @mixin content {
   .content-header {
-    font-size: calc(1.2rem + 1vw);
+    //font-size: calc(1.2rem + 1vw);
+    font-size: calc(1rem + 1vw);
     font-weight: 550;
     margin: 5vh 0 0 0;
     padding-left: calc(5% + .4vw);
     padding-top: calc(4% + 0.4vh);
+    min-height: 15vh;
   }
 }
 
