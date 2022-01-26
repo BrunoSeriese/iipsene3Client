@@ -22,11 +22,11 @@ export class SharedNodeService{
 
   public getLowestNonExistingId(list: number[], first: number, last: number) {
     if (first > last) {
-      return last + 2;
+      return last + 1;
     }
 
     if (first != list[first] - 1) {
-      return first + 1;
+      return first;
     }
 
     let mid: number = Math.trunc((first + last) / 2);
