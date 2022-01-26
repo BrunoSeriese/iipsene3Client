@@ -1,10 +1,10 @@
 <app-header></app-header>
-
-<button class="btn btn-primary" (click)="getAll()">All</button>
-<button class="btn btn-primary" (click)="getAllOfPastWeek()">Past Week</button>
-<button class="btn btn-primary" (click)="getAllOfPastMonth()">Past Month</button>
-<button class="btn btn-primary" (click)="getAllOfPastYear()">Past Year</button>
-
+<div class="filter-container">
+  <button class="btn btn-white btn-mid" (click)="getAll()">All</button>
+  <button class="btn btn-white btn-mid" (click)="getAllOfPastWeek()">Past Week</button>
+  <button class="btn btn-white btn-mid" (click)="getAllOfPastMonth()">Past Month</button>
+  <button class="btn btn-white btn-mid" (click)="getAllOfPastYear()">Past Year</button>
+</div>
 <div class="table-wrapper">
   <table class="table">
     <thead>
@@ -14,14 +14,14 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let userResult of userResults">
-        <td>{{ userResult.dateAdded }}</td>
-        <td>{{ userResult.result }}</td>
-      </tr>
+    <tr *ngFor="let userResult of userResults">
+      <td>{{ userResult.dateAdded }}</td>
+      <td>{{ userResult.result }}</td>
+    </tr>
     </tbody>
   </table>
 </div>
-
-<button class="btn btn-primary" (click)="generatePDF()">Download</button>
-
+<div class="filter-container">
+  <button class="btn btn-white btn-mid" (click)="generatePDF()">Download</button>
+</div>
 <router-outlet></router-outlet>

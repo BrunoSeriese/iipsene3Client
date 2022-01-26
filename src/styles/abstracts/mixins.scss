@@ -1,3 +1,30 @@
+@mixin btn-mid {
+  .btn-mid {
+    width: 10em;
+    border-radius: 0;
+    text-decoration: none;
+    padding: .4em .8em;
+    font-size: calc(0.6rem + 0.4vw);
+    line-height: 25px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: all .4s ease-in-out;
+  }
+
+  .btn-white {
+    border: solid 2px #fff;
+    background: #fff;
+    color: #000000 !important;
+  }
+  .btn-white:hover {
+    border: solid 2px #fff;
+    background: #000000;
+    color: #ffffff !important;
+  }
+}
+
 @mixin nav-button {
 
   .nav-button {
