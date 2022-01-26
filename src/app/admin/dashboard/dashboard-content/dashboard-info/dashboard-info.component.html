@@ -18,9 +18,9 @@
       </div>
     </div>
 
-    <ul   class="myColor d-flex  myUl">
+    <ul   class="myColor myUl">
       <li class="myColor p-1" ><b class="text-white">Waarde:</b>
-        <input #value  required type="text" class="form-control"  value="{{copyContent.value}}"></li>
+        <input #value  required type="text" class="form-control input-custom"  value="{{copyContent.value}}"></li>
     </ul>
 
   </div>
@@ -30,7 +30,7 @@
     <ol class="mySize d-flex flex-column flex-wrap "   type="A">
 
       <li *ngFor="let answer of copyContent.answers, index as i" class="myColor col-ms-6 m-2" >
-        <input required id="answer{{i}}" type="text" class="form-control mySize" value="{{answer.value}}"></li>
+        <input required id="answer{{i}}" type="text" class="form-control" value="{{answer.value}}"></li>
     </ol>
     <p class="alert-warning" *ngIf="showTypeChangeErrorMessage">Can't change type if {{ node.content.type }} has answers</p>
     <div class="buttonContainer align-self-center">
