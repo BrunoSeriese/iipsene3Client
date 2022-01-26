@@ -18,9 +18,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {DashboardComponent} from "./admin/dashboard/dashboard.component";
 import { HeaderComponent } from './admin/dashboard/header/header.component';
 import { DashboardContentComponent } from './admin/dashboard/dashboard-content/dashboard-content.component';
-import { DashboardItemComponent } from './admin/dashboard/dashboard-content/dashboard-item/dashboard-item.component';
 import {DashboardInfoComponent} from "./admin/dashboard/dashboard-content/dashboard-info/dashboard-info.component";
-import { NavbarComponent } from './content/shared/navigation/navbar/navbar.component';
 
 
 const appRoutes: Routes = [
@@ -49,9 +47,7 @@ const appRoutes: Routes = [
     ContentStartComponent,
     HeaderComponent,
     DashboardContentComponent,
-    DashboardItemComponent,
-    DashboardInfoComponent,
-    NavbarComponent
+    DashboardInfoComponent
 
   ],
   imports: [

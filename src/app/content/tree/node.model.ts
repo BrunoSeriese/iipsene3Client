@@ -1,9 +1,10 @@
-import {Content} from "../content.interface";
+
+import {ContentModel} from "../content.model";
 
 export class Node {
   private children: Node[] = [];
 
-  constructor(public content: Content) { }
+  constructor(public content: ContentModel) { }
 
   public getChildren(): Node[] {
     return this.children;

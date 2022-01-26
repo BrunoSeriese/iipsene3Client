@@ -4,8 +4,6 @@ import {ContentDAO} from "../../../../content/content.DAO";
 import {ContentModel} from "../../../../content/content.model";
 import {Node} from "../../../../content/tree/node.model";
 import {SharedNodeService} from "../shared-node.service";
-import {Content} from "../../../../content/content.interface";
-
 @Component({
   selector: 'app-dashboard-info',
   templateUrl: './dashboard-info.component.html',
@@ -14,7 +12,9 @@ import {Content} from "../../../../content/content.interface";
 export class DashboardInfoComponent implements OnInit {
   location: string;
   node: Node;
-  copyContent: Content;
+  copyContent: ContentModel;
+  types: string[] = ["Question", "Result", "Explanation", "Video"];
+  showTypeChangeErrorMessage: boolean = false;
 
   constructor(private route: ActivatedRoute,
               public sharedNodeService: SharedNodeService) {
@@ -33,12 +33,23 @@ export class DashboardInfoComponent implements OnInit {
     }
   }
 
-  public onUpdate(value: string) {
+  public onUpdate(value: string): void {
+    if(this.node.getChildren().length == 0 ) {
+      this.showTypeChangeErrorMessage = true;
+      return;
+    } else {
+      this.showTypeChangeErrorMessage = false;
+    }
+
     this.copyContent.value = value;
     for(let i in this.copyContent.answers) {
       this.copyContent.answers[i].value = (<HTMLInputElement>document.getElementById("answer" + i)).value;
     }
     this.node.content = this.copyContent;
+  }
+
+  public onSelected(type: string): void {
+
   }
 
 }

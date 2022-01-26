@@ -1,15 +1,17 @@
-
 <div class="col-xs-12">
-  <!--  TODO Navbar component toevoegen (ryan of hicham) -->
-  <div class="content-wrapper" [ngSwitch]="getInstance()">
+  <span class="list-group-item logo-header"></span>
+
+  <div class="content-wrapper" [ngSwitch]="content.type">
     <app-question *ngSwitchCase="'Question'" [question]="content"></app-question>
     <app-result *ngSwitchCase="'Result'" [result]="content"></app-result>
     <app-explanation *ngSwitchCase="'Explanation'" [explanation]="content"></app-explanation>
     <app-video *ngSwitchCase="'Video'" [video]="content"></app-video>
   </div>
 
-  <div class="navbar justify-content-evenly" *ngIf="getInstance() != 'Result'">
+  <div class="navbar justify-content-evenly">
     <app-previous></app-previous>
     <app-next></app-next>
   </div>
 </div>
+
+
