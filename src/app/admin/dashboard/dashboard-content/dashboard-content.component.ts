@@ -29,6 +29,7 @@ export class DashboardContentComponent implements OnInit {
   }
 
   public addNode() {
+    this.nodes = this.sharedNodeService.nodes;
     let answerIds: number[] = this.sharedNodeService.getAnswerIds(this.nodes, []);
     let answerId: number = this.sharedNodeService.getLowestNonExistingId(answerIds, 0, answerIds.length - 1) + 1;
     this.node.content.answers.push(new Answer(answerId, ""));
