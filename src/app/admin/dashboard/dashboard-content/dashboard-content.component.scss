@@ -6,4 +6,13 @@
   border: none;
   border-radius: 10px;
   padding: 0px 7px;
+  background-color: #FAF9F6;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.btn:hover{
+  border-color: #161616;
 }
