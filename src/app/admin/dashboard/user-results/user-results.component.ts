@@ -23,6 +23,9 @@ export class UserResultsComponent implements OnInit {
     this.userResultService.getAll()
       .subscribe(userResult => {
         this.userResults = userResult;
+        this.userResults.forEach(userResult => {
+          userResult.dateAdded = userResult.dateAdded.slice(0, userResult.dateAdded.indexOf("."));
+        });
       });
   }
 
@@ -54,7 +57,7 @@ export class UserResultsComponent implements OnInit {
         author: 'Severin, Vincent'
       },
       content: [
-        this.createTable(this.userResults, ["Date", "Result"])
+        this.createTable(this.userResults, ["Date (yyyy-mm-dd hh:mm:ss)", "Result"])
       ]
     };
     pdfMake.createPdf(docDefinition).download('GebruikerResultaten.pdf').open();
