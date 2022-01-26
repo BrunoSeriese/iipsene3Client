@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ContentModel} from "../../../content/content.model";
+import {Content} from "../../../content/content";
 import {Node} from "../../../content/tree/node.model";
 import {SharedNodeService} from "./shared-node.service";
 import {ContentService} from "../../../content/content.service";
@@ -33,7 +33,7 @@ export class DashboardContentComponent implements OnInit {
 
     let contentIds: number[] = this.getContentIds(this.nodes, []);
     let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
-    this.node.addChild(new Node(new ContentModel(contentId, "new Content", "Question", [])));
+    this.node.addChild(new Node(new Content(contentId, "new Content", "Question", [])));
   }
 
   public removeNode(): void {

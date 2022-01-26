@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NavigationService} from "../../shared/navigation.service";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
 
 @Component({
   selector: 'app-video',
@@ -8,7 +8,7 @@ import {ContentModel} from "../../content.model";
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
-  @Input() public video: ContentModel;
+  @Input() public video: Content;
 
   constructor(private navigationService: NavigationService) { }
 

@@ -1,6 +1,5 @@
 <h1 class="content-header corner-styling">{{ question.value }}</h1>
 
-
 <app-answer-list class="answerlist-layout offset-xl-1" [answers]="question.answers"
                  [selectedAnswer]="navigationService.getSelected()"
                  (selectedAnswerEvent)="navigationService.setSelected($event)">

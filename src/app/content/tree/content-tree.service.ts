@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Node} from "./node.model";
 import {Iterator} from "./iterator.model";
-import {ContentModel} from "../content.model";
+import {Content} from "../content";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentTreeService {
-  private contents: ContentModel[];
+  private contents: Content[];
   private root: Node;
   private parent: Node;
 
@@ -18,20 +18,20 @@ export class ContentTreeService {
     return this.root;
   }
 
-  public create(contents: ContentModel[]): Node {
+  public create(contents: Content[]): Node {
     this.contents = contents;
-    const iterator: Iterator<ContentModel> = new Iterator<ContentModel>(this.contents);
+    const iterator: Iterator<Content> = new Iterator<Content>(this.contents);
     this.root = this.construct(iterator);
     return this.root;
   }
 
-  private construct(iterator: Iterator<ContentModel>): Node {
+  private construct(iterator: Iterator<Content>): Node {
     if (!iterator.hasNext()) {
 
       return null;
     }
 
-    const content: ContentModel = iterator.next();
+    const content: Content = iterator.next();
     const node: Node = new Node(content);
 
     if (!(content.type == "Result")) {
@@ -58,24 +58,6 @@ export class ContentTreeService {
     for(let child of node.getChildren()) {
       this.display(child);
     }
-  }
-
-  public height(node: Node): number {
-    let totalHeight: number = 0;
-
-    if(node == null) {
-      return totalHeight;
-    }
-
-    for(let child of node.getChildren()) {
-      let currentHeight: number = this.height(child);
-
-      if (currentHeight > totalHeight) {
-        totalHeight = currentHeight;
-      }
-    }
-
-    return ++totalHeight;
   }
 
   public level(node: Node, value: Node, level: number): number {

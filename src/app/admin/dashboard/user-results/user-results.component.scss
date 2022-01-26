@@ -1,4 +1,14 @@
-.table-wrapper{
+@import "src/styles/abstracts/mixins";
+@include btn-mid;
+
+.filter-container {
+  display: flex;
+  width: 60%;
+  margin: 3em auto auto auto;
+  justify-content: space-evenly;
+}
+
+.table-wrapper {
   height: 100vh;
   overflow-y: scroll;
 }
@@ -12,6 +22,18 @@
 @media (max-width: 1200px) {
   .table-wrapper {
     overflow-y: auto;
+  }
+
+  .filter-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .btn-mid {
+    padding: .2rem .4rem;
+    font-size: .6rem;
+    width: fit-content;
   }
 }
 

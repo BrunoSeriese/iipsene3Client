@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {LoginService} from "../../login/login.service";
 import {Observable} from "rxjs";
-import {ContentModel} from "../../../content/content.model";
 import {UserResult} from "./user-result.model";
 
 @Injectable({

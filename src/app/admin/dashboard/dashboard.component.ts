@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentDAO} from "../../content/content.DAO";
-import {ContentModel} from "../../content/content.model";
+import {Content} from "../../content/content";
 import {ContentService} from "../../content/content.service";
 import {Node} from "../../content/tree/node.model";
 import {SharedNodeService} from "./dashboard-content/shared-node.service";
@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
 
   public save(): void {
     this.updateNodeArray(this.nodes);
-    let contents: ContentModel[] = [];
+    let contents: Content[] = [];
     this.nodeArray.forEach(node => {
       contents.push(node.content);
     });

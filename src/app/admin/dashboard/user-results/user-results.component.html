@@ -1,27 +1,27 @@
 <app-header></app-header>
-
-<button class="btn btn-primary" (click)="getAll()">All</button>
-<button class="btn btn-primary" (click)="getAllOfPastWeek()">Past Week</button>
-<button class="btn btn-primary" (click)="getAllOfPastMonth()">Past Month</button>
-<button class="btn btn-primary" (click)="getAllOfPastYear()">Past Year</button>
-
+<div class="filter-container">
+  <button class="btn btn-white btn-mid" (click)="getAll()">Alles</button>
+  <button class="btn btn-white btn-mid" (click)="getAllOfPastWeek()">Week</button>
+  <button class="btn btn-white btn-mid" (click)="getAllOfPastMonth()">Maand</button>
+  <button class="btn btn-white btn-mid" (click)="getAllOfPastYear()">Jaar</button>
+</div>
 <div class="table-wrapper">
   <table class="table">
     <thead>
     <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Result</th>
+      <th scope="col">Datum (yyyy-mm-dd hh:mm:ss)</th>
+      <th scope="col">Resultaat</th>
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let userResult of userResults">
-        <td>{{ userResult.dateAdded }}</td>
-        <td>{{ userResult.result }}</td>
-      </tr>
+    <tr *ngFor="let userResult of userResults">
+      <td>{{ userResult.dateAdded }}</td>
+      <td>{{ userResult.result }}</td>
+    </tr>
     </tbody>
   </table>
 </div>
-
-<button class="btn btn-primary" (click)="generatePDF()">Download</button>
-
+<div class="filter-container">
+  <button class="btn btn-white btn-mid" (click)="generatePDF()">Download</button>
+</div>
 <router-outlet></router-outlet>
