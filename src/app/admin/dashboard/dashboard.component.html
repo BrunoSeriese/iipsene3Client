@@ -3,14 +3,15 @@
 <div class="background">
   <div class="content-container">
     <div class="scroll-div left-side">
-      <div class="row" *ngFor="let node of updateNodeArray(nodes)" >
-        <div class="col-ms-5">
+      <div class="" *ngFor="let node of updateNodeArray(nodes)" >
+        <div class="">
           <app-dashboard-content [nodes]="nodes" [node]="node"></app-dashboard-content>
         </div>
       </div>
-      <div class="align-self-center flex-nowrap">
-        <button class="btn-mid btn-white" (click)="save()">Opslaan</button>
-      </div>
+    </div>
+
+    <div class="">
+      <button class="btn-mid btn-white" (click)="save()">Opslaan</button>
     </div>
 
     <div class="scroll-div results">

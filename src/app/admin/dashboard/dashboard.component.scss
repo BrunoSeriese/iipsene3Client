@@ -13,14 +13,15 @@
 }
 
 .left-side {
-  height: 92.5vh;
-  display: flex;
-  flex-direction: column;
+  height: 70vh;
+  //display: flex;
+  //flex-direction: column;
   padding: 3em !important;
+  overflow-y: auto;
 }
 
 .scroll-div {
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 50vw;
 }
 

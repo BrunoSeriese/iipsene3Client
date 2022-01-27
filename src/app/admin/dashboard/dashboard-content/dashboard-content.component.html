@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-nowrap">
+<div class="overflow-scroll d-flex flex-column flex-nowrap">
   <h4>{{ "&emsp;".repeat(contentService.getLevel(node)) }}{{ node.content.type }}:
     <a (click)="updateNode()" routerLink="{{ node.content.id }}" class="btn">{{ node.content.value }} </a>
 
