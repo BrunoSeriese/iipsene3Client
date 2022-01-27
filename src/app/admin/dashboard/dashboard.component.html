@@ -3,16 +3,17 @@
 <div class="background">
   <div class="content-container">
     <div class="scroll-div left-side">
-      <div class="" *ngFor="let node of updateNodeArray(nodes)" >
-        <div class="">
-          <app-dashboard-content [nodes]="nodes" [node]="node"></app-dashboard-content>
+      <div *ngFor="let node of updateNodeArray(nodes)">
+        <div>
+          <app-dashboard-content class="row-spacing" [nodes]="nodes" [node]="node"></app-dashboard-content>
         </div>
       </div>
-    </div>
 
-    <div class="">
+    </div>
+    <div>
       <button class="btn-mid btn-white" (click)="save()">Opslaan</button>
     </div>
+
 
     <div class="scroll-div results">
       <router-outlet></router-outlet>

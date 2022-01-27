@@ -5,6 +5,9 @@
 
 .btn-mid{
   color: #000;
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
 }
 
 .content-container {
@@ -14,8 +17,6 @@
 
 .left-side {
   height: 70vh;
-  //display: flex;
-  //flex-direction: column;
   padding: 3em !important;
   overflow-y: auto;
   overflow-x: hidden;

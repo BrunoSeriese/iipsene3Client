@@ -1,10 +1,11 @@
 <div class="d-flex flex-column flex-nowrap">
-  <h4>{{ "&emsp;".repeat(contentService.getLevel(node)) }}{{ node.content.type }}:
+  <div class="left-side-text">{{ "&emsp;".repeat(contentService.getLevel(node)) }}{{ node.content.type }}:
     <a (click)="updateNode()" routerLink="{{ node.content.id }}" class="btn">{{ node.content.value }} </a>
 
-  <button class="plus-crossBtn plus-img" (click)="addNode()" *ngIf="node.content.type != 'Result' && isAllowedToGetChildren(node)"></button>
-  <button class="plus-crossBtn cross-img" (click)="removeNode()"
-          *ngIf="(node != this.nodes) && (contentService.getParentNodeByNode(node).content.answers.length != 1)">
-  </button>
-</h4>
+    <button class="plus-crossBtn plus-img" (click)="addNode()"
+            *ngIf="node.content.type != 'Result' && isAllowedToGetChildren(node)"></button>
+    <button class="plus-crossBtn cross-img" (click)="removeNode()"
+            *ngIf="(node != this.nodes) && (contentService.getParentNodeByNode(node).content.answers.length != 1)">
+    </button>
+  </div>
 </div>
