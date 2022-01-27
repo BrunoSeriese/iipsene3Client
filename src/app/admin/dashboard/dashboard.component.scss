@@ -18,10 +18,11 @@
   //flex-direction: column;
   padding: 3em !important;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .scroll-div {
-  overflow-y: auto;
+  //overflow-y: auto;
   width: 50vw;
 }
 
