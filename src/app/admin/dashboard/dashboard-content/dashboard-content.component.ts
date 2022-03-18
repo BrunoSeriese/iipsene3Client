@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ContentModel} from "../../../content/content.model";
+import {Content} from "../../../content/content";
 import {Node} from "../../../content/tree/node.model";
 import {SharedNodeService} from "./shared-node.service";
 import {ContentService} from "../../../content/content.service";
@@ -20,20 +20,26 @@ export class DashboardContentComponent implements OnInit {
 
   public ngOnInit(): void {
     this.sharedNodeService.updateSelectedNode(this.node);
+    this.sharedNodeService.nodes = this.nodes;
   }
 
   public updateNode(){
     this.sharedNodeService.updateSelectedNode(this.node);
+    this.sharedNodeService.nodes = this.nodes;
   }
 
   public addNode() {
-    let answerIds: number[] = this.getAnswerIds(this.nodes, []);
-    let answerId: number = this.getLowestNonExistingId(answerIds, 0, answerIds.length - 1);
+    this.nodes = this.sharedNodeService.nodes;
+    let answerIds: number[] = this.sharedNodeService.getAnswerIds(this.nodes, []);
+    answerIds.sort((a, b) => (a < b ? -1 : 1));
+    let answerId: number = this.sharedNodeService.getLowestNonExistingId(answerIds, 0, answerIds.length - 1) + 1;
     this.node.content.answers.push(new Answer(answerId, ""));
 
-    let contentIds: number[] = this.getContentIds(this.nodes, []);
-    let contentId: number= this.getLowestNonExistingId(contentIds, 0, contentIds.length - 1);
-    this.node.addChild(new Node(new ContentModel(contentId, "new Content", "Question", [])));
+    let contentIds: number[] = this.sharedNodeService.getContentIds(this.nodes, []);
+    contentIds.sort((a, b) => (a < b ? -1 : 1));
+    let contentId: number= this.sharedNodeService.getLowestNonExistingId(contentIds, 0, contentIds.length - 1) + 1;
+    this.node.addChild(new Node(new Content(contentId, "new Content", "Question", [])));
+    this.updateNode();
   }
 
   public removeNode(): void {
@@ -41,55 +47,14 @@ export class DashboardContentComponent implements OnInit {
     let index: number = parent.getChildren().indexOf(this.node);
     parent.content.answers.splice(index, 1);
     parent.removeChild(this.node);
-  }
-
-  public getLowestNonExistingId(list: number[], first: number, last: number) {
-    if (first > last) {
-      return last + 2;
-    }
-
-    if (first != list[first] - 1) {
-      return first + 1;
-    }
-
-    let mid: number = Math.trunc((first + last) / 2);
-
-    if (list[mid] - 1 == mid) {
-      return this.getLowestNonExistingId(list, mid + 1, last);
-    }
-    return this.getLowestNonExistingId(list, first, mid);
-  }
-
-  public getContentIds(node: Node, contentIds: number[]): number[] {
-    if(node == null) {
-      return;
-    }
-
-    contentIds.push(node.content.id);
-
-    for(let child of node.getChildren()) {
-      this.getContentIds(child, contentIds);
-    }
-    return contentIds;
-  }
-
-  public getAnswerIds(node: Node, answerIds: number[]): number[] {
-    if(node == null) {
-      return;
-    }
-
-    node.content.answers.forEach(answer => {
-      answerIds.push(answer.id);
-    })
-
-    for(let child of node.getChildren()) {
-      this.getAnswerIds(child, answerIds);
-    }
-    return answerIds;
+    this.updateNode();
   }
 
   public isResult(): boolean {
     return this.node.content.type == "Result";
   }
 
+  public isAllowedToGetChildren(node: Node): boolean {
+    return !(node.content.type != "Question" && node.getChildren().length == 1);
+  }
 }

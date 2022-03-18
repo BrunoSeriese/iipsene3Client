@@ -11,8 +11,6 @@ export class AnswerListComponent {
   @Input() public selectedAnswer: number;
   @Output("selectedAnswerEvent") public selectedAnswerEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
-
   public radioButtonChangeHandler(value: number): void {
     this.selectedAnswerEvent.emit(value);
   }

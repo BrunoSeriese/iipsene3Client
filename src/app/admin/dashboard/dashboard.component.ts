@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentDAO} from "../../content/content.DAO";
-import {ContentModel} from "../../content/content.model";
+import {Content} from "../../content/content";
 import {ContentService} from "../../content/content.service";
 import {Node} from "../../content/tree/node.model";
 import {SharedNodeService} from "./dashboard-content/shared-node.service";
+import {Answer} from "../../content/shared/answer/answer.model";
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +19,6 @@ export class DashboardComponent implements OnInit {
   constructor(private contentService: ContentService,
               private contentDAO: ContentDAO) {
     this.getContent();
-
   }
 
   public ngOnInit(): void {
@@ -27,6 +27,12 @@ export class DashboardComponent implements OnInit {
   public getContent(): void {
     this.contentDAO.getAll().subscribe(contentModels =>{
       this.nodes = this.contentService.createTree(contentModels);
+      if(this.nodes == null) {
+        this.nodes = this.contentService.createTree([
+          new Content(1, "new Question", "Question", [new Answer(1, "")]),
+          new Content(2, "new Result", "Result", [new Answer(2, "")])
+        ]);
+      }
     });
   }
 
@@ -37,7 +43,7 @@ export class DashboardComponent implements OnInit {
 
   public save(): void {
     this.updateNodeArray(this.nodes);
-    let contents: ContentModel[] = [];
+    let contents: Content[] = [];
     this.nodeArray.forEach(node => {
       contents.push(node.content);
     });
@@ -48,7 +54,7 @@ export class DashboardComponent implements OnInit {
       let parentId: number = this.contentService.getParentNodeIdByNode(this.nodeArray[i]);
       parentIds.push(parentId);
     }
-
+    console.log(this.nodes)
     this.contentDAO.addAllContent(contents, parentIds);
   }
 

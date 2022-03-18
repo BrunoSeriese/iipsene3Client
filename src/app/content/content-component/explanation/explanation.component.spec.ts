@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExplanationComponent } from './explanation.component';
 import {Answer} from "../../shared/answer/answer.model";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
 
 describe('ExplanationComponent', () => {
   let component: ExplanationComponent;
@@ -19,7 +19,7 @@ describe('ExplanationComponent', () => {
     fixture = TestBed.createComponent(ExplanationComponent);
     component = fixture.componentInstance;
 
-    component.explanation = new ContentModel(6, "Je gaat een sterke kop koffie krijgen", "Explanation", [new Answer(9, "Die heb je verdient!")]);
+    component.explanation = new Content(6, "Je gaat een sterke kop koffie krijgen", "Explanation", [new Answer(9, "Die heb je verdient!")]);
 
     fixture.detectChanges();
   });

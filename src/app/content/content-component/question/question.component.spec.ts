@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { QuestionComponent } from './question.component';
 import {Answer} from "../../shared/answer/answer.model";
 import {AnswerListComponent} from "./answer-list/answer-list.component";
-import {ContentModel} from "../../content.model";
+import {Content} from "../../content";
 
 describe('QuestionComponent', () => {
   let component: QuestionComponent;
@@ -20,7 +20,7 @@ describe('QuestionComponent', () => {
     fixture = TestBed.createComponent(QuestionComponent);
     component = fixture.componentInstance;
 
-    component.question = new ContentModel(1, "Is koffie lekker?", "Question", [
+    component.question = new Content(1, "Is koffie lekker?", "Question", [
       new Answer(1, "Ja"),
       new Answer(2, "Beetje wel"),
       new Answer(3, "Beetje niet"),

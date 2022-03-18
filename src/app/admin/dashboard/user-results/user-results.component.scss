@@ -1,0 +1,55 @@
+@import "src/styles/abstracts/mixins";
+@include btn-mid;
+
+.filter-container {
+  display: flex;
+  width: 60%;
+  margin: 3em auto auto auto;
+  justify-content: space-evenly;
+}
+
+.table-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.table-wrapper {
+  height: 50vh;
+  margin: calc(4% + 0.4vh) calc(5% + 0.4vw);
+  font-size: calc(1rem + .2vw);
+}
+
+@media (max-width: 1200px) {
+  .table-wrapper {
+    overflow-y: auto;
+  }
+
+  .filter-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .btn-mid {
+    padding: .2rem .4rem;
+    font-size: .6rem;
+    width: fit-content;
+  }
+}
+
+.table-wrapper::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.49);
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+  background-color: #ffffff;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
+  border-radius: 10px;
+}

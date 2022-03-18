@@ -1,73 +1,77 @@
 @import "src/styles/abstracts/mixins";
 @include nav-button;
 @include logo_header;
+@include corner-styling;
+@include content;
 
-.logo-header{
-  margin-top:0;
 
+.start-header-text {
+  font-weight: 500;
+  font-size: calc(0.8rem + 1.2vw);
+}
+.start-text{
+  font-weight: bold;
+  font-size: calc(1rem + 1vw);
+}
+
+.corner-styling{
+  margin-top: 15vh;
+}
+
+.corner-styling::before{
+
+}
+.corner-styling::after{
+  height: 30%;
+}
+
+
+.start-btn{
+  margin-top: 20vh;
+  padding: 2vw 2vw 2vw calc(5% + .4vw);
 }
 
 .main-content{
   min-height: 100vh;
-  height: 90vh;
-  width: 83%;
-  color: #FFFFFF;
+  height: 100vh;
   background: rgba(255, 255, 255, 0.15);
-}
-
-.startDiv{
-  padding: 20px;
-}
-
-.header-text{
-  background: #e0e0e0;
-  border: 3px solid black;
-}
-
-.header-text > h1{
-  color: black;
-}
-
-
-.dashboardDiv{
-  background-color: #e0e0e0;
-  padding: 20px;
-  border: 3px solid black;
-}
-
-.dashboardDiv > h1{
-  color: black;
-}
-
-.dashboardDiv > h1 > strong {
-  color: black;
 }
 
 .flex-container {
   display: flex;
+  row-gap: 8vh;
   flex-wrap: wrap;
-  padding: 2vw;
+  padding-left: calc(5% + .4vw);
+  padding-top: calc(4% + 0.4vh);
+  width: 90%;
 }
 
-.flex-item {
-  flex: 100%;
-
-}
 
 @media (max-width: 767px) {
-  .flex-item-right, .flex-item-left {
-    flex: 100%;
-    margin: 0;
-    margin-bottom: 2vw;
-  }
-
   .main-content{
     height: 100vh;
     width: 100%;
   }
 
-  .header-balk{
-    height: 13vh;
+  .flex-container {
+    padding: 6vw;
+    width: 100%;
+  }
 
+  .corner-styling{
+    margin-top: 5vh;
+  }
+
+  .corner-styling::before{
+    width: 60%;
+  }
+  .corner-styling::after{
+    height: 20%;
+  }
+
+  .start-btn{
+    text-align: center;
+    margin-top: 15vh;
+    padding: 6vw 6vw 6vw calc(5% + .4vw);
   }
 }
