@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class LoginService {
-  private baseURL: String = "http://localhost:8080/api/v1";
+  private baseURL: String = "https://ipsen3-api.herokuapp.com/api/v1";
   private _token: String = "";
 
   constructor(private http: HttpClient) { }
