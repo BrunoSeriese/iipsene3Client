@@ -8,7 +8,7 @@ import {UserResult} from "./user-result.model";
   providedIn: 'root'
 })
 export class UserResultsService {
-  private baseURL: String = "http://localhost:8080/api/v1";
+  private baseURL: String = "https://ipsen3-api.herokuapp.com/api/v1";
 
   constructor(private http: HttpClient,
               private loginService: LoginService) {
